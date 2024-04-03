@@ -3,38 +3,44 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
-            <div class="card col-6" style="width: 18rem;">
-                <form class="card-body">
-                    <!-- from title -->
-                    <h5 class="card-title text-center">Register with Boardgame Buddy</h5>
+            <div class="card shadow p-3 mb-5 bg-light rounded col-6" style="width: 18rem;">
+                <form class="card-body" method="POST" action="{{ url_for('register') }}">
+                    <!-- form title -->
+                    <h3 class="card-title text-center">Register with Boardgame Buddy</h5>
                     <p class="text-muted text-center">We'll never share your personal information with anyone else.</p>
                     <!-- username input -->
-                    <div class="form-group">
-                        <span>
+                    <div class="form-group row">
+                        <span class="col-10 mx-auto">
                             <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
                         </span>
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" placeholder="Enter a username here" id="username" name="username" aria-describedby="usernameHelp">
-                        <small id="usernameHelp" class="form-text text-muted">Username must be between 3 - 15 characters long, and can contain letters and numbers only.</small>
+                        <label for="username" class="col-10 mx-auto">Username</label>
+                        <input type="text" class="form-control col-10 mx-auto" placeholder="Enter a username here" id="username" name="username" aria-describedby="usernameHelp">
+                        <small id="usernameHelp" class="form-text col-10 mx-auto text-muted">Username must be between 3 - 15 characters long, and can contain letters and numbers only.</small>
                     </div>
                     <!-- email input -->
-                    <div class="form-group">
-                        <span>
+                    <div class="form-group row">
+                        <span class="col-10 mx-auto">
                             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         </span>
-                        <label for="email" class="mt-4">Email address</label>
-                        <input type="email" class="form-control" placeholder="Enter your email here"
+                        <label for="email" class="col-10 mx-auto">Email address</label>
+                        <input type="email" class="form-control col-10 mx-auto" placeholder="Enter your email here"
                             id="email" name="email" aria-describedby="emailHelp">
                     </div>
                     <!-- password input -->
-                    <div class="form-group">
-                        <span>
+                    <div class="form-group row">
+                        <span class="col-10 mx-auto">
                             <i class="fa-solid fa-unlock-alt" aria-hidden="true"></i>
                         </span>
-                        <label for="password" class="mt-4">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter a username here"
+                        <label for="password" class="col-10 mx-auto">Password</label>
+                        <input type="password" class="form-control col-10 mx-auto validate" placeholder="Enter a username here"
                             id="password" name="password" aria-describedby="usernameHelp">
-                        <small id="usernameHelp" class="form-text text-muted">Password must be between 5 - 20 characters long, and can contain letters and numbers only.</small>
+                        <small id="usernameHelp" class="form-text col-10 mx-auto text-muted">Password must be between 5 - 20 characters long, and can contain letters and numbers only.</small>
+                    </div>
+                    <!-- register button -->
+                    <div class="row">
+                        <button class="btn-lg btn-primary col-4 my-2 mx-auto shadow" type="submit" value="Submit">
+                            Register <i class="fa-solid fa-sign-in-alt mx-1"></i>
+                        </button>
                     </div>
                 </form>
             </div>
