@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boardgame Buddy</title>
+</head>
+<body>
+    {% for game in games %}
+        {{ game.game_title }}<br>
+        {{ game.publisher }}<br>
+        {{ game.min_players }}<br>
+        {{ game.max_players }}<br>
+        {{ game.avg_playtime_mins }}<br>
+        {{ game.difficulty }}<br>
+        {{ game.description }}<br>
+    {% endfor %}
+</body>
+</html>
