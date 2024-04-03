@@ -276,15 +276,9 @@ An advertising banner could be added to promote other content from the same publ
 
 [**Back to top**](#rock-paper-scissors)
 ## **Imported Code**
-EXAMPLE!!! DO NOT LEAVE IN!!###
-Template modal code from [Bootstrap 4.6 Library](https://getbootstrap.com/docs/4.6/components/modal/). Heavily modified to suit my project requirements
+Template navbar code from [Bootstrap 4.6 Library](https://getbootstrap.com/docs/4.6/components/navbar/). Heavily modified to suit my project requirements
 <details><summary>View the imported code here</summary>
-<img src="">
-</details><br/>
-
-
-<details><summary>View the mentor session code result here</summary>
-<img src="">
+<img src="documents/readme-images/bootstrap-navbar-code.png">
 </details><br/>
 
 ## **Credits**
