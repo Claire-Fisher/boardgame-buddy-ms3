@@ -276,10 +276,13 @@ An advertising banner could be added to promote other content from the same publ
 
 [**Back to top**](#rock-paper-scissors)
 ## **Imported Code**
-Template navbar code from [Bootstrap 4.6 Library](https://getbootstrap.com/docs/4.6/components/navbar/). Heavily modified to suit my project requirements
-<details><summary>View the imported code here</summary>
+Template code blocks taken from [Bootstrap 4.6 Library](https://getbootstrap.com/docs/4.6/components/navbar/). Heavily modified to suit my project requirements.
+<details><summary>View the navbar code here</summary>
 <img src="documents/readme-images/bootstrap-navbar-code.png">
-</details><br/>
+</details>
+<details><summary>View the card panel code here</summary>
+<img src="documents/readme-images/bootstrap-card-code.png">
+</details>
 
 ## **Credits**
 - Shaun Russell: RPS logo & Modal Rules images.
