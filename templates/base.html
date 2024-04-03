@@ -57,8 +57,22 @@
         </nav>
     </header>
 
-    {% block content %}
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                    <div class="alert flashes text-center" role="alert">
+                        <h4 class="col-12 mx-auto">{{ message }}</h4>
+                    </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <main class="container-fluid">
+        {% block content %}
     {% endblock%}
+    </main>
+
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"

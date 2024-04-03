@@ -4,3 +4,8 @@ body {
     color: #3d251e;
     background-color: rgba(153, 236, 247, 0.5);
 }
+
+.flashes h4 {
+    line-height: 2;
+    background-color: rgba(250, 0, 0, 0.5);
+}
