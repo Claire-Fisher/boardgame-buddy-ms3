@@ -1,14 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container-fluid">
-        <div class="row justify-content-center mt-5">
-            <div class="card shadow p-3 mb-5 bg-light rounded col-6" style="width: 18rem;">
-                <h3 class="username-title">
+    <div class="container-fluid h-100">
+        <div class="row h-100 card-column">
+            <div id="user-profile-column" 
+                class="card-body shadow text-center bg-light rounded col-3">
+                <div id="circle-border" class="row">
+                    <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="" no-repeat center center>
+                </div>
+                <h3 class="username-title row justify-content-center my-3">
                     {{ username }}'s Profile
                 </h3>
             </div>
         </div>
-    </div>    
+    </div>
 
 {% endblock %}
