@@ -37,21 +37,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Events</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Collection</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-                    </li>
+                    {% if session.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
