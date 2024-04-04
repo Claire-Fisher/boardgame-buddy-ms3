@@ -4,14 +4,13 @@
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
             <div class="card shadow p-3 mb-5 bg-light rounded col-6" style="width: 18rem;">
-                <form class="card-body" method="POST" action="{{ url_for('register') }}">
+                <form class="card-body" method="POST" action="{{ url_for('login') }}">
                     <!-- form title -->
-                    <h3 class="card-title text-center">Register with Boardgame Buddy</h5>
-                    <p class="text-muted text-center">We'll never share your personal information with anyone else.</p>
+                    <h3 class="card-title text-center">Log In to Boardgame Buddy</h5>
                     <!-- username input -->
                     <div class="form-group row">
                         <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                            <i class="fa-solid fa-user-cog" aria-hidden="true"></i>
                         </span>
                         <label for="username" class="col-10 mx-auto">Username
                             <small class="mx-1 text-muted"> (Required)</small>
@@ -24,18 +23,6 @@
                             Username must be between 3 - 15 characters long, 
                             and can contain letters and numbers only.
                         </small>
-                    </div>
-                    <!-- email input -->
-                    <div class="form-group row">
-                        <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        </span>
-                        <label for="email" class="col-10 mx-auto">Email address
-                            <small class="mx-1 text-muted"> (Required)</small>
-                        </label>
-                        <input type="email" required class="form-control col-10 mx-auto" 
-                            placeholder="Enter your email here" id="email" name="email"
-                            aria-describedby="emailHelp">
                     </div>
                     <!-- password input -->
                     <div class="form-group row">
@@ -54,11 +41,11 @@
                             and can contain letters and numbers only.
                         </small>
                     </div>
-                    <!-- register button -->
+                    <!-- log in button -->
                     <div class="row">
                         <button class="btn-lg btn-primary col-4 my-2 mx-auto shadow" 
                             type="submit" value="Submit">
-                            Register <i class="fa-solid fa-sign-in-alt mx-1"></i>
+                            Log in <i class="fa-solid fa-sign-in-alt mx-1"></i>
                         </button>
                     </div>
                 </form>
@@ -67,11 +54,11 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="text-center col-12">
+        <div class="col-12 text-center mx-auto">
             <p>
-                Already registered?
-                <a href="{{ url_for('login') }}">
-                    Log in
+                New Here?
+                <a href="{{ url_for('register') }}">
+                    Register an account for FREE additional features!
                 </a>
             </p>
         </div>
