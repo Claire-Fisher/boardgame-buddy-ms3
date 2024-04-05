@@ -18,18 +18,10 @@ body {
     text-transform: capitalize;
 }
 
-/* profile page - user column */
-#user-profile-column {
-    display: inline-block;
-    margin-left: .8rem;
-    height: 100vh;
-}
-
 /* profile page - circle profile image */
 #circle-border {
     width: 200px;
     height: 200px;
-    border-style: solid;
     border-color: #ccc;
     border-width: 1px;
     border-radius: 50%;
@@ -39,4 +31,13 @@ body {
 #circle-profile-img {
     height: 100%;
     border-radius: 50%;
+}
+
+.red-box {
+    background-color: red;
+    height: 200px;
+}
+
+#green-card {
+    background-color: green;
 }

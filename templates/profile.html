@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container-fluid h-100">
-        <div class="row h-100 card-column">
-            <div id="user-profile-column" 
-                class="card-body shadow text-center bg-light rounded col-3">
-                <div id="circle-border" class="row">
-                    <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="" no-repeat center center>
-                </div>
-                <h3 class="username-title row justify-content-center my-3">
+    <div class="container-fluid my-3 card">
+        <div class="card-body shadow bg-light rounded row">
+            <div id="circle-border" class="my-auto col-2">
+                <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="" no-repeat center center>
+            </div>
+            <div class="col-10">
+                <h3 class="username-title justify-content-center">
                     {{ username }}'s Profile
                 </h3>
+                <p>email</p>
+                <p>city</p>
+                <p>country</p>
+                <p>favourite game</p>
+                <button class="btn btn-primary my-2 mx-auto shadow" 
+                    type="submit" value="Submit">
+                    Edit <i class="fa fa-pencil mx-1" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-danger my-2 mx-auto shadow" 
+                    type="submit" value="Submit">
+                    Delete <i class="fa fa-times-circle mx-1" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </div>
