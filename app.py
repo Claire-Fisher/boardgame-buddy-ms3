@@ -39,7 +39,10 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "city": "",
+            "country": "",
+            "favourite game": ""
         }
         mongo.db.users.insert_one(register)
 
@@ -93,10 +96,19 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    #remove user from the session cookies
+    # remove user from the session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# @app.route("/edit_profile/<username>", methods=["GET", "POST"])
+# def edit_profile(username):
+#     # grab the session user's username from the db
+#     username = mongo.db.users.find_one(
+#         {"username": session["user"]})["username"]
+    
+#     return render_template(url_for("profile.html", username=username))
 
 
 if __name__ == "__main__":
