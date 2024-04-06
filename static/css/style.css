@@ -7,10 +7,10 @@ body {
 }
 
 /* user action feedback messages */
-.flashes h4 {
+.flash-message {
     line-height: 2;
     text-transform: capitalize;
-    background-color: rgba(250, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 /* profile page */
