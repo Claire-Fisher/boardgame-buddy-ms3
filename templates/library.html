@@ -1,18 +1,45 @@
 {% extends "base.html" %}
 {% block content%}
-
-    {% for game in games %}
-        <br>
-        <i class="fa-solid fa-plus-circle"></i>
-        {{ game.game_title }}<br>
-        {{ game.publisher }}<br>
-        {{ game.min_players }}<br>
-        {{ game.max_players }}<br>
-        {{ game.avg_playtime_mins }}<br>
-        {{ game.difficulty }}<br>
-        {{ game.description }}<br><hr>
-    {% endfor %}
-
-    
+    <!-- game library header -->
+    <div id="game-library" class="title text-center py-2">
+        <h1>Board Game Library</h1>
+        <p>Browse the full library of games.<br>
+            Or use the filters to search for games that fit your needs.</p>
+    </div>
+    <!-- filter games form -->
+    <div class="text-center">
+        <form class="mx-auto" action="">
+            <div style="border: 5px dotted black; background-color: grey;">
+                <h3>FILTERS PLACEHOLDER</h3>
+            </div>
+        </form>
+    </div>
+    <!-- games library game-cards -->
+    <div class="container-fluid m-0 p-0">
+        <div class="row">
+            {% for game in games %}
+                <div class="card game-card text-center col-md-6 m-3 mx-auto">
+                    <img id="game-image" src="{{ game.image }}"
+                        class="card-img-top"
+                        alt="An image of the game {{ game.game_title}}"
+                        no-repeat center center>
+                    <div class="card-body">
+                        <h5 class="card-title capitalize underline"><strong>Title: {{ game.game_title }}</strong></h5>
+                        <p class="card-text capitalize"><strong>Publisher: </strong>{{ game.publisher }}</p>
+                        <p class="card-text"><strong>Min Players: </strong>{{ game.min_players }}</p>
+                        <p class="card-text"><strong>Max Players: </strong>{{ game.max_players }}</p>
+                        <p class="card-text"><strong>Avg Playtime: </strong>{{ game.avg_playtime_mins }} mins</p>
+                        <p class="card-text capitalize"><strong>Difficulty: </strong>{{ game.difficulty }}</p>
+                        <p class="card-text"><strong>Description: </strong>{{ game.description }}</p>
+                    </div>
+                    <!-- add to user collection / user wishlist buttons -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-outline-primary"><strong>Add to Collection</strong></button>
+                        <button type="submit" class="btn btn-outline-info"><strong>Add to Wishlist</strong></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}
