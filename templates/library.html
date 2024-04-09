@@ -2,15 +2,17 @@
 {% block content%}
 
     {% for game in games %}
+        <br>
+        <i class="fa-solid fa-plus-circle"></i>
         {{ game.game_title }}<br>
         {{ game.publisher }}<br>
         {{ game.min_players }}<br>
         {{ game.max_players }}<br>
         {{ game.avg_playtime_mins }}<br>
         {{ game.difficulty }}<br>
-        {{ game.description }}<br>
+        {{ game.description }}<br><hr>
     {% endfor %}
 
-    <i class="fa-solid fa-plus-circle"></i>
+    
 
 {% endblock %}

@@ -23,8 +23,8 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/get_games")
-def get_games():
+@app.route("/library")
+def library():
     games = list(mongo.db.games.find())
     return render_template("library.html", games=games)
 
@@ -71,15 +71,14 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            #username doesn't exist
+            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -104,15 +103,6 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
-
-# @app.route("/edit_profile/<username>", methods=["GET", "POST"])
-# def edit_profile(username):
-#     # grab the session user's username from the db
-#     username = mongo.db.users.find_one(
-#         {"username": session["user"]})["username"]
-    
-#     return render_template(url_for("profile.html", username=username))
 
 
 if __name__ == "__main__":
