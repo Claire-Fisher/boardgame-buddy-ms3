@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container-fluid my-3 card">
-        <div class="card-body shadow bg-light rounded row">
+    <div class="container-fluid bg-light-blue my-3">
+        <!-- profile banner -->
+        <div class="card-body shadow bg-yellow rounded row">
             <!-- user profile image -->
             <div id="circle-border" class="my-auto col-sm-12 col-md-2">
                 <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="Profile image for {{ username }}" no-repeat center center>
@@ -30,8 +31,15 @@
                 </button>
             </div>
         </div>
-        
-        
+
+        <!-- toggle between user collection / user wishlist windows -->
+        <div class="card my-2">
+            <div class="row bg-light text-center my-3 mx-auto">
+                <button class="btn btn-lg btn-outline-primary mx-3 px-5"><strong>My Collection</strong></button>
+                <button class="btn btn-lg btn-outline-info mx-3 px-5"><strong>My Wishlist</strong></button>
+            </div>
+        </div>
+
     </div>
 
-{% endblock %}
+{% endblock %} 

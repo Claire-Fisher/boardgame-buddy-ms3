@@ -8,6 +8,16 @@ body {
     background-color: rgba(153, 236, 247, 0.5);
 }
 
+/* colour palettes */
+
+.bg-light-blue {
+    background-color: rgba(153, 236, 247, 0.5);
+}
+
+.bg-yellow {
+    background-color: rgb(247, 204, 87);
+}
+
 .capitalize {
     text-transform: capitalize;
 }
