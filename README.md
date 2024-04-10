@@ -8,7 +8,6 @@ This project is intended for users of any age. It is developed using a mobile fi
 
 **PLEASE NOTE: This documentation contains many images which can be viewed via a dropdown toggle.**
 
-Test github connected
 
 ## Table of Contents
 * [**Planning and Development**](#planning-and-development)
