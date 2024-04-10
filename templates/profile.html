@@ -14,10 +14,14 @@
                     <strong>{{ username }}'s Profile</strong>
                 </h3>
                 <!-- user profile info -->
-                <p>(placeholder) email</p>
-                <p>(placeholder) city</p>
-                <p>(placeholder) country</p>
-                <p>(placeholder) favourite game</p>
+                {% for user in info %}
+                    {% if user["username"] == username %}
+                        <p>Email: {{ user["email"] }}</p>
+                        <p>City: {{ user["city"] }}</p>
+                        <p>Country: {{ user["country"] }}</p>
+                        <p>Favourite Game: {{ user["favourite_game"] }}</p>
+                    {% endif %}
+                {% endfor%}
                 <!-- edit user info button -->
                 <button class="btn btn-lg btn-primary my-2 mx-2 shadow" 
                     type="submit" value="Submit">
