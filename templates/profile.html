@@ -35,8 +35,32 @@
         <!-- toggle between user collection / user wishlist windows -->
         <div class="card my-2">
             <div class="row bg-light text-center my-3 mx-auto">
-                <button class="btn btn-lg btn-outline-primary mx-3 px-5"><strong>My Collection</strong></button>
-                <button class="btn btn-lg btn-outline-info mx-3 px-5"><strong>My Wishlist</strong></button>
+                <button id="user-collection-btn" class="btn btn-lg btn-outline-primary mx-3 px-5"><strong>My Collection</strong></button>
+                <button id="user-wishlist-btn" class="btn btn-lg btn-outline-info mx-3 px-5"><strong>My Wishlist</strong></button>
+            </div>
+        </div>
+
+        <!-- user games collection window -->
+        <div id="user-collection-card" class="card bg-light">
+            <div class="row mx-auto">
+                <h3 class="capitalize py-2">{{ username }}'s game collection</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h5>Loop through game COLLECTION list in player db document?</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- user games wishlist window -->
+        <div id="user-wishlist-card" class="card bg-light hidden">
+            <div class="row mx-auto">
+                <h3 class="capitalize py-2">{{ username }}'s game wishlist</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h5>Loop through game WISHLIST list in player db document?</h5>
+                </div>
             </div>
         </div>
 
