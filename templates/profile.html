@@ -3,27 +3,35 @@
 
     <div class="container-fluid my-3 card">
         <div class="card-body shadow bg-light rounded row">
+            <!-- user profile image -->
             <div id="circle-border" class="my-auto col-sm-12 col-md-2">
                 <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="Profile image for {{ username }}" no-repeat center center>
             </div>
             <div id="profile-info" class="col-sm-12 col-md-9">
+                <!-- username from session cookie -->
                 <h3 class="username-title">
                     <strong>{{ username }}'s Profile</strong>
                 </h3>
+                <!-- user profile info -->
                 <p>(placeholder) email</p>
                 <p>(placeholder) city</p>
                 <p>(placeholder) country</p>
                 <p>(placeholder) favourite game</p>
+                <!-- edit user info button -->
                 <button class="btn btn-lg btn-primary my-2 mx-2 shadow" 
                     type="submit" value="Submit">
                     Edit <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                 </button>
+                <!-- delete user info button  -->
+                <!-- NEEDS A USER CONFIRMATION POP-UP BEFORE IT SUBMITS -->
                 <button class="btn btn-lg btn-danger my-2 shadow" 
                     type="submit" value="Submit">
                     Delete <i class="fa-solid fa-times-circle mx-1" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
+        
+        
     </div>
 
 {% endblock %}
