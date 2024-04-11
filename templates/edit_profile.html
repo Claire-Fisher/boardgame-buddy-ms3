@@ -3,68 +3,87 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
-            <div class="card shadow p-3 mb-5 bg-light rounded col-6" style="width: 18rem;">
+            <div class="card shadow p-3 mb-5 bg-yellow rounded col-6" style="width: 18rem;">
                 <form class="card-body" method="POST" action="">
                     <!-- form title -->
-                    <h3 class="card-title text-center">Edit {{ username }}'s Profile</h5>
-                    <p class="text-muted text-center">Please note: username / email / password cannot be changed.</p>
-                    <!-- username display -->
-                    <div class="form-group row">
-                        <div class="col-10 mx-auto">
-                            <i class="fa-solid fa-user" aria-hidden="true"><p>Username: {{ username }}</p></i>
+                    <h3 class="card-title text-center capitalize">Edit {{ info.username }}'s Profile</h5>
+                    <p class="text-center">Please note: username / email / password cannot be changed.</p>
+                    <div class="form-group">
+                        <!-- username display -->
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p class="capitalize">
+                                    <i class="fa-solid fa-user"
+                                        aria-hidden="true">
+                                    </i><strong> Username: {{ info.username }}</strong></p>
+                            <!-- email display -->
+                            <p>
+                                <i class="fa-solid fa-envelope"
+                                    aria-hidden="true">
+                                </i><strong> Email: {{ info.email }}</strong></p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- email input -->
-                    <div class="form-group row">
-                        <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        </span>
-                        <label for="email" class="col-10 mx-auto">Email address
-                            <small class="mx-1 text-muted"> (Required)</small>
-                        </label>
-                        <input type="email" required class="form-control col-10 mx-auto" 
-                            placeholder="Enter your email here" id="email" name="email"
-                            aria-describedby="emailHelp">
-                    </div>
-                    <!-- password input -->
-                    <div class="form-group row">
-                        <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-unlock-alt" aria-hidden="true"></i>
-                        </span>
-                        <label for="password" class="col-10 mx-auto">Password
-                            <small class="mx-1 text-muted"> (Required)</small>
-                        </label>
-                        <input type="password" required
-                            class="form-control col-10 mx-auto validate" 
-                            placeholder="Enter a username here" pattern="^[a-zA-Z0-9]{6,15}$" 
-                            id="password" name="password" aria-describedby="usernameHelp">
-                        <small id="usernameHelp" class="form-text col-10 mx-auto text-muted">
-                            Password must be between 6 - 20 characters long, 
-                            and can contain letters and numbers only.
-                        </small>
-                    </div>
-                    <!-- register button -->
-                    <div class="row">
-                        <button class="btn-lg btn-primary col-4 my-2 mx-auto shadow" 
-                            type="submit" value="Submit">
-                            Register <i class="fa-solid fa-sign-in-alt mx-1"></i>
-                        </button>
-                    </div>
+                        <!-- city input -->
+                        <div class="row">
+                            <div class="col-10 mx-auto my-2">
+                                <label for="city">
+                                    <i class="fa-solid fa-building"
+                                        aria-hidden="true">
+                                    </i><strong> City</strong>
+                                </label>
+                                <input type="text" class="form-control"
+                                    placeholder="Enter your city here"
+                                    id="city" name="city" 
+                                    aria-describedby="uHelp">
+                            </div>
+                        </div>
+                        <!-- country input -->
+                        <div class="row">
+                            <div class="col-10 mx-auto my-2">
+                                <label for="country">
+                                    <i class="fa-solid fa-globe"
+                                        aria-hidden="true">
+                                    </i><strong> Country</strong>
+                                </label>
+                                <input type="text" class="form-control"
+                                    placeholder="Enter your country here"
+                                    id="country" name="country" 
+                                    aria-describedby="uHelp">
+                            </div>
+                        </div>
+                        <!-- favourite boardgame -->
+                        <div class="row">
+                            <div class="col-10 mx-auto my-2">
+                                <label for="country">
+                                    <i class="fa-solid fa-heart"
+                                        aria-hidden="true">
+                                    </i><strong> Favourite Boardgame</strong>
+                                </label>
+                                <input type="text" class="form-control"
+                                    placeholder="Enter your favourite game here"
+                                    id="country" name="country" 
+                                    aria-describedby="uHelp">
+                            </div>
+                        </div>
+                        <!-- edit profile buttons -->
+                        <div class="row">
+                            <div class="col-10 my-2 text-center mx-auto">
+                                <!-- save changes profile button -->
+                                <button class="btn btn-lg btn-primary shadow" 
+                                    type="submit" value="Submit">
+                                    Save <i class="fa-solid fa-check mx-1"></i>
+                                </button>
+                                <!-- cancel changes profile button -->
+                                <a href="{{ url_for('profile', username=session['user']) }}"
+                                    class="btn btn-lg btn-danger shadow">
+                                    Cancel <i class="fa-solid fa-times-circle mx-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
                 </form>
             </div>
         </div>
     </div>
-
-    <div class="row justify-content-center">
-        <div class="text-center col-12">
-            <p>
-                Already registered?
-                <a href="{{ url_for('login') }}">
-                    Log in
-                </a>
-            </p>
-        </div>
-    </div>
-    
 
 {% endblock %}
