@@ -97,6 +97,16 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/game/<game_id>", methods=["GET"])
+def game_detail(game_id):
+    print(game_id)
+
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    print(game)
+
+    return redirect(url_for("library"))
+
+
 @app.route("/logout")
 def logout():
     # remove user from the session cookies
