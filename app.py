@@ -90,11 +90,16 @@ def profile(username):
     # creates a list of session user's data
     info = mongo.db.users.find_one({"username": username})
 
-
     if session["user"]:
         return render_template("profile.html", info=info)
 
     return redirect(url_for("login"))
+
+
+@app.route("/edit_profile/<username>", methods=["GET", "POST"])
+def edit_profile(username):
+    info = mongo.db.users.find_one({"username": username})
+    return render_template("edit_profile.html", info=info)
 
 
 @app.route("/game/<game_id>", methods=["GET"])

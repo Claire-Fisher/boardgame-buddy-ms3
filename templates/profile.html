@@ -18,10 +18,10 @@
                 <p>Country: {{ info["country"] }}</p>
                 <p>Favourite Game: {{ info["favourite_game"] }}</p>
                 <!-- edit user info button -->
-                <button class="btn btn-lg btn-primary my-2 mx-2 shadow" 
+                <a href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-lg btn-primary my-2 mx-2 shadow" 
                     type="submit" value="Submit">
                     Edit <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
-                </button>
+                </a>
                 <!-- delete user info button  -->
                 <!-- NEEDS A USER CONFIRMATION POP-UP BEFORE IT SUBMITS -->
                 <button class="btn btn-lg btn-danger my-2 shadow" 
