@@ -74,11 +74,19 @@ Below is a list of bugs I found during the development process by testing myself
             </details>
     * ***Solution Used:*** 
         
-2. **ISSUE NAME** 
+2. **Logo not displaying** 
     * ***Issue Found:***
-        * ...
+        * Custom svg logo wouldn't display. 
+        * My code inside the anchor tag = {{ url_for('static', filename='bgb-logo.svg') }}
+            <details><summary>Click here to view the logo bug</summary>
+            <img src="documents/testing-images/bgb-logo-bug.png">
+            </details>
     * ***Solution Used:***    
-        * ...
+        * Tried Flask documentation without success. 
+        * Found the answer on stack overflow [here.](https://stackoverflow.com/questions/28207761/where-does-flask-look-for-image-files#:~:text=Ideally%20your%20web%20server%20is,at%20%2Fstatic%20on%20the%20application.&text=The%20file%20has%20to%20be,the%20filesystem%20as%20static%2Fstyle.)
+            <details><summary>Click here to view solution</summary>
+            <img src="documents/testing-images/display-logo-solution.png">
+            </details>
 3. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
