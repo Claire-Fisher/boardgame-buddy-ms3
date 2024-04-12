@@ -17,6 +17,7 @@
                 <p>City: {{ info["city"] }}</p>
                 <p>Country: {{ info["country"] }}</p>
                 <p>Favourite Game: {{ info["favourite_game"] }}</p>
+
                 <!-- edit user info button -->
                 <a href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-lg btn-primary my-2 mx-2 shadow" 
                     type="submit" value="Submit">

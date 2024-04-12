@@ -32,7 +32,8 @@
                                     </i><strong> City</strong>
                                 </label>
                                 <input type="text" class="form-control"
-                                    placeholder="Enter your city here"
+                                    value="{{ info.city }}"
+                                    placeholder="{{ placeholder.city }}"
                                     id="city" name="city" 
                                     aria-describedby="uHelp">
                             </div>
@@ -46,7 +47,8 @@
                                     </i><strong> Country</strong>
                                 </label>
                                 <input type="text" class="form-control"
-                                    placeholder="Enter your country here"
+                                    value="{{ info.country }}"
+                                    placeholder="{{ placeholder.country }}"
                                     id="country" name="country" 
                                     aria-describedby="uHelp">
                             </div>
@@ -54,14 +56,15 @@
                         <!-- favourite boardgame -->
                         <div class="row">
                             <div class="col-10 mx-auto my-2">
-                                <label for="country">
+                                <label for="favourite_game">
                                     <i class="fa-solid fa-heart"
                                         aria-hidden="true">
                                     </i><strong> Favourite Boardgame</strong>
                                 </label>
                                 <input type="text" class="form-control"
-                                    placeholder="Enter your favourite game here"
-                                    id="country" name="country" 
+                                    value="{{ info.favourite_game }}"
+                                    placeholder="{{ placeholder.favourite_game }}"
+                                    id="favourite_game" name="favourite_game" 
                                     aria-describedby="uHelp">
                             </div>
                         </div>

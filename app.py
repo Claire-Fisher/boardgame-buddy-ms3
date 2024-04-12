@@ -97,9 +97,29 @@ def profile(username):
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
-def edit_profile(username):
+def edit_profile(username, placeholder=None):
     info = mongo.db.users.find_one({"username": username})
-    return render_template("edit_profile.html", info=info)
+    # placeholder instructions for user if values are blank
+    placeholder = {
+        "city": "Enter your City here" if info["city"] == "" else "",
+        "country": "Enter your Country here" if info["country"] == "" else "",
+        "favourite_game": "Enter your Favourite Game here" if info["favourite_game"] == "" else "",
+    }
+
+    if request.method == "POST":
+        save = {
+            "city": request.form.get("city"),
+            "country": request.form.get("country"),
+            "favourite_game": request.form.get("favourite_game")
+        }
+        # find the object id
+        match_id = {"_id": info["_id"]}
+        # set save object data to the matched user
+        mongo.db.users.update_one(match_id, {"$set": save})
+        # redirect back to updated user profile page
+        flash("Profile Successfully Updated")
+        return redirect( url_for("profile", username=username))
+    return render_template("edit_profile.html", info=info, placeholder=placeholder)
 
 
 @app.route("/game/<game_id>", methods=["GET"])
