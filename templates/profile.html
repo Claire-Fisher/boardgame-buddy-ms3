@@ -6,7 +6,9 @@
         <div class="card-body shadow bg-yellow rounded row">
             <!-- user profile image -->
             <div id="circle-border" class="my-auto mx-auto col-sm-12 col-md-2">
-                <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="Profile image for {{ username }}" no-repeat center center>
+                <img id="circle-profile-img"
+                    src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg"
+                    alt="Profile image for {{ username }}" no-repeat center center>
             </div>
             <div id="profile-info" class="col-sm-12 col-md-9 my-auto">
                 <!-- user profile info -->
@@ -24,14 +26,48 @@
                     Edit <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                 </a>
 
-                <!-- delete user info button  -->
-                <!-- NEEDS A USER CONFIRMATION POP-UP BEFORE IT SUBMITS -->
-                <button class="btn btn-lg btn-danger my-2 shadow" 
-                    type="submit" value="Submit">
+                <!-- Button trigger modal -->
+                <button class="btn btn-lg bg-danger my-2 shadow text-white" data-toggle="modal" data-target="#exampleModal">
                     Delete <i class="fa-solid fa-times-circle mx-1" aria-hidden="true"></i>
                 </button>
+                <!-- Warning Modal for user profile deletion -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-yellow">
+                                <h5 class="modal-title" id="exampleModalLabel"><strong>Are you sure?...</strong></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="text-purple" aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p class="text-pink"><strong>
+                                    This user profile will be<br>permanently deleted.
+                                </strong></p>
+                                <p>
+                                    Click Confirm to delete.<br>Or Back to cancel.
+                                </p>
+                            </div>
+                            <div class="modal-footer bg-yellow">
+                                <button 
+                                    type="button" data-dismiss="modal"
+                                    class="btn btn-lg btn-primary my-2 shadow">
+                                    <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back</button>
+                                <a
+                                    href="{{ url_for('delete_profile', user_id=user._id) }}"
+                                    type="button"
+                                    class="btn btn-lg bg-danger text-white my-2 shadow">
+                                    Confirm 
+                                    <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+            
+
 
         <!-- toggle between user collection / user wishlist windows -->
         <div class="card my-2">

@@ -46,7 +46,7 @@ def register():
             "password": generate_password_hash(request.form.get("password")),
             "city": "",
             "country": "",
-            "favourite game": ""
+            "favourite_game": ""
         }
         mongo.db.users.insert_one(register)
 
@@ -103,7 +103,7 @@ def edit_profile(username, placeholder=None):
     placeholder = {
         "city": "Enter your City here" if info["city"] == "" else "",
         "country": "Enter your Country here" if info["country"] == "" else "",
-        "favourite_game": "Enter your Favourite Game here" if info["favourite_game"] == "" else "",
+        "favourite_game": "Enter your Favourite Game here" if info["favourite_game"] == "" else ""
     }
 
     if request.method == "POST":
@@ -118,8 +118,16 @@ def edit_profile(username, placeholder=None):
         mongo.db.users.update_one(match_id, {"$set": save})
         # redirect back to updated user profile page
         flash("Profile Successfully Updated")
-        return redirect( url_for("profile", username=username))
+        return redirect(url_for("profile", username=username))
     return render_template("edit_profile.html", info=info, placeholder=placeholder)
+
+
+@app.route("/delete_profile/<user_id>")
+def delete_profile(user_id):
+    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
+    session.pop("user")
+    flash("Profile Successfully Deleted")
+    return redirect(url_for("index"))
 
 
 @app.route("/game/<game_id>", methods=["GET"])
