@@ -18,10 +18,18 @@ body {
     background-color: #FFC538;
 }
 
+.bg-pink {
+    background-color: #FF1178;
+}
+
 .text-purple {
     font-weight: 600;
     letter-spacing: 0.05rem;
     color: #530F83 !important;
+}
+
+.text-pink {
+    color:#FF1178;
 }
 
 /* font styles */
