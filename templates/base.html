@@ -21,7 +21,7 @@
 <body>
 
     <header class="container-fluid">
-        <nav class="navbar row navbar-expand-lg navbar-light bg-light">
+        <nav id="nav-header" class="navbar row navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand col-4" href="{{ url_for('index') }}"><img id="logo-svg" src="/static/images/bgb-logo.svg" alt="Boardgame Buddy Logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,28 +29,28 @@
             <div class="collapse navbar-collapse col-8 justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url_for('index') }}">Home
+                        <a class="nav-link text-purple" href="{{ url_for('index') }}">Home
                             <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('library') }}">Games Library</a>
+                        <a class="nav-link text-purple" href="{{ url_for('library') }}">Games Library</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Events</a>
+                        <a class="nav-link text-purple" href="#">Events</a>
                     </li>
                     {% if session.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
+                            <a class="nav-link text-purple" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                            <a class="nav-link text-purple" href="{{ url_for('logout') }}">Log Out</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+                            <a class="nav-link text-purple" href="{{ url_for('login') }}">Log In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                            <a class="nav-link text-purple" href="{{ url_for('register') }}">Register</a>
                         </li>
                     {% endif %}
                 </ul>
