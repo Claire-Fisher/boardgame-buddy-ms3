@@ -67,6 +67,7 @@ body {
 /* profile page */
 .username-title {
     text-transform: capitalize;
+    line-height: 2;
 }
 
 /* profile.html: user image */
@@ -97,12 +98,14 @@ body {
     #game-image {
         max-width: 200px;
         max-height: 200px;
+        padding: 0;
     }
 
     /* profile.html: user image */
     #circle-border {
         width: 100px;
         height: 100px;
+        padding: 0;
     }
 
     #profile-info {

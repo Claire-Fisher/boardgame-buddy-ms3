@@ -5,24 +5,25 @@
         <!-- profile banner -->
         <div class="card-body shadow bg-yellow rounded row">
             <!-- user profile image -->
-            <div id="circle-border" class="my-auto col-sm-12 col-md-2">
+            <div id="circle-border" class="my-auto mx-auto col-sm-12 col-md-2">
                 <img id="circle-profile-img" src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg" alt="Profile image for {{ username }}" no-repeat center center>
             </div>
-            <div id="profile-info" class="col-sm-12 col-md-9">
+            <div id="profile-info" class="col-sm-12 col-md-9 my-auto">
                 <!-- user profile info -->
                 <h3 class="username-title">
                     <strong>{{ info.username }}'s Profile</strong>
                 </h3>
-                <p>Email: {{ info["email"] }}</p>
-                <p>City: {{ info["city"] }}</p>
-                <p>Country: {{ info["country"] }}</p>
-                <p>Favourite Game: {{ info["favourite_game"] }}</p>
+                <p class="m-0">Email: {{ info["email"] }}</p>
+                <p class="m-0">City: {{ info["city"] }}</p>
+                <p class="m-0">Country: {{ info["country"] }}</p>
+                <p class="">Favourite Game: {{ info["favourite_game"] }}</p>
 
                 <!-- edit user info button -->
-                <a href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-lg btn-primary my-2 mx-2 shadow" 
+                <a href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-lg btn-primary mr-2 my-2 shadow" 
                     type="submit" value="Submit">
                     Edit <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                 </a>
+
                 <!-- delete user info button  -->
                 <!-- NEEDS A USER CONFIRMATION POP-UP BEFORE IT SUBMITS -->
                 <button class="btn btn-lg btn-danger my-2 shadow" 
