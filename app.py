@@ -125,7 +125,16 @@ def edit_profile(username, placeholder=None):
     return render_template("edit_profile.html", info=info, placeholder=placeholder)
 
 
-@app.route("/game/<game_id>", methods=["GET"])
+@app.route("/game/<game_id>", methods=["GET", "POST"])
+def game(game_id):
+    print(game_id)
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    print(game["game_title"])
+
+    return render_template("game.html", game=game)
+
+
+@app.route("/game_detail/<game_id>", methods=["GET"])
 def game_detail(game_id):
     print(game_id)
 

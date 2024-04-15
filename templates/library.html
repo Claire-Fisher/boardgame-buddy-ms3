@@ -20,13 +20,21 @@
             {% for game in games %}
                 <div class="card game-card text-center col-md-6 m-3 mx-auto">
                     <div class="game-image-container">
-                        <img id="game-image" src="{{ game.image }}"
-                            class="card-img-top"
-                            alt="An image of the game {{ game.game_title}}"
-                            no-repeat center center>
+                    <a href="{{ url_for('game', game_id=game._id) }}" 
+                        class="game-image-container">
+                            <img id="game-image" src="{{ game.image }}"
+                                class="card-img-top"
+                                alt="An image of the game {{ game.game_title}}"
+                                no-repeat center center>
+                    </a>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title capitalize underline"><strong>Title: {{ game.game_title }}</strong></h5>
+                        <a href="{{ url_for('game', game_id=game._id) }}" 
+                            class="game-image-container">
+                            <h5 class="card-title capitalize underline">
+                                <strong>Title: {{ game.game_title }}</strong></h5>
+                        </a>
+                        
                         <p class="card-text capitalize"><strong>Publisher: </strong>{{ game.publisher }}</p>
                         <p class="card-text"><strong>Min Players: </strong>{{ game.min_players }}</p>
                         <p class="card-text"><strong>Max Players: </strong>{{ game.max_players }}</p>
