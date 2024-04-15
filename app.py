@@ -54,6 +54,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -68,10 +69,11 @@ def login():
         if existing_user:
             # ensure hashed password matched user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for("profile", username=session["user"]))
+                existing_user["password"], request.form.get("password")
+            ):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -87,11 +89,12 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # creates a list of session user's data
-    info = mongo.db.users.find_one({"username": username})
+    # grab the session user's username from the db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", info=info)
+        return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
 
@@ -108,9 +111,9 @@ def edit_profile(username, placeholder=None):
 
     if request.method == "POST":
         save = {
-            "city": request.form.get("city"),
-            "country": request.form.get("country"),
-            "favourite_game": request.form.get("favourite_game")
+            "city": request.form.get("city").lower(),
+            "country": request.form.get("country").lower(),
+            "favourite_game": request.form.get("favourite_game").lower()
         }
         # find the object id
         match_id = {"_id": info["_id"]}
@@ -120,14 +123,6 @@ def edit_profile(username, placeholder=None):
         flash("Profile Successfully Updated")
         return redirect(url_for("profile", username=username))
     return render_template("edit_profile.html", info=info, placeholder=placeholder)
-
-
-@app.route("/delete_profile/<user_id>")
-def delete_profile(user_id):
-    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
-    session.pop("user")
-    flash("Profile Successfully Deleted")
-    return redirect(url_for("index"))
 
 
 @app.route("/game/<game_id>", methods=["GET"])
