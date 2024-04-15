@@ -61,7 +61,13 @@ body {
     background-color: rgb(247, 204, 87);
 }
 
+.game-image-container {
+    max-width: 400px;
+    max-height: 400px;
+}
+
 #game-image {
+    object-fit: contain;
     border: 10px solid white;
 }
 
@@ -168,8 +174,8 @@ body {
 
     /* library.html: game image on game card */
     #game-image {
-        max-width: 600px;
-        max-height: 600px;
+        max-width: 400px;
+        max-height: 400px;
     }
 
     /* profile.html: user image */
