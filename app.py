@@ -73,6 +73,7 @@ def login():
             ):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                print(session['user'])
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
@@ -93,10 +94,9 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    info = mongo.db.users.find_one({"username": username})
 
-    return redirect(url_for("login"))
+    return render_template("profile.html", username=username, info=info)
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
@@ -150,6 +150,14 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/delete_profile/<user_id>")
+def delete_profile(user_id):
+    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
+    session.pop("user")
+    flash("Profile Successfully Deleted")
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
