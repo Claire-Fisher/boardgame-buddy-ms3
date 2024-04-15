@@ -87,16 +87,32 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view solution</summary>
             <img src="documents/testing-images/display-logo-solution.png">
             </details>
-3. **ISSUE NAME** 
+3. **Undefined Error 01** 
     * ***Issue Found:*** 
-        * ...
+        * User Profile page would not load/display
+            <details><summary>Click here to view original code function</summary>
+            <img src="documents/testing-images/profile-undefined-error01-code.png">
+            </details>
+            <details><summary>Click here to view the error message</summary>
+            <img src="documents/testing-images/profile-undefined-error01.png">
+            </details>
     * ***Solution Used:***    
-        * ...
-4. **ISSUE NAME** 
+        * Created an info variable inside the function.
+        * Passed that to the page inside the render_template returned
+            <details><summary>Click here to view the code fix</summary>
+            <img src="documents/testing-images/profile-undefined-error01-code-fix.png">
+            </details>
+4. ***Undefined Error 02** 
     * ***Issue Found:*** 
-        * ...
+        * User Profile page would not load/display
+            <details><summary>Click here to view the error message</summary>
+            <img src="documents/testing-images/profile-undefined-error02.png">
+            </details>
     * ***Solution Used:***    
-        * ...
+        * Passed the page user=username from inside the function, instead of from the argument passed into the function.
+            <details><summary>Click here to view the error message</summary>
+            <img src="documents/testing-images/profile-undefined-error02-code-fix.png">
+            </details>
 5. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...

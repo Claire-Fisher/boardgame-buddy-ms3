@@ -96,7 +96,7 @@ def profile(username):
 
     info = mongo.db.users.find_one({"username": username})
 
-    return render_template("profile.html", username=username, info=info)
+    return render_template("profile.html", user=username, info=info)
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
@@ -150,14 +150,6 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
-
-@app.route("/delete_profile/<user_id>")
-def delete_profile(user_id):
-    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
-    session.pop("user")
-    flash("Profile Successfully Deleted")
-    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
