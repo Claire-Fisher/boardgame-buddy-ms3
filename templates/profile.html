@@ -16,9 +16,9 @@
                     <strong>{{ info.username }}'s Profile</strong>
                 </h3>
                 <p class="m-0">Email: {{ info["email"] }}</p>
-                <p class="m-0">City: {{ info["city"] }}</p>
-                <p class="m-0">Country: {{ info["country"] }}</p>
-                <p class="">Favourite Game: {{ info["favourite_game"] }}</p>
+                <p class="capitalize m-0">City: {{ info["city"] }}</p>
+                <p class="capitalize m-0">Country: {{ info["country"] }}</p>
+                <p class="capitalize">Favourite Game: {{ info["favourite_game"] }}</p>
 
                 <!-- edit user info button -->
                 <a href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-lg btn-primary mr-2 my-2 shadow" 
