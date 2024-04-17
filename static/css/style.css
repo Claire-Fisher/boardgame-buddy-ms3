@@ -55,8 +55,7 @@ body {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-/* *** PAGE: LIBRARY.HTML *** */
-
+/* library.html */
 #game-library {
     background-color: rgb(247, 204, 87);
 }
@@ -75,8 +74,6 @@ body {
     max-width: 450px;
     border: 10px solid white;
 }
-
-/* *** PAGE: PROFILE.HTML *** */
 
 /* profile page */
 .username-title {
@@ -98,6 +95,12 @@ body {
 #circle-profile-img {
     height: 100%;
     border-radius: 50%;
+}
+
+/* game.html: review entry */
+.review-entry {
+    padding:0.5rem;
+    border: 1px solid #530F83;
 }
 
 /* media queries for responsive layout (bootstrap breakpoints) */
