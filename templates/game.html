@@ -44,7 +44,7 @@
                                 <span class="text-purple" aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form class="modal-body">
+                            <form class="modal-body" method="POST" action="{{ url_for('review', game_id=game._id) }}">
                                 <!-- review title input -->
                                 <div class="form-group m-2 row">
                                     <label for="review-title" class="mr-2" aria-hidden="true">Review Title:</label>
@@ -59,20 +59,19 @@
                                     </textarea>
                                     <small class="text-muted">Reviews are limited to 250 characters.</small>
                                 </div>
+                                <div class="modal-footer bg-yellow">
+                                    <button 
+                                        type="button" data-dismiss="modal"
+                                        class="btn btn-lg btn-primary my-2">
+                                        <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back</button>
+                                    <button
+                                        type="submit"
+                                        class="btn btn-lg bg-info text-white my-2">
+                                            Submit
+                                        <i class="fa-solid fa-check mx-1" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                             </form>
-                            <div class="modal-footer bg-yellow">
-                                <button 
-                                    type="button" data-dismiss="modal"
-                                    class="btn btn-lg btn-primary my-2 shadow">
-                                    <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back</button>
-                                <a
-                                    href="#"
-                                    type="button"
-                                    class="btn btn-lg bg-info text-white my-2 shadow">
-                                        Submit
-                                    <i class="fa-solid fa-check mx-1" aria-hidden="true"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
