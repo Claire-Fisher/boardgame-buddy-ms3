@@ -97,6 +97,7 @@ def profile(username):
 
     info = mongo.db.users.find_one({"username": username})
 
+    # gets the users profile avatar url and turns it into a string
     avatar = info.get("avatar_url")
     avatar = str(avatar)
     print(avatar)
@@ -112,12 +113,16 @@ def edit_profile(username, placeholder=None):
         "country": "Enter your Country here" if info["country"] == "" else "",
         "favourite_game": "Enter your Favourite Game here" if info["favourite_game"] == "" else ""
     }
+    # gets the users profile avatar url and turns it into a string
+    avatar = info.get("avatar_url")
+    avatar = str(avatar)
 
     if request.method == "POST":
         save = {
             "city": request.form.get("city").lower(),
             "country": request.form.get("country").lower(),
-            "favourite_game": request.form.get("favourite_game").lower()
+            "favourite_game": request.form.get("favourite_game").lower(),
+            "avatar_url": request.form.get("avatar_url")
         }
         # find the object id
         match_id = {"_id": info["_id"]}
@@ -126,7 +131,7 @@ def edit_profile(username, placeholder=None):
         # redirect back to updated user profile page
         flash("Profile Successfully Updated")
         return redirect(url_for("profile", username=username))
-    return render_template("edit_profile.html", info=info, placeholder=placeholder)
+    return render_template("edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
 
 
 
