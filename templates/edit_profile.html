@@ -68,6 +68,22 @@
                                     aria-describedby="uHelp">
                             </div>
                         </div>
+                        <!-- user profile avatar -->
+                        <div class="row">
+                            <div class="col-10 mx-auto my-2">
+                                <label for="avatar_url">
+                                    <i class="fa-solid fa-file-image"
+                                        aria-hidden="true">
+                                    </i><strong> Your Profile Avatar</strong>
+                                </label>
+                                <input type="text" class="form-control"
+                                    value={{ avatar }}
+                                    placeholder="{{ placeholder.avatar_url }}"
+                                    id="avatar_url" name="avatar_url" 
+                                    aria-describedby="uHelp">
+                                    <small>Enter a URL for your profile image above.<br>Recommend size = 400pixels<sup>2</sup></small>
+                            </div>
+                        </div>
                         <!-- edit profile buttons -->
                         <div class="row">
                             <div class="col-10 my-2 text-center mx-auto">
