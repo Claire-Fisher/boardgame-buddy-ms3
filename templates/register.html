@@ -3,35 +3,33 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
-            <div class="card shadow p-3 mb-5 bg-light rounded col-6" style="width: 18rem;">
+            <div class="card shadow p-3 mb-5 bg-yellow rounded col-6" style="width: 18rem;">
                 <form class="card-body" method="POST" action="{{ url_for('register') }}">
                     <!-- form title -->
                     <h3 class="card-title text-center">Register with Boardgame Buddy</h5>
-                    <p class="text-muted text-center">We'll never share your personal information with anyone else.</p>
+                    <p class="text-center">We'll never share your personal information with anyone else.</p>
                     <!-- username input -->
                     <div class="form-group row">
-                        <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
-                        </span>
-                        <label for="username" class="col-10 mx-auto">Username
-                            <small class="mx-1 text-muted"> (Required)</small>
+                        <label for="username" class="col-10 mx-auto">
+                                <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                                    <strong> Username</strong>
+                            <small class="mx-1"> (Required)</small>
                         </label>
                         <input type="text" required
                             class="form-control col-10 mx-auto" placeholder="Enter a username here"
                             pattern="^[a-zA-Z0-9]{3,15}$" id="username" name="username" 
                             aria-describedby="usernameHelp">
-                        <small id="usernameHelp" class="form-text col-10 mx-auto text-muted">
+                        <small id="usernameHelp" class="form-text col-10 mx-auto">
                             Username must be between 3 - 15 characters long, 
                             and can contain letters and numbers only.
                         </small>
                     </div>
                     <!-- email input -->
                     <div class="form-group row">
-                        <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        </span>
-                        <label for="email" class="col-10 mx-auto">Email address
-                            <small class="mx-1 text-muted"> (Required)</small>
+                        <label for="email" class="col-10 mx-auto">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                    <strong> Email address</strong>
+                            <small class="mx-1"> (Required)</small>
                         </label>
                         <input type="email" required class="form-control col-10 mx-auto" 
                             placeholder="Enter your email here" id="email" name="email"
@@ -39,17 +37,16 @@
                     </div>
                     <!-- password input -->
                     <div class="form-group row">
-                        <span class="col-10 mx-auto">
-                            <i class="fa-solid fa-unlock-alt" aria-hidden="true"></i>
-                        </span>
-                        <label for="password" class="col-10 mx-auto">Password
-                            <small class="mx-1 text-muted"> (Required)</small>
+                        <label for="password" class="col-10 mx-auto">
+                                <i class="fa-solid fa-unlock-alt" aria-hidden="true"></i>
+                                    <strong> Password</strong>
+                            <small class="mx-1"> (Required)</small>
                         </label>
                         <input type="password" required
                             class="form-control col-10 mx-auto validate" 
                             placeholder="Enter a username here" pattern="^[a-zA-Z0-9]{6,15}$" 
                             id="password" name="password" aria-describedby="usernameHelp">
-                        <small id="usernameHelp" class="form-text col-10 mx-auto text-muted">
+                        <small id="usernameHelp" class="form-text col-10 mx-auto">
                             Password must be between 6 - 20 characters long, 
                             and can contain letters and numbers only.
                         </small>
