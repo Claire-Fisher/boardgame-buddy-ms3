@@ -7,7 +7,7 @@
             <!-- user profile image -->
             <div id="circle-border" class="my-auto mx-auto col-sm-12 col-md-2">
                 <img id="circle-profile-img"
-                    src="https://www.waifu.com.mx/wp-content/uploads/2023/05/Tifa-Lockhart-Cover-1.jpg"
+                    src={{ avatar }}
                     alt="Profile image for {{ username }}" no-repeat center center>
             </div>
             <div id="profile-info" class="col-sm-12 col-md-9 my-auto">
@@ -54,7 +54,7 @@
                                     class="btn btn-lg btn-primary my-2 shadow">
                                     <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back</button>
                                 <a
-                                    href="{{ url_for('delete_profile', user_id=user._id) }}"
+                                    href="#"
                                     type="button"
                                     class="btn btn-lg bg-danger text-white my-2 shadow">
                                     Confirm 

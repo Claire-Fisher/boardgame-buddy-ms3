@@ -46,7 +46,8 @@ def register():
             "password": generate_password_hash(request.form.get("password")),
             "city": "",
             "country": "",
-            "favourite_game": ""
+            "favourite_game": "",
+            "avatar_url": "https://cdn1.iconfinder.com/data/icons/project-management-8/500/worker-512.png"
         }
         mongo.db.users.insert_one(register)
 
@@ -96,7 +97,10 @@ def profile(username):
 
     info = mongo.db.users.find_one({"username": username})
 
-    return render_template("profile.html", user=username, info=info)
+    avatar = info.get("avatar_url")
+    avatar = str(avatar)
+    print(avatar)
+    return render_template("profile.html", user=username, info=info, avatar=avatar)
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
@@ -123,6 +127,7 @@ def edit_profile(username, placeholder=None):
         flash("Profile Successfully Updated")
         return redirect(url_for("profile", username=username))
     return render_template("edit_profile.html", info=info, placeholder=placeholder)
+
 
 
 @app.route("/game/<game_id>", methods=["GET", "POST"])
