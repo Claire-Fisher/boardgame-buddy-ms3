@@ -28,7 +28,8 @@
                     <div class="text-centear">
                         <button type="submit" class="btn btn-outline-primary mx-3"><strong>Add to Collection</strong></button>
                         <button type="submit" class="btn btn-outline-info mx-3"><strong>Add to Wishlist</strong></button>
-                        <a href="{{ url_for('library') }}" class="btn btn-primary text-center mx-3">Back to main game library</a>
+                        <a href="{{ url_for('review', game_id=game._id) }}" class="btn btn-outline-primary text-center mx-3">Leave a review</a>
+                        <a href="{{ url_for('library') }}" class="btn btn-outline-info text-center mx-3">Back to main game library</a>
                     </div>
                 </div>
             </div>

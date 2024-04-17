@@ -144,6 +144,13 @@ def game(game_id):
     return render_template("game.html", game=game)
 
 
+@app.route("/game/<game_id>", methods=["GET", "POST"])
+def review(game_id):
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+
+    return redirect(url_for("game", game=game))
+
+
 @app.route("/game_detail/<game_id>", methods=["GET"])
 def game_detail(game_id):
     print(game_id)
