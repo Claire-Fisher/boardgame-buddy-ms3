@@ -35,9 +35,6 @@
                     <li class="nav-item">
                         <a class="nav-link text-purple" href="{{ url_for('library') }}">Games Library</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-purple" href="#">Events</a>
-                    </li>
                     {% if session.user %}
                         <li class="nav-item">
                             <a class="nav-link text-purple" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
