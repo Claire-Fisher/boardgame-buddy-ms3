@@ -142,6 +142,8 @@ def game(game_id):
     print(game["game_title"])
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    relevant_reviews = list(mongo.db.reviews.find({"game_id": game_id}))
+    print(relevant_reviews)
 
     if request.method == "POST":
         print("in top post")
@@ -155,7 +157,10 @@ def game(game_id):
 
         mongo.db.reviews.insert_one(new_review)
 
-    return render_template("game.html", game=game)
+        relevant_reviews.append(new_review)
+
+    return render_template(
+        "game.html", game=game, relevant_reviews=relevant_reviews)
 
 
 @app.route("/game_detail/<game_id>", methods=["GET"])

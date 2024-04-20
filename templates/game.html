@@ -83,13 +83,13 @@
                 <h3 class="capitalize m-3"><strong>user reviews for {{ game.game_title }}</strong></h3>
             </div>
             <div class="card-body">
+                {% for review in relevant_reviews %}
                 <div class="review-entry">
-                    <h5>REVIEW TITLE</h5><hr>
-                    <P>REVIEW MAIN TEXT</P>
-                    <P>WRITTEN BY: USER</P>
+                    <h5><strong>{{ relevant_reviews.review_title }}</strong></h5>
+                    <p>{{ relevant_reviews.review }}</p>
+                    <p>User: {{ relevant_reviews.username }}</p>
                 </div>
+                {% endfor %}
             </div>
-        </div>
     </div>
-
 {% endblock %}
