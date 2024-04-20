@@ -28,7 +28,7 @@
                     <div class="text-centear">
                         <button type="submit" class="btn btn-outline-primary mx-3"><strong>Add to Collection</strong></button>
                         <button type="submit" class="btn btn-outline-info mx-3"><strong>Add to Wishlist</strong></button>
-                        <a href="{{ url_for('review', game_id=game._id) }}" class="btn btn-outline-primary text-center mx-3"
+                        <a href="{{ url_for('game', game_id=game._id) }}" class="btn btn-outline-primary text-center mx-3"
                             data-toggle="modal" data-target="#writeReviewModal">
                             <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>Leave a review</a>
                         <a href="{{ url_for('library') }}" class="btn btn-outline-info text-center mx-3">
@@ -44,7 +44,7 @@
                                 <span class="text-purple" aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form class="modal-body" method="POST" action="{{ url_for('review', game_id=game._id) }}">
+                            <form class="modal-body" method="POST" action="{{ url_for('game', game_id=game._id) }}">
                                 <!-- review title input -->
                                 <div class="form-group m-2 row">
                                     <label for="review-title" class="mr-2" aria-hidden="true">Review Title:</label>

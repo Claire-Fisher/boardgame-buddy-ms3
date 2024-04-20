@@ -144,38 +144,18 @@ def game(game_id):
         {"username": session["user"]})["username"]
 
     if request.method == "POST":
-        print("in post")
+        print("in top post")
         new_review = {
             "game_id": game_id,
             "game_title": game["game_title"],
             "review": request.form.get("review"),
             "review_title": request.form.get("review-title"),
-            "username": username
+            "username": username,
         }
-    
+
         mongo.db.reviews.insert_one(new_review)
 
     return render_template("game.html", game=game)
-
-
-@app.route("/game/<game_id>", methods=["GET", "POST"])
-def review(game_id):
-    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if request.method == "POST":
-        print("in post")
-        new_review = {
-            "game_id": game_id,
-            "game_title": game.title,
-            "review": request.form.get("review"),
-            "review_title": request.form.get("review-title"),
-            "username": username.username,
-        }
-
-        mongo.db.reviews.add(new_review)
-    return redirect(url_for("game", game=game))
 
 
 @app.route("/game_detail/<game_id>", methods=["GET"])
