@@ -137,16 +137,24 @@ def edit_profile(username, placeholder=None):
 
 @app.route("/game/<game_id>", methods=["GET", "POST"])
 def game(game_id):
-    print(game_id)
+    """_summary_  Displays full info for a game selected by the user.
+
+    Args:
+        game_id (_str_): Game ObjectId
+
+    Returns:
+        _data_: displays full game info and all it's user reviews
+    """
+    # Finds all the data for the selected game
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    print(game["game_title"])
+    # Finds the username for the current session user
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    # Creates a list of all the review obj for the target game
     relevant_reviews = list(mongo.db.reviews.find({"game_id": game_id}))
-    print(relevant_reviews)
 
+    # Creates a new review obj from user input into the modal form
     if request.method == "POST":
-        print("in top post")
         new_review = {
             "game_id": game_id,
             "game_title": game["game_title"],
@@ -154,9 +162,9 @@ def game(game_id):
             "review_title": request.form.get("review-title"),
             "username": username,
         }
-
+        # Adds the new review obj to the db
         mongo.db.reviews.insert_one(new_review)
-
+        # Adds the new review to the end of the relevant reviews list
         relevant_reviews.append(new_review)
 
     return render_template(
