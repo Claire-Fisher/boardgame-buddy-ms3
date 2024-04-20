@@ -129,7 +129,21 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the db creating a new entry correctly </summary>
             <img src="documents/testing-images/null-review-title-fixed.png">
             </details>
-6. **ISSUE NAME** 
+6. **Relevant reviews not displaying** 
+    * ***Issue Found:*** 
+        * Review data not displaying as expected.
+            <details><summary>Click here to view the reviews bug</summary>
+            <img src="documents/testing-images/relevant-reviews-not-displaying-bug.png">
+            </details>
+            <details><summary>Click here to view the html with for loop</summary>
+            <img src="documents/testing-images/relevant-reviews-not-displaying-html.png">
+            </details>
+    * ***Solution Used:***    
+        * Corrected the targeting syntax in jinja code in the html.
+            <details><summary>Click here to view the fix</summary>
+            <img src="documents/testing-images/relevant-reviews-not-displaying-fix.png">
+            </details>
+7. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
