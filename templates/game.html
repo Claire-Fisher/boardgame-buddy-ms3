@@ -85,9 +85,9 @@
             <div class="card-body">
                 {% for review in relevant_reviews %}
                 <div class="review-entry">
-                    <h5><strong>{{ relevant_reviews.review_title }}</strong></h5>
-                    <p>{{ relevant_reviews.review }}</p>
-                    <p>User: {{ relevant_reviews.username }}</p>
+                    <h5><strong>{{ review.review_title }}</strong></h5>
+                    <p>{{ review.review }}</p>
+                    <p>User: {{ review.username }}</p>
                 </div>
                 {% endfor %}
             </div>
