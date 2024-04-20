@@ -113,7 +113,23 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the error message</summary>
             <img src="documents/testing-images/profile-undefined-error02-code-fix.png">
             </details>
-5. **ISSUE NAME** 
+5. **NULL entry for review_title in mongoDB** 
+    * ***Issue Found:*** 
+        * During a review creation: I discovered the review form was failing to pass data to the review_title key:value in the mongoDB.
+        * Resulting in a "null" entry
+            <details><summary>Click here to view the mongoDB result</summary>
+            <img src="documents/testing-images/null-review-title-bug.png">
+            </details>
+    * ***Solution Used:***    
+        * Found a typo on the name attribute in the review-title input.
+            <details><summary>Click here to view the typo (line 52)</summary>
+            <img src="documents/testing-images/null-review-title-typo.png">
+            </details>
+        * Corrected name="review_title" to name="review-title"
+            <details><summary>Click here to view the db creating a new entry correctly </summary>
+            <img src="documents/testing-images/null-review-title-fixed.png">
+            </details>
+6. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
