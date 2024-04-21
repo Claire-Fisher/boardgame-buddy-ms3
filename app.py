@@ -188,7 +188,7 @@ def collection(game_id):
             print("Collection Exists")
             mongo.db.collections.update_one(
                 existing_collection,
-                {"push": { user_collection: game[_id] }})
+                {"$push": { "user_collection": str(game["_id"]) }})
         else:
             print("Collection does NOT exist")
             new_collection = {
