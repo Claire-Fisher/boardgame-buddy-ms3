@@ -52,16 +52,19 @@
                                 </button>
                             {% else %}
                                 <!-- display if no user logged in. 
-                                    Redirect to LogIn if user still 
+                                    Redirects to Log In if user still 
                                     clicks the button -->
-                                <small>You must be logged in to add this game to your collection<br></small>
-                                <button class="btn btn-outline-primary"
-                                    type="submit" value="Submit">
+                                <a href="{{ url_for('login') }}" class="btn btn-outline-primary"
+                                    type="button">
                                         <strong>Add to Collection</strong>
-                                </button>
+                                </a>
                             {% endif %}
                         </form>
                             <button type="submit" class="btn btn-outline-info"><strong>Add to Wishlist</strong></button>
+                            {% if session.user %}
+                            {% else %}
+                                <p><small>You must be logged in to add this game<br></small></p>
+                            {% endif %}
                     </div>
                 </div>
             {% endfor %}
