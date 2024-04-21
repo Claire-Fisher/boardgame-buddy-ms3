@@ -169,33 +169,40 @@ def game(game_id):
 
 @app.route("/collection/<game_id>", methods=["GET", "POST"])
 def collection(game_id):
-    print(game_id)
+    """_summary_ Allows user to add a game to their personal collection.
+    If all the conditions are met.
+
+    Args:
+        game_id (_str_): Game ObjectId
+
+    Returns:
+        _page_: refreshed render page. DB updates, if conditions met.
+    """
     # Identifu the current game obj
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
     # Finds the user obj for the current session user
     user = mongo.db.users.find_one(
         {"username": session["user"]})
-    print(user)
     # Finds the username for the current session user
     username = user["username"]
-    print(username)
     # check if user collection exists in db
     existing_collection = mongo.db.collections.find_one(
             {"username": user["username"]})
 
+    # Attempt to add game to user collection.
     if request.method == "POST":
+        # Checks if the user has an existing collection
         if existing_collection:
-            print("Collection Exists")
+            # Checks if the current game exists in user_collection arr
             if str(game["_id"]) in existing_collection["user_collection"]:
                 flash("You already have this game in your collection.")
-                print("This game already exists in the user collection")
             else:
-                print("Adding to collection now")
+                # Adds game Id string to user_collection arr
                 mongo.db.collections.update_one(
                     existing_collection,
                     {"$push": { "user_collection": str(game["_id"]) }})
         else:
-            print("Collection does NOT exist")
+            # Creates a new collection for the user
             new_collection = {
                 "user_id": str(user["_id"]),
                 "username": username,
