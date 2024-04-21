@@ -192,8 +192,8 @@ def collection(game_id):
         else:
             print("Collection does NOT exist")
             new_collection = {
-                "user_id": username._id,
-                "username": username.username,
+                "user_id": str(user["_id"]),
+                "username": username,
                 "user_collection": [game_id]
             }
             mongo.db.collections.insert_one(new_collection)
