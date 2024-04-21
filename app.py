@@ -106,8 +106,9 @@ def profile(username):
     collectionImages = []
     for game_id in collection:
         game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-        gameImage = game["image"]
-        collectionImages.append(gameImage)
+        tuple = game["image"], game["game_title"]
+        collectionImages.append(tuple)
+
     print(collectionImages)
 
     return render_template("profile.html", user=username, info=info, avatar=avatar, collectionImages=collectionImages)

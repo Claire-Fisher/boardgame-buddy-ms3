@@ -82,11 +82,13 @@
             <div class="row mx-auto">
                 <h3 class="capitalize py-2">{{ info.username }}'s game collection</h3>
             </div>
+            {% for game in collectionImages %}
             <div class="row">
-                <div class="col-md-6 text-center">
-                    <h5>Loop through game COLLECTION list in player db document?</h5>
+                <div class="card text-center col-md-6 m-3 mx-auto">
+                    <img src="{{ game[0] }}" alt="An image for the game {{ game[1] }}">
                 </div>
             </div>
+            {% endfor %}
         </div>
 
         <!-- user games wishlist window -->
