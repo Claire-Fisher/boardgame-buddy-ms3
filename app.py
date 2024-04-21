@@ -167,12 +167,36 @@ def game(game_id):
         "game.html", game=game, relevant_reviews=relevant_reviews)
 
 
-@app.route("/game_detail/<game_id>", methods=["GET"])
-def game_detail(game_id):
+@app.route("/collection/<game_id>", methods=["GET", "POST"])
+def collection(game_id):
     print(game_id)
-
+    # Identifu the current game obj
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    print(game)
+    # Finds the user obj for the current session user
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    print(user)
+    # Finds the username for the current session user
+    username = user["username"]
+    print(username)
+    # check if user collection exists in db
+    existing_collection = mongo.db.collections.find_one(
+            {"username": user["username"]})
+
+    if request.method == "POST":
+        if existing_collection:
+            print("Collection Exists")
+            mongo.db.collections.update_one(
+                existing_collection,
+                {"push": { user_collection: game[_id] }})
+        else:
+            print("Collection does NOT exist")
+            new_collection = {
+                "user_id": username._id,
+                "username": username.username,
+                "user_collection": [game_id]
+            }
+            mongo.db.collections.insert_one(new_collection)
 
     return redirect(url_for("library"))
 
