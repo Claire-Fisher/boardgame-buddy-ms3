@@ -97,7 +97,20 @@ def profile(username):
     avatar = info.get("avatar_url")
     avatar = str(avatar)
     print(avatar)
-    return render_template("profile.html", user=username, info=info, avatar=avatar)
+    collectionObj = mongo.db.collections.find_one(
+        {"user_id": str(info["_id"])})
+    print(collectionObj)
+    collection = collectionObj["user_collection"]
+    print(collection)
+
+    collectionImages = []
+    for game_id in collection:
+        game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+        gameImage = game["image"]
+        collectionImages.append(gameImage)
+    print(collectionImages)
+
+    return render_template("profile.html", user=username, info=info, avatar=avatar, collectionImages=collectionImages)
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
