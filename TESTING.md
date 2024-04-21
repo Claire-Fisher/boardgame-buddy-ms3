@@ -143,7 +143,26 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the fix</summary>
             <img src="documents/testing-images/relevant-reviews-not-displaying-fix.png">
             </details>
-7. **ISSUE NAME** 
+7. **Attribute error - collection creation** 
+    * ***Issue Found:*** 
+        * Expected when "Add to Collection" button clicked: function would check the db for an existing collection for that user, and if none found, create a new object and add the selected games id to an empty array.
+        * Attribute error message thrown. Db entry not created. 
+            <details><summary>Click here to view the error message</summary>
+            <img src="documents/testing-images/collection-function-attr-error-message.png">
+            </details>
+            <details><summary>Click here to view the function code</summary>
+            <img src="documents/testing-images/collection-function-attr-error-code.png">
+            </details>
+    * ***Solution Used:***    
+        * Corrected the syntax error to target the id correctly.
+        * Db entry creation also working.
+            <details><summary>Click here to view the corrected code</summary>
+            <img src="documents/testing-images/collection-function-attr-error-fix.png">
+            </details>
+            <details><summary>Click here to view the db entry creation</summary>
+            <img src="documents/testing-images/collection-function-attr-error-db.png">
+            </details>
+8. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
