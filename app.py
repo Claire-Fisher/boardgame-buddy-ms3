@@ -186,9 +186,14 @@ def collection(game_id):
     if request.method == "POST":
         if existing_collection:
             print("Collection Exists")
-            mongo.db.collections.update_one(
-                existing_collection,
-                {"$push": { "user_collection": str(game["_id"]) }})
+            if str(game["_id"]) in existing_collection["user_collection"]:
+                flash("You already have this game in your collection.")
+                print("This game already exists in the user collection")
+            else:
+                print("Adding to collection now")
+                mongo.db.collections.update_one(
+                    existing_collection,
+                    {"$push": { "user_collection": str(game["_id"]) }})
         else:
             print("Collection does NOT exist")
             new_collection = {
