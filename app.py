@@ -49,11 +49,26 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        """ Calls new_collection() to generate an empty 
+        collection for the new user"""
+        return redirect(url_for("new_collection", username=session["user"]))
 
     return render_template("register.html")
 
+
+@app.route("/new_collection/<username>", methods=["POST"])
+def new_collection(username):
+    user = mongo.db.users.find_one({"username": username})
+    
+    create_collection = {
+        "user_id": str(user["_id"]),
+        "username": user["username"],
+        "user_collection": [],
+    }
+    mongo.db.collections.insert_one(create_collection)
+
+    flash("Registration Successful!")
+    return redirect(url_for("profile", username=session["user"]))
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
