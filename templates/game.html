@@ -27,13 +27,13 @@
                     <!-- add to user collection / user wishlist buttons -->
                     <div class="text-centear">
                         <a href="{{ url_for('collection', game_id=game._id) }}"
-                            class="btn btn-outline-primary mx-3"><strong>Add to Collection</strong></a>
-                        <button type="submit" class="btn btn-outline-info mx-3"><strong>Add to Wishlist</strong></button>
+                            class="btn btn-outline-primary mx-3">
+                            <i class="fa-solid fa-plus-circle mx-1" aria-hidden="true"></i><strong> Add to Collection</strong></a>
                         <a href="{{ url_for('game', game_id=game._id) }}" class="btn btn-outline-primary text-center mx-3"
                             data-toggle="modal" data-target="#writeReviewModal">
-                            <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>Leave a review</a>
+                            <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i> Leave a review</a>
                         <a href="{{ url_for('library') }}" class="btn btn-outline-info back-to-library text-center mx-3">
-                            <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i>Back to main game library</a>
+                            <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back to main game library</a>
                     </div>
                 </div>
                 <div class="modal fade" id="writeReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
