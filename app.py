@@ -96,12 +96,13 @@ def profile(username):
     # gets the users profile avatar url and turns it into a string
     avatar = info.get("avatar_url")
     avatar = str(avatar)
-    print(avatar)
+    # print()
+    # print(avatar)
     collectionObj = mongo.db.collections.find_one(
         {"user_id": str(info["_id"])})
-    print(collectionObj)
+    # print(collectionObj)
     collection = collectionObj["user_collection"]
-    print(collection)
+    # print(collection)
 
     collectionImages = []
     for game_id in collection:
@@ -109,9 +110,36 @@ def profile(username):
         tuple = game["image"], game["game_title"]
         collectionImages.append(tuple)
 
-    print(collectionImages)
+    # print(collectionImages)
+    # print()
 
     return render_template("profile.html", user=username, info=info, avatar=avatar, collectionImages=collectionImages)
+
+
+@app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
+def edit_collection(this_game):
+
+    print(this_game)
+    # gets the session user's details from the db
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    # gets the username so the profile page can render correctly
+    username = user["username"]
+    # grab the user's collection obj
+    user_coll = mongo.db.collections.find_one({"user_id": str(user["_id"])})
+    print(user_coll)
+    # Gets the game obj from the this_game argument
+    target_game = mongo.db.games.find_one({"game_title": this_game})
+    #gets the game id from the target game obj (converted into a str)
+    target_game_id = str(target_game["_id"])
+    print(target_game_id)
+    # Removes the game from the collections list and updates the db
+    mongo.db.collections.update_one(
+        {"_id": user_coll["_id"]},
+        {"$pull": {"user_collection": target_game_id}}
+    )
+
+    return redirect(url_for("profile", username=username))
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
