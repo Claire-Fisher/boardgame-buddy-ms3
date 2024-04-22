@@ -176,7 +176,24 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the code fix</summary>
             <img src="documents/testing-images/collection_doesnt_exist_error-fix.png">
             </details>
-9. **ISSUE NAME** 
+9. **Key Error 'user'** 
+    * ***Issue Found:*** 
+        * Game full info page would not load if no user is logged in.
+            <details><summary>Click here to view the error message</summary>
+            <img src="documents/testing-images/key-error-game-no-session-user-error-msg.png">
+            </details>
+            <details><summary>Click here to view the code</summary>
+            <img src="documents/testing-images/key-error-game-no-session-user-code.png">
+            </details>
+    * ***Solution Used:***    
+        * Set a username variable to equal None
+        * Set an if statement checking to see if a user is logged in.
+        * Moved the If method "POST" inside the check for user statement, as only users can add reviews. 
+        * Created an If statement in game.html to redirect the user to log in, if they still try to click the buttons.
+            <details><summary>Click here to view the fix</summary>
+            <img src="documents/testing-images/key-error-game-no-session-user-fix.png">
+            </details>
+10. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
