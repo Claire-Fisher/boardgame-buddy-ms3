@@ -53,9 +53,9 @@ body {
     line-height: 2;
     text-transform: capitalize;
     background-color: rgba(0, 0, 0, 0.25);
+    
 }
 
-/* library.html */
 #game-library {
     background-color: rgb(247, 204, 87);
 }
@@ -75,13 +75,13 @@ body {
     border: 10px solid white;
 }
 
-/* profile page */
+/* profile username */
 .username-title {
     text-transform: capitalize;
     line-height: 2;
 }
 
-/* profile.html: user image */
+/* user profile image */
 #circle-border {
     width: 200px;
     height: 200px;
@@ -91,10 +91,31 @@ body {
     margin: 0 auto;
 }
 
-/* profile.html: user image */
+/* user profile image circle frame */
 #circle-profile-img {
     height: 100%;
     border-radius: 50%;
+}
+
+/* profile.html: collection image */
+.thumbnail-container {
+    position: relative;
+    margin: 0.25rem;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.img-thumbnail {
+    object-fit: contain;
+    max-height: 250px;
+    border: 5px solid white;
+}
+
+.coll-game-delete {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    color: white;
 }
 
 /* game.html: review entry */
