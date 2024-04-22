@@ -207,25 +207,26 @@ def game(game_id):
     """
     # Finds all the data for the selected game
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    # Finds the username for the current session user
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
     # Creates a list of all the review obj for the target game
     relevant_reviews = list(mongo.db.reviews.find({"game_id": game_id}))
-
-    # Creates a new review obj from user input into the modal form
-    if request.method == "POST":
-        new_review = {
-            "game_id": game_id,
-            "game_title": game["game_title"],
-            "review": request.form.get("review"),
-            "review_title": request.form.get("review-title"),
-            "username": username,
-        }
-        # Adds the new review obj to the db
-        mongo.db.reviews.insert_one(new_review)
-        # Adds the new review to the end of the relevant reviews list
-        relevant_reviews.append(new_review)
+    # Check if a user is logged in
+    username = None
+    if "user" in session:
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        # Creates a new review obj from user input into the modal form
+        if request.method == "POST":
+            new_review = {
+                "game_id": game_id,
+                "game_title": game["game_title"],
+                "review": request.form.get("review"),
+                "review_title": request.form.get("review-title"),
+                "username": username,
+            }
+            # Adds the new review obj to the db
+            mongo.db.reviews.insert_one(new_review)
+            # Adds the new review to the end of the relevant reviews list
+            relevant_reviews.append(new_review)
 
     return render_template(
         "game.html", game=game, relevant_reviews=relevant_reviews)
