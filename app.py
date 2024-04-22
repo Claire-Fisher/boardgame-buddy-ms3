@@ -280,8 +280,17 @@ def collection(game_id):
 
 @app.route("/delete_review/<review>/<game_id>", methods=["POST"])
 def delete_review(review, game_id):
-    print(review)
-    print(game_id)
+    """_summary_  Allows user to delete their own game reviews
+
+    Args:
+        review (_str_): Target review ObjectId
+        game_id (_str_): game_id to pass to redirected game page
+
+    Returns:
+        _data_: displays full game info and all it's user reviews
+        (Minus the review just deleted - as it no longer exists!)
+    """
+    # Finds & deletes the target review selected by the user
     mongo.db.reviews.delete_one({"_id": ObjectId(review)})
 
     return redirect(url_for('game', game_id=game_id))
