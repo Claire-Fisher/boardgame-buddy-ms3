@@ -162,7 +162,21 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the db entry creation</summary>
             <img src="documents/testing-images/collection-function-attr-error-db.png">
             </details>
-8. **ISSUE NAME** 
+8. **Non-Type Error: No user_collection for current user** 
+    * ***Issue Found:*** 
+        * If user has no existing collection db doc: their profile page wont render and throws the following error.
+            <details><summary>Click here to view error message</summary>
+            <img src="documents/testing-images/collection_doesnt_exist_error-msg.png">
+            </details>
+    * ***Solution Used:***    
+        * As part of the user registration function, I call a second "new_collection" function.
+        * (The register function has to complete first so the user doc is added to mongoDB and therefore a unique _id generated)
+        * The new_collection function generates and "empty" collection and links it to the user with the correct matching data.
+        * Profile page now renders as expected: with an empty collection section. 
+            <details><summary>Click here to view the code fix</summary>
+            <img src="documents/testing-images/collection_doesnt_exist_error-fix.png">
+            </details>
+9. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
