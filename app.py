@@ -278,6 +278,15 @@ def collection(game_id):
     return redirect(url_for("library"))
 
 
+@app.route("/delete_review/<review>/<game_id>", methods=["POST"])
+def delete_review(review, game_id):
+    print(review)
+    print(game_id)
+    mongo.db.reviews.delete_one({"_id": ObjectId(review)})
+
+    return redirect(url_for('game', game_id=game_id))
+
+
 @app.route("/logout")
 def logout():
     # remove user from the session cookies

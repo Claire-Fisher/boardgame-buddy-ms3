@@ -104,7 +104,18 @@
                 <div class="review-entry">
                     <h5><strong>{{ review.review_title }}</strong></h5>
                     <p>{{ review.review }}</p>
-                    <p>Written by: {{ review.username }}</p>
+                    <p class="capitalize">Author: {{ review.username }}</p>
+                    {% if session.user|lower == review.username|lower %}
+                        <form action="{{ url_for('delete_review', review=review._id, game_id=review.game_id) }}"
+                            method="POST">
+                            <button 
+                                class="btn btn-lg btn-outline-danger"
+                                type="submit">
+                                Delete
+                            </button>
+                        </form>
+                    {% else %}
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
