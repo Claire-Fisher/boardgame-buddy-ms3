@@ -118,8 +118,15 @@ def profile(username):
 
 @app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
 def edit_collection(this_game):
+    """_summary_  Delete functionality. 
+    User can remove games from their collection.
 
-    print(this_game)
+    Args:
+        game_id (_str_): Game ObjectId
+
+    Returns:
+        _data_: refreshs profile page with deleted game instantly removed. 
+    """
     # gets the session user's details from the db
     user = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -127,17 +134,17 @@ def edit_collection(this_game):
     username = user["username"]
     # grab the user's collection obj
     user_coll = mongo.db.collections.find_one({"user_id": str(user["_id"])})
-    print(user_coll)
     # Gets the game obj from the this_game argument
     target_game = mongo.db.games.find_one({"game_title": this_game})
-    #gets the game id from the target game obj (converted into a str)
+    # gets the game id from the target game obj (converted into a str)
     target_game_id = str(target_game["_id"])
-    print(target_game_id)
     # Removes the game from the collections list and updates the db
     mongo.db.collections.update_one(
         {"_id": user_coll["_id"]},
         {"$pull": {"user_collection": target_game_id}}
     )
+    # Displays flash msg to tell the user their deletion was successful.
+    flash("Game successfully removed from your collection")
 
     return redirect(url_for("profile", username=username))
 
