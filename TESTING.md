@@ -193,7 +193,22 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the fix</summary>
             <img src="documents/testing-images/key-error-game-no-session-user-fix.png">
             </details>
-10. **ISSUE NAME** 
+10. **Error 405 - User registration** 
+    * ***Issue Found:*** 
+        * Browser throws a 405 error after user registers.
+            <details><summary>Click here to view the browser error msg</summary>
+            <img src="documents/testing-images/error-405-user-registration-browser-msg.png">
+            </details>
+            <details><summary>Click here to view the terminal error msg</summary>
+            <img src="documents/testing-images/error-405-user-registration-error-msg.png">
+            </details>
+    * ***Solution Used:***    
+        * Called the new_collection func inside the register function. 
+        * Redirected the user to the games library instead of their profile page. This allows the backend to build the profile data and collection data for the new user, before trying to render that info. 
+            <details><summary>Click here to view the fix</summary>
+            <img src="documents/testing-images/error-405-user-registration-fix.png">
+            </details>
+11. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
