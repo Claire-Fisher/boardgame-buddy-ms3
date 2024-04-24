@@ -8,18 +8,18 @@
     </div>
     <!-- filter games form -->
     <nav class="container-fluid m-0 p-0">
-        <form class="form-inline bg-purple" action="">
+        <form class="form-inline bg-purple" method="POST" action="{{ url_for('search') }}">
             <div class="form-group mx-auto mr-2">
                 <label for="players" class="mx-2 text-white">
                     Numbers of players (0-10)
                 </label>
                 <input type="number" id="players" name="players" 
-                    min="1" max="10" class="form-control-lg my-2">
+                    min="1" max="10" class="form-control my-2">
                 </label>
             </div>
             <div class="form-group mx-auto mr-2">
                 <label for="duration" class="mx-2 text-white">Avg play duration</label>
-                <select name="duration" id="duration" class="form-control-lg my-2">
+                <select name="duration" id="duration" class="form-control my-2">
                     <option value="">Less than 30mins</option>
                     <option value="">Up to 60mins</option>
                     <option value="">Up to 2hrs</option>
@@ -28,14 +28,24 @@
             </div>
             <div class="form-group mx-auto mr-2 text-white">
                 <label for="difficulty" class="mx-2">Difficulty</label>
-                <select name="difficulty" id="difficulty" class="form-control-lg my-2">
+                <select name="difficulty" id="difficulty" class="form-control my-2">
                     <option value="">Beginner</option>
                     <option value="">Advanced</option>
                 </select>
             </div>
             <div class="form-group mx-auto mr-2 text-white">
-                <input class="form-control form-control-lg mx-automr-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-lg bg-yellow text-purple my-2 my-2" type="submit">Search</button>
+                <label for="query" class="mx-2">Search Games</label>
+                <input
+                    class="form-control form-control mx-automr-2 validate"
+                    type="search" id="query" name="query"
+                    aria-label="Search"
+                    minlength="3">
+                <button class="btn bg-yellow text-purple my-2 my-2" type="submit">
+                    <i class="fa-solid fa-search"></i>
+                    Search
+                </button>
+                <a href="{{ url_for('library') }}"
+                    class="btn btn-info">Reset</a>
             </div>
         </form>
     </nav>
