@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap');
+
 /* site wide page styles */
 body {
     margin: 0;
@@ -6,6 +8,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #530F83;
     background-color: #bbecf7;
+}
+
+.bold {
+    font-weight: 800;
 }
 
 /* colour palettes */
@@ -27,7 +33,7 @@ body {
 }
 
 .text-purple {
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 0.05rem;
     color: #530F83 !important;
 }
