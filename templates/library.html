@@ -51,6 +51,7 @@
     </nav>
 
     <!-- games library game-cards -->
+    {% if games|length > 0 %}
     <div class="container-fluid m-0 p-0">
         <div class="row">
             {% for game in games %}
@@ -106,5 +107,11 @@
             {% endfor %}
         </div>
     </div>
+    {% else %}
+    <h4 class="text-center bold mt-4">Oops! No games matching your search found.</h4>
+    <h5 class="text-center"><a href="{{ url_for('library') }}">
+        Click here to return to the library</a></h5>
+    <p class="text-center">( Or click the Reset button in the search bar )</p>
+    {% endif %}
 
 {% endblock %}
