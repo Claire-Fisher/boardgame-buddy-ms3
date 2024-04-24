@@ -22,6 +22,10 @@ body {
     background-color: #FF1178;
 }
 
+.bg-purple {
+    background-color: #530F83;
+}
+
 .text-purple {
     font-weight: 600;
     letter-spacing: 0.05rem;
