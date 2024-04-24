@@ -26,8 +26,41 @@ def library():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
-    games = list(mongo.db.games.find({"$text": {"$search": query}}))
+    query = {}
+
+    players = request.form.get('players')
+    if not players:
+        pass
+    else:
+        players = int(players)
+        query["min_players"] = {"$lte": players}
+        query["max_players"] = {"$gte": players}
+        games = list(mongo.db.games.find(query))
+
+    duration = request.form.get('duration')
+    if not duration:
+        pass
+    else:
+        duration = int(duration)
+        query["avg_playtime_mins"] = {"$gte": duration}
+        games = list(mongo.db.games.find(query))
+
+    difficulty = request.args.get('difficulty')
+    if not difficulty:
+        pass
+    else:
+        query["difficulty"] = difficulty
+        games = list(mongo.db.games.find(query))
+
+    search = request.form.get("search")
+    if not search:
+        pass
+    else:
+        query["$text"] = {"$search": search}
+        games = list(mongo.db.games.find(query))
+
+    print(query)
+
     return render_template("library.html", games=games)
 
 
@@ -135,12 +168,18 @@ def profile(username):
     # print(collectionImages)
     # print()
 
-    return render_template("profile.html", user=username, info=info, avatar=avatar, collectionImages=collectionImages)
+    return render_template(
+        "profile.html",
+        user=username,
+        info=info,
+        avatar=avatar,
+        collectionImages=collectionImages)
 
 
 @app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
 def edit_collection(this_game):
-    """_summary_  Delete functionality. 
+    """_summary_  Delete functionality.
+    Gets the user collection and games.
     User can remove games from their collection.
 
     Args:
@@ -149,14 +188,11 @@ def edit_collection(this_game):
     Returns:
         _data_: refreshs profile page with deleted game instantly removed. 
     """
-    # gets the session user's details from the db
     user = mongo.db.users.find_one(
         {"username": session["user"]})
-    # gets the username so the profile page can render correctly
+    # gets the username
     username = user["username"]
-    # grab the user's collection obj
     user_coll = mongo.db.collections.find_one({"user_id": str(user["_id"])})
-    # Gets the game obj from the this_game argument
     target_game = mongo.db.games.find_one({"game_title": this_game})
     # gets the game id from the target game obj (converted into a str)
     target_game_id = str(target_game["_id"])
@@ -178,7 +214,9 @@ def edit_profile(username, placeholder=None):
     placeholder = {
         "city": "Enter your City here" if info["city"] == "" else "",
         "country": "Enter your Country here" if info["country"] == "" else "",
-        "favourite_game": "Enter your Favourite Game here" if info["favourite_game"] == "" else ""
+        "favourite_game":
+            "Enter your Favourite Game here"
+            if info["favourite_game"] == "" else ""
     }
     # gets the users profile avatar url and turns it into a string
     avatar = info.get("avatar_url")
