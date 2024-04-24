@@ -51,7 +51,9 @@ def register():
         session["user"] = request.form.get("username").lower()
         """ Calls new_collection() to generate an empty 
         collection for the new user"""
-        return redirect(url_for("new_collection", username=session["user"]))
+        new_collection(session["user"])
+        flash("Registration Successful!")
+        return redirect(url_for("library"))
 
     return render_template("register.html")
 
@@ -59,7 +61,7 @@ def register():
 @app.route("/new_collection/<username>", methods=["POST"])
 def new_collection(username):
     user = mongo.db.users.find_one({"username": username})
-    
+
     create_collection = {
         "user_id": str(user["_id"]),
         "username": user["username"],
@@ -67,8 +69,7 @@ def new_collection(username):
     }
     mongo.db.collections.insert_one(create_collection)
 
-    flash("Registration Successful!")
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for("library"))
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
