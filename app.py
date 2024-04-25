@@ -24,6 +24,7 @@ def library():
     games = list(mongo.db.games.find())
     return render_template("library.html", games=games)
 
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = {}
@@ -82,7 +83,9 @@ def register():
             "city": "",
             "country": "",
             "favourite_game": "",
-            "avatar_url": "https://cdn1.iconfinder.com/data/icons/project-management-8/500/worker-512.png"
+            "avatar_url":
+                "https://cdn1.iconfinder.com/data/icons/project-management-8/"
+                "500/worker-512.png"
         }
         mongo.db.users.insert_one(register)
 
@@ -109,6 +112,7 @@ def new_collection(username):
     mongo.db.collections.insert_one(create_collection)
 
     return redirect(url_for("library"))
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -179,7 +183,7 @@ def profile(username):
 @app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
 def edit_collection(this_game):
     """_summary_  Delete functionality.
-    Gets the user collection and games.
+    Gets the user collection games.
     User can remove games from their collection.
 
     Args:
@@ -192,16 +196,16 @@ def edit_collection(this_game):
         {"username": session["user"]})
     # gets the username
     username = user["username"]
-    user_coll = mongo.db.collections.find_one({"user_id": str(user["_id"])})
+    user_collection = mongo.db.collections.find_one(
+        {"user_id": str(user["_id"])})
     target_game = mongo.db.games.find_one({"game_title": this_game})
-    # gets the game id from the target game obj (converted into a str)
     target_game_id = str(target_game["_id"])
     # Removes the game from the collections list and updates the db
     mongo.db.collections.update_one(
-        {"_id": user_coll["_id"]},
+        {"_id": user_collection["_id"]},
         {"$pull": {"user_collection": target_game_id}}
     )
-    # Displays flash msg to tell the user their deletion was successful.
+
     flash("Game successfully removed from your collection")
 
     return redirect(url_for("profile", username=username))
@@ -236,7 +240,8 @@ def edit_profile(username, placeholder=None):
         # redirect back to updated user profile page
         flash("Profile Successfully Updated")
         return redirect(url_for("profile", username=username))
-    return render_template("edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
+    return render_template(
+        "edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
 
 
 
@@ -310,7 +315,7 @@ def collection(game_id):
                 # Adds game Id string to user_collection arr
                 mongo.db.collections.update_one(
                     existing_collection,
-                    {"$push": { "user_collection": str(game["_id"]) }})
+                    {"$push": {"user_collection": str(game["_id"])}})
         else:
             # Creates a new collection for the user
             new_collection = {
