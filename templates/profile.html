@@ -25,45 +25,6 @@
                     type="submit" value="Submit">
                     Edit <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                 </a>
-
-                <!-- Button trigger modal -->
-                <button class="btn btn-lg bg-danger my-2 shadow text-white" data-toggle="modal" data-target="#exampleModal">
-                    Delete <i class="fa-solid fa-times-circle mx-1" aria-hidden="true"></i>
-                </button>
-                <!-- Warning Modal for user profile deletion -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header bg-yellow">
-                                <h5 class="modal-title" id="exampleModalLabel"><strong>Are you sure?...</strong></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span class="text-purple" aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body text-center">
-                                <p class="text-pink"><strong>
-                                    This user profile will be<br>permanently deleted.
-                                </strong></p>
-                                <p>
-                                    Click Confirm to delete.<br>Or Back to cancel.
-                                </p>
-                            </div>
-                            <div class="modal-footer bg-yellow">
-                                <button 
-                                    type="button" data-dismiss="modal"
-                                    class="btn btn-lg btn-primary my-2 shadow">
-                                    <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back</button>
-                                <a
-                                    href="#"
-                                    type="button"
-                                    class="btn btn-lg bg-danger text-white my-2 shadow">
-                                    Confirm 
-                                    <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -89,15 +50,59 @@
                             alt="An image for the game {{ game[1] }}"
                             no-repeat center center>
                             <!-- delete game from collection buttons-->
-                            <form 
+                            <a
                                 action="{{ url_for('edit_collection', this_game=game[1]) }}"
                                 method="POST">
                                 <button
-                                    class="btn btn-lg btn-danger mb-2 coll-game-delete capitalize"
-                                    type="submit" value="Submit">
+                                    class="btn btn-lg btn-danger text-white mb-2 coll-game-delete capitalize"
+                                    type="submit"
+                                    value="Submit"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal">
                                         <strong>Remove</strong>
+                                        <i class="fa-solid fa-times-circle mx-1" aria-hidden="true"></i>
                                 </button>
-                            </form>
+                            </a>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-yellow">
+                                        <h5 class="modal-title" id="exampleModalLabel"><strong>Are you sure?...</strong></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span class="text-purple" aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <p class="text-pink"><strong>
+                                            This game will be removed from your<br>
+                                            personal games collection.
+                                        </strong></p>
+                                        <p>
+                                            Click Confirm to delete.<br>Or Back to cancel.
+                                        </p>
+                                    </div>
+                                    <div
+                                        action="{{ url_for('edit_collection', this_game=game[1]) }}"
+                                        class="modal-footer bg-yellow">
+                                        <button 
+                                            type="button" data-dismiss="modal"
+                                            class="btn btn-lg btn-primary my-2 shadow">
+                                            <i 
+                                            class="fa-solid fa-chevron-left mx-1"
+                                            aria-hidden="true">
+                                            </i> Back
+                                        </button>
+                                        <a
+                                            href="{{ url_for('edit_collection', this_game=game[1]) }}"
+                                            type="button"
+                                            class="btn btn-lg bg-danger text-white my-2 shadow">
+                                            Confirm 
+                                            <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
