@@ -107,18 +107,56 @@
                     <p class="capitalize">Game: {{ review.game_title }}</p>
                     <p class="capitalize">Author: {{ review.username }}</p>
                     {% if session.user|lower == review.username|lower %}
-                        <form action="{{ url_for('delete_review', review=review._id, game_id=review.game_id) }}"
-                            method="POST">
-                            <button 
-                                class="btn btn-lg btn-outline-danger"
-                                type="submit">
-                                Delete
-                            </button>
-                        </form>
+                        <button 
+                            class="btn btn-lg btn-outline-danger"
+                            type="submit"
+                            value="submit"
+                            data-toggle="modal"
+                            data-target="#deleteModal{{ loop.index }}">
+                            Delete
+                        </button>
+                        <div class="modal fade" id="deleteModal{{ loop.index }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-yellow">
+                                        <h5 class="modal-title" id="deleteModalLabel"><strong>Are you sure?...</strong></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span class="text-purple" aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <p class="text-pink bold"><strong>
+                                            Your review will be permanently deleted
+                                        </strong></p>
+                                        <p class="bold">
+                                            Click Confirm to delete.<br>Or Back to cancel.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form
+                                            method="POST"
+                                            action="{{ url_for('delete_review', review=review._id, game_id=review.game_id) }}">
+                                            <button 
+                                                type="button" data-dismiss="modal"
+                                                class="btn btn-lg btn-primary my-2 shadow">
+                                                    <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
+                                            </button>
+                                            <button
+                                                type="submit"
+                                                class="btn btn-lg bg-danger text-white my-2 shadow">
+                                                    Confirm 
+                                                        <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> 
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     {% else %}
                     {% endif %}
                 </div>
                 {% endfor %}
             </div>
+        </div>
     </div>
 {% endblock %}
