@@ -78,22 +78,24 @@
                                             Click Confirm to delete.<br>Or Back to cancel.
                                         </p>
                                     </div>
-                                    <div>
-                                        <button 
-                                            type="button" data-dismiss="modal"
-                                            class="btn btn-lg btn-primary my-2 shadow">
-                                            <i 
-                                            class="fa-solid fa-chevron-left mx-1"
-                                            aria-hidden="true">
-                                            </i> Back
-                                        </button>
-                                        <a
-                                            href="{{ url_for('edit_collection', this_game=game[1]) }}"
-                                            type="button"
-                                            class="btn btn-lg bg-danger text-white my-2 shadow">
-                                            Confirm 
-                                            <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> 
-                                        </a>
+                                    <div class="modal-footer">
+                                        <form 
+                                            method="POST"
+                                            action="{{ url_for('edit_collection', this_game=game[1]) }}">
+                                            <button 
+                                                type="submit" data-dismiss="modal"
+                                                class="btn btn-lg btn-primary my-2 shadow">
+                                                    <i 
+                                                    class="fa-solid fa-chevron-left mx-1"
+                                                    aria-hidden="true">
+                                                    </i> Back
+                                            </button>
+                                            <button
+                                                type="submit"
+                                                class="btn btn-lg bg-danger text-white my-2 shadow">
+                                                    Confirm <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> 
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
