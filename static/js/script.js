@@ -4,4 +4,7 @@ $(document).ready(function () {
     $("#user-collection-card").removeClass("hidden");
     $("#user-wishlist-card").addClass("hidden");
   });
+  $(".user-filter").change(function () {
+    $("#search-form").submit();
+  });
 });
