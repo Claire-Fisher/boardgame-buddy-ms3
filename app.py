@@ -46,7 +46,7 @@ def search():
         query["avg_playtime_mins"] = {"$gte": duration}
         games = list(mongo.db.games.find(query))
 
-    difficulty = request.args.get('difficulty')
+    difficulty = request.form.get('difficulty')
     if not difficulty:
         pass
     else:
