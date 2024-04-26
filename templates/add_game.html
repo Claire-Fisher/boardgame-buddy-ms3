@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
             <div class="card shadow p-3 mb-5 bg-yellow rounded col-6" style="width: 18rem;">
-                <form class="card-body" method="POST" action="">
+                <form class="card-body" method="POST" action="{{ url_for('add_game') }}">
                     <!-- form title -->
                     <h3 class="card-title bold text-center">Add a new game to Boardgame Buddy</h5>
                     <p class="text-center">Info added here will be available to all users.<br>
@@ -12,7 +12,7 @@
                         Games cannot be deleted once created.</p>
                     <!-- game title input -->
                     <div class="form-group row">
-                        <label for="title" class="col-10 mx-auto">
+                        <label for="game_title" class="col-10 mx-auto">
                                 <i class="fa-solid fa-chess-board" aria-hidden="true"></i>
                                     <strong> Game Title:</strong>
                             <small class="mx-1"> (Required)</small>
@@ -21,9 +21,9 @@
                             class="form-control col-10 mx-auto"
                             placeholder="Enter a game title here"
                             pattern="^[a-zA-Z0-9]{3,15}$"
-                            id="title" name="title" 
-                            aria-describedby="titleHelp">
-                        <small id="usernameHelp" class="form-text col-10 mx-auto">
+                            id="game_title" name="game_title" 
+                            aria-describedby="game_titleHelp">
+                        <small id="game_titleeHelp" class="form-text col-10 mx-auto">
                             Game titles can contain letters and numbers only.
                         </small>
                     </div>
@@ -42,33 +42,33 @@
                     </div>
                     <!-- min players -->
                     <div class="form-group row">
-                        <label for="min-players" class="col-10 mx-auto">
+                        <label for="min_players" class="col-10 mx-auto">
                                 <i class="fa-solid fa-user" aria-hidden="true"></i>
                                     <strong> Minimum Players</strong>
                             <small class="mx-1"> (Required)</small>
                         </label>
                         <input type="number" required
                             class="form-control col-10 mx-auto validate"
-                            min="1" max="8" placeholder="( 0 - 8 )"
-                            id="min-players" name="min-players"
-                            aria-describedby="min-playerseHelp">
+                            id="min_players" name="min_players"
+                            min="1" max="8" placeholder="Enter a number ( 1 - 8 )"
+                            aria-describedby="min_playerseHelp">
                         <small id="min-playersHelp" class="form-text col-10 mx-auto">
                             For single player only games, please set both min and max players to 1.
                         </small>
                     </div>
                     <!-- max players -->
                     <div class="form-group row">
-                        <label for="max-players" class="col-10 mx-auto">
+                        <label for="max_players" class="col-10 mx-auto">
                                 <i class="fa-solid fa-users" aria-hidden="true"></i>
                                     <strong> Maximum Players</strong>
                             <small class="mx-1"> (Required)</small>
                         </label>
                         <input type="number" required
                             class="form-control col-10 mx-auto validate"
-                            min="1" max="8" placeholder="( 0 - 8 )"
-                            id="max-players" name="max-players"
+                            id="max_players" name="max_players"
+                            min="1" max="8" placeholder="Enter a number ( 1 - 8 )"
                             aria-describedby="max-playersHelp">
-                        <small id="max-playersHelp" class="form-text col-10 mx-auto">
+                        <small id="max_playersHelp" class="form-text col-10 mx-auto">
                             For games that can accommodate more than 8 players, please enter 8.
                         </small>
                     </div>
@@ -81,8 +81,8 @@
                         </label>
                         <input type="number" required
                             class="form-control col-10 mx-auto validate"
-                            min="10" max="121" placeholder="Please enter a number only ( 10 - 121 )"
                             id="duration" name="duration"
+                            min="10" max="121" placeholder="Enter a number ( 10 - 121 )"
                             aria-describedby="durationHelp">
                         <small id="durationHelp" class="form-text col-10 mx-auto">
                             For games longer than 2 hours, please enter 121.
@@ -98,6 +98,7 @@
                         <select required
                             class="form-control col-10 mx-auto validate"
                             id="difficulty" name="difficulty">
+                                <option value="">Options</option>
                                 <option value="beginner">Beginner</option>
                                 <option value="advanced">Advanced</option>
                         </select>
@@ -125,9 +126,8 @@
                         <input type="text" required
                             class="form-control col-10 mx-auto validate"
                             placeholder="Enter an image URL"
-                            minlength="100" maxlength="1000"
                             id="image" name="image"
-                            aria-describedby="imageHelp"></textarea>
+                            aria-describedby="imageHelp">
                         <small id="imageHelp" class="form-text col-10 mx-auto">
                             Recommended size = 300pixels<sup>2</sup>
                         </small>

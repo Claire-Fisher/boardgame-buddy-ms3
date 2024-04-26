@@ -290,16 +290,21 @@ def add_game():
             flash("That game already exists")
             return redirect(url_for("add_game"))
 
+        min_players = int(request.form.get("min_players"))
+        max_players = int(request.form.get("max_players"))
+        duration = int(request.form.get("duration"))
+
         new_game = {
             "game_title": request.form.get("game_title").lower(),
             "publisher": request.form.get("publisher").lower(),
-            "min_players": int(request.form.get("min_players")),
-            "max_players": int(request.form.get("max_players")),
-            "avg_playtime_mins": int(request.form.get("duration")),
+            "min_players": min_players,
+            "max_players": max_players,
+            "avg_playtime_mins": duration,
             "difficulty": request.form.get("difficulty").lower(),
             "description": request.form.get("description"),
             "avatar_url": request.form.get("image"),
         }
+        print(new_game)
         mongo.db.games.insert_one(new_game)
 
         flash("Game added successfully!")
