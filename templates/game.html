@@ -25,7 +25,7 @@
                         <p class="card-text-description"><strong>Description: </strong>{{ game.description }}</p>
                     </div>
                     <!-- add to user collection -->
-                    <div class="text-centear">
+                    <div class="text-left mb-3">
                         {% if session.user %}
                             <a href="{{ url_for('collection', game_id=game._id) }}"
                                 class="btn btn-outline-primary mx-3">
