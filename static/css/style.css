@@ -103,6 +103,10 @@ body {
     line-height: 0.7;
 }
 
+.card-text-description {
+    line-height: 1.4;
+}
+
 /* profile username */
 .username-title {
     text-transform: capitalize;
