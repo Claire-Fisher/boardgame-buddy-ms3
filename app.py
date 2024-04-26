@@ -282,33 +282,27 @@ def game(game_id):
 @app.route("/add_game", methods=["GET", "POST"])
 def add_game():
     if request.method == "POST":
-        # check if username already exists in db
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+        # check if game already exists in db
+        existing_game = mongo.db.games.find_one(
+            {"game_title": request.form.get("game_title").lower()})
 
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("register"))
+        if existing_game:
+            flash("That game already exists")
+            return redirect(url_for("add_game"))
 
-        register = {
-            "username": request.form.get("username").lower(),
-            "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "city": "",
-            "country": "",
-            "favourite_game": "",
-            "avatar_url":
-                "https://cdn1.iconfinder.com/data/icons/project-management-8/"
-                "500/worker-512.png"
+        new_game = {
+            "game_title": request.form.get("game_title").lower(),
+            "publisher": request.form.get("publisher").lower(),
+            "min_players": int(request.form.get("min_players")),
+            "max_players": int(request.form.get("max_players")),
+            "avg_playtime_mins": int(request.form.get("duration")),
+            "difficulty": request.form.get("difficulty").lower(),
+            "description": request.form.get("description"),
+            "avatar_url": request.form.get("image"),
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.games.insert_one(new_game)
 
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        """ Calls new_collection() to generate an empty 
-        collection for the new user"""
-        new_collection(session["user"])
-        flash("Registration Successful!")
+        flash("Game added successfully!")
         return redirect(url_for("library"))
 
     return render_template("add_game.html")
