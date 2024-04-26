@@ -84,8 +84,8 @@ body {
 }
 
 .game-image-container {
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 #game-image {
@@ -94,8 +94,12 @@ body {
 }
 
 .game-card {
-    max-width: 450px;
+    max-width: 350px;
     border: 10px solid white;
+}
+
+.card-text {
+    line-height: 0.7;
 }
 
 /* profile username */
@@ -156,8 +160,8 @@ body {
 
     /* library.html: game image on game card */
     #game-image {
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 300px;
+        max-height: 300px;
         padding: 0;
     }
 
@@ -204,8 +208,8 @@ body {
 
     /* library.html: game image on game card */
     #game-image {
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 300px;
+        max-height: 300px;
     }
 
     /* profile.html: user image */
@@ -224,8 +228,8 @@ body {
 
     /* library.html: game image on game card */
     #game-image {
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 300px;
+        max-height: 300px;
     }
 
     /* profile.html: user image */
