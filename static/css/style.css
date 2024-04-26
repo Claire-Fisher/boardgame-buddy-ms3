@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&display=swap');
 
 /* site wide page styles */
 body {
     margin: 0;
     padding: 0;
-    font-weight: 400;
+    font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     color: #530F83;
     background-color: #bbecf7;
@@ -76,6 +76,7 @@ body {
 }
 
 .search-group {
+    font-weight: 400;
         margin: 0.4rem auto;
     }
 
