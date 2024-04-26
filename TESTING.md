@@ -208,7 +208,26 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the fix</summary>
             <img src="documents/testing-images/error-405-user-registration-fix.png">
             </details>
-11. **ISSUE NAME** 
+11. **Difficulty serach not working** 
+    * ***Issue Found:*** 
+        * Difficulty dropdown search not filtering games in library
+            <details><summary>Click here to view the code</summary>
+            <img src="documents/testing-images/difficulty-search-bug-code.png">
+            </details>
+    * ***Solution Used:***    
+        * Fixed request code from .args to .form.get()
+            <details><summary>Click here to view the fix in app.py</summary>
+            <img src="documents/testing-images/difficulty-search-bug-fix-py.png">
+            </details>
+        * Gave the html a starting dropdown with an empty value & an inner text of Options
+            <details><summary>Click here to view the fix in library.html</summary>
+            <img src="documents/testing-images/difficulty-search-bug-fix-html.png">
+            </details>
+        * Created an event listener in JS to auto submit the search form if the user makes a changes to the dropdown
+            <details><summary>Click here to view the fix in script.js</summary>
+            <img src="documents/testing-images/difficulty-search-bug-fix-js.png">
+            </details>
+12. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
