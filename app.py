@@ -279,6 +279,41 @@ def game(game_id):
         "game.html", game=game, relevant_reviews=relevant_reviews)
 
 
+@app.route("/add_game", methods=["GET", "POST"])
+def add_game():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "city": "",
+            "country": "",
+            "favourite_game": "",
+            "avatar_url":
+                "https://cdn1.iconfinder.com/data/icons/project-management-8/"
+                "500/worker-512.png"
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        """ Calls new_collection() to generate an empty 
+        collection for the new user"""
+        new_collection(session["user"])
+        flash("Registration Successful!")
+        return redirect(url_for("library"))
+
+    return render_template("add_game.html")
+
+
 @app.route("/collection/<game_id>", methods=["GET", "POST"])
 def collection(game_id):
     """_summary_ Allows user to add a game to their personal collection.
