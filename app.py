@@ -302,7 +302,7 @@ def add_game():
             "avg_playtime_mins": duration,
             "difficulty": request.form.get("difficulty").lower(),
             "description": request.form.get("description"),
-            "avatar_url": request.form.get("image"),
+            "image": request.form.get("image"),
         }
         print(new_game)
         mongo.db.games.insert_one(new_game)
