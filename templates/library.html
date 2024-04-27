@@ -87,17 +87,20 @@
                     <div class="card-footer">
                         <!-- check for active user -->
                         <form method="POST" action="{{ url_for('collection', game_id=game._id) }}">
+                            <a href="{{ url_for('game', game_id=game._id) }}"
+                                class="btn btn-lg btn-outline-info mb-1 card-library-btns">
+                                <strong><i class="fa-solid fa-circle-question"></i> More info</strong></a>
                             {% if session.user %}
-                                <button class="btn btn-outline-primary"
+                                <button class="btn btn-lg btn-outline-primary mb-1 card-library-btns"
                                     type="submit" value="Submit">
-                                        <strong>Add to Collection</strong>
+                                        <strong><i class="fa-solid fa-circle-plus"></i> Add to Collection</strong>
                                 </button>
                             {% else %}
                                 <!-- display if no user logged in. 
                                     Redirects to Log In if user still 
                                     clicks the button -->
                                 <a href="{{ url_for('login') }}"
-                                    class="btn btn-outline-primary" 
+                                    class="btn btn-lg btn-outline-primary mb-1 card-library-btns" 
                                         type="button">
                                         <strong>Add to Collection</strong>
                                 </a>

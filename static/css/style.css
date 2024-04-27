@@ -103,6 +103,10 @@ body {
     line-height: 0.7;
 }
 
+.card-library-btns {
+    width: 250px;
+}
+
 .card-text-description {
     line-height: 1.4;
 }
