@@ -296,7 +296,7 @@ def add_game():
 
         new_game = {
             "game_title": request.form.get("game_title").lower(),
-            "publisher": request.form.get("publisher").lower(),
+            "designer": request.form.get("designer").lower(),
             "min_players": min_players,
             "max_players": max_players,
             "avg_playtime_mins": duration,
