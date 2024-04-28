@@ -56,6 +56,9 @@
     <!-- games library game-cards -->
     {% if games|length > 0 %}
     <div class="container-fluid m-0 p-0">
+        <div class="row bg-yellow">
+            <h5 class="text-center col-12 p-0 m-1"><strong>{{ games|length }} Games Found</strong></h5>
+        </div>
         <div class="row">
             {% for game in games %}
                 <div class="card game-card text-center col-md-6 m-3 mx-auto">
