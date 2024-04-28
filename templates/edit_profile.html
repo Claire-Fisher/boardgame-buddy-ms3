@@ -3,10 +3,10 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
-            <div class="card shadow p-3 mb-5 bg-yellow rounded col-6" style="width: 18rem;">
-                <form class="card-body" method="POST" action="">
+            <div id="edit_card" class="card shadow p-3 mb-5 bg-yellow rounded col-sm-12 col-md-10 col-xl-8" style="width: 25rem;">
+                <form id="edit_card" class="card-body" method="POST" action="">
                     <!-- form title -->
-                    <h3 class="card-title text-center capitalize">Edit {{ info.username }}'s Profile</h5>
+                    <h3 class="card-title text-center capitalize"><strong>Edit {{ info.username }}'s Profile</strong></h5>
                     <p class="text-center">Please note: username / email / password cannot be changed.</p>
                     <div class="form-group">
                         <!-- username display -->
@@ -88,18 +88,18 @@
                         <div class="row">
                             <div class="col-10 my-2 text-center mx-auto">
                                 <!-- save changes profile button -->
-                                <button class="btn btn-lg btn-primary shadow" 
+                                <button class="btn btn-lg btn-primary shadow m-2" 
                                     type="submit" value="Submit">
                                     Save <i class="fa-solid fa-check mx-1"></i>
                                 </button>
                                 <!-- cancel changes profile button -->
                                 <a href="{{ url_for('profile', username=session['user']) }}"
-                                    class="btn btn-lg btn-danger shadow">
+                                    class="btn btn-lg btn-danger shadow m-2">
                                     Cancel <i class="fa-solid fa-times-circle mx-1"></i>
                                 </a>
                             </div>
                         </div>
-                        
+                    </div>
                 </form>
             </div>
         </div>
