@@ -114,10 +114,18 @@
         </div>
     </div>
     {% else %}
-    <h4 class="text-center bold mt-4">Oops! No games matching your search found.</h4>
-    <h5 class="text-center"><a href="{{ url_for('library') }}">
-        Click here to return to the library</a></h5>
-    <p class="text-center">( Or click the Reset button in the search bar )</p>
+    <div class="text-center">
+        <h4 class="text-center text-pink bold mt-4">Oops! No games matching your search found.</h4>
+        <a href="{{ url_for('add_game') }}"
+            class="btn btn-lg btn-outline-primary card-library-btns m-3 col-12">
+            <i class="fa-solid fa-circle-plus mx-1"></i><strong> Add Game</strong>
+        </a>
+        <a href="{{ url_for('library') }}"
+            class="btn btn-lg btn-outline-primary card-library-btns m-3 col-12">
+            <i class="fa-solid fa-chevron-left mx-1"></i><strong> Return to Library</strong>
+        </a>
+        <p class="text-center">( Or click the Reset button in the search bar )</p>
+    </div>
     {% endif %}
 
 {% endblock %}
