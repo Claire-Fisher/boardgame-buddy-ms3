@@ -58,9 +58,11 @@
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-dismissible
-                    flashes flash-message text-center" role="alert">
-                    <h4 class="col-12 mx-auto">{{ message }}</h4>
+                <div class="container-fluid m-0 p-0">
+                    <div class="alert alert-dismissible
+                        flashes flash-message row m-0 p-1" role="alert">
+                        <h5 class="text-center mx-auto">{{ message }}</h5>
+                    </div>
                 </div>
             {% endfor %}
         {% endif %}

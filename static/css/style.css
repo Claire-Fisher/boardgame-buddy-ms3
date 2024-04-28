@@ -60,10 +60,10 @@ body {
 
 /* user action immediate feedback messages */
 .flash-message {
-    line-height: 2;
     text-transform: capitalize;
-    background-color: rgba(0, 0, 0, 0.25);
-    
+    color: #fff;
+    background-color: #bc0e5a;
+    margin: 0;
 }
 
 #duration,
@@ -182,6 +182,8 @@ body {
 
     .username-title {
         margin: 0;
+        line-height: 1;
+        font-size: 1rem;
     }
 
     #profile-info {
