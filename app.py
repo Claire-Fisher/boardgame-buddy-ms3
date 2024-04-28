@@ -316,7 +316,9 @@ def add_game():
 @app.route("/collection/<game_id>", methods=["GET", "POST"])
 def collection(game_id):
     """_summary_ Allows user to add a game to their personal collection.
-    If all the conditions are met.
+    Identifies the game and user.
+    Flash message if game already exists in user collection.
+    Add game id str to user collection arr.
 
     Args:
         game_id (_str_): Game ObjectId
@@ -324,37 +326,20 @@ def collection(game_id):
     Returns:
         _page_: refreshed render page. DB updates, if conditions met.
     """
-    # Identifu the current game obj
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    # Finds the user obj for the current session user
     user = mongo.db.users.find_one(
         {"username": session["user"]})
-    # Finds the username for the current session user
-    username = user["username"]
-    # check if user collection exists in db
     existing_collection = mongo.db.collections.find_one(
             {"username": user["username"]})
 
-    # Attempt to add game to user collection.
     if request.method == "POST":
-        # Checks if the user has an existing collection
-        if existing_collection:
-            # Checks if the current game exists in user_collection arr
-            if str(game["_id"]) in existing_collection["user_collection"]:
-                flash("You already have this game in your collection.")
-            else:
-                # Adds game Id string to user_collection arr
-                mongo.db.collections.update_one(
-                    existing_collection,
-                    {"$push": {"user_collection": str(game["_id"])}})
+        if str(game["_id"]) in existing_collection["user_collection"]:
+            flash("You already have this game in your collection.")
         else:
-            # Creates a new collection for the user
-            new_collection = {
-                "user_id": str(user["_id"]),
-                "username": username,
-                "user_collection": [game_id]
-            }
-            mongo.db.collections.insert_one(new_collection)
+            # Adds game Id string to user_collection arr
+            mongo.db.collections.update_one(
+                existing_collection,
+                {"$push": {"user_collection": str(game["_id"])}})
 
     return redirect(url_for("library"))
 
