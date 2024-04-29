@@ -10,11 +10,11 @@
     <div class="container-fluid m-0 p-0">
         <div class="card m-3">
             <div class="row no-gutters p-2">
-                <div class="col-sm-12 col-md-4 mx-auto my-auto game-image-container">
+                <div class="col-sm-12 col-md-4 my-auto game-image-container">
                     <img id="game-image" src="{{ game.image }}"
                             class="card-img-top"
                             alt="An image of the game {{ game.game_title}}"
-                            no-repeat center center>
+                            no-repeat>
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <div class="card-body">
@@ -29,32 +29,41 @@
                     <div class="text-left mb-3">
                         {% if session.user %}
                             <a href="{{ url_for('collection', game_id=game._id) }}"
-                                class="btn btn-lg btn-outline-primary mx-3">
-                                <i class="fa-solid fa-plus-circle mx-1" aria-hidden="true"></i><strong> Add to Collection</strong>
+                                class="btn btn-lg btn-outline-primary mx-3 my-2"
+                                data-toggle="popover" data-title="{{ game.game_title }} added to your collection successful">
+                                <i class="fa-solid fa-plus-circle mx-1" aria-hidden="true"></i>
+                                <strong> Add to Collection</strong>
                             </a>
-                            <a href="{{ url_for('game', game_id=game._id) }}" class="btn btn-lg btn-outline-primary text-center mx-3"
+                            <a href="{{ url_for('game', game_id=game._id) }}"
+                                class="btn btn-lg btn-outline-primary mx-3 my-2"
                                 data-toggle="modal" data-target="#writeReviewModal">
                                 <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                                 <strong> Leave a review</strong>
                             </a>
-                            <a href="{{ url_for('library') }}" class="btn btn-lg btn-outline-info back-to-library text-center mx-3">
+                            <a href="{{ url_for('library') }}"
+                                class="btn btn-lg btn-outline-info back-to-library mx-3 my-2">
                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i>
                                 <strong> Back to main game library</strong>
                             </a>
                         {% else %}
                             <a href="{{ url_for('login') }}"
-                                class="btn btn-lg btn-outline-primary mx-3 bold">
-                                <i class="fa-solid fa-plus-circle mx-1" aria-hidden="true"></i> Add to Collection
+                                class="btn btn-lg btn-outline-primary mx-3 my-2">
+                                <i class="fa-solid fa-plus-circle mx-1" aria-hidden="true"></i>
+                                <strong> Add to Collection</strong>
                             </a>
                             <a href="{{ url_for('login') }}"
-                                class="btn btn-lg btn-outline-primary text-center mx-3 bold">
-                                <i class="fa-solid fa-pencil mx-1" aria-hidden="true">
-                                </i> Leave a Review
+                                class="btn btn-lg btn-outline-primary mx-3 my-2">
+                                <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
+                                <strong> Leave a Review</strong>
                             </a>
-                            <a href="{{ url_for('library') }}" class="btn btn-lg btn-outline-info back-to-library text-center mx-3">
-                                <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i><strong> Back to main game library</strong>
+                            <a href="{{ url_for('library') }}" 
+                                class="btn btn-lg btn-outline-info back-to-library mx-3 my-2">
+                                <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i>
+                                <strong> Back to main game library</strong>
                             </a>
-                            <p class="text-pink mx-3 mt-1"><small>You must be logged in use the "Add to Collection" and/or "Leave a Review"</small></p>
+                            <p class="text-pink mx-3 mt-1">
+                                <small>You must be logged in use the "Add to Collection" and/or "Leave a Review"</small>
+                            </p>
                         {% endif %}
                     </div>
                 </div>
@@ -137,7 +146,7 @@
                                 <p class="capitalize m-0 p-2">Author: {{ review.username }}</p>
                                 {% if session.user|lower == review.username|lower %}
                                     <button 
-                                        class="btn btn-lg btn-outline-danger"
+                                        class="btn btn-lg btn-outline-danger m-2"
                                         type="submit"
                                         value="submit"
                                         data-toggle="modal"

@@ -3,7 +3,8 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
-            <div class="card shadow p-3 mb-5 bg-yellow rounded col-sm-12 col-md-10 col-xl-8" style="width: 25rem;">
+            <div class="card shadow p-3 mb-5 bg-yellow rounded col-sm-12 col-md-10 col-xl-8"
+                style="width: 100vw;">
                 <form class="card-body" method="POST" action="{{ url_for('add_game') }}">
                     <!-- form title -->
                     <h3 class="card-title bold text-center">Add a new game to Boardgame Buddy</h5>
@@ -135,12 +136,12 @@
                     <!-- submit button -->
                     <div class="row">
                         <div class="col-10 my-2 text-center mx-auto">
-                            <button class="btn btn-lg btn-primary m-2 mx-1" 
+                            <button class="btn btn-lg btn-primary col-sm-6 col-md-4 m-2 mx-1" 
                                 type="submit" value="Submit">
                                 Submit <i class="fa-regular fa-circle-check mx-1"></i>
                             </button>
                             <a href="{{ url_for('library') }}"
-                                class="btn btn-lg btn-danger m-2 mx-1"
+                                class="btn btn-lg btn-danger col-sm-6 col-md-4 m-2 mx-1"
                                 type="button">Cancel <i class="fa-regular fa-times-circle mx-1"></i>
                             </a>
                         </div>
