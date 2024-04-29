@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content%}
     <!-- game library header -->
-    <div id="game-library" class="title text-center py-1">
-        <h1 class="bold">Board Game Library</h1>
+    <div id="game-library" class="title text-center px-1 py-1">
+        <h1><strong>Board Game Library</strong></h1>
         <p>Browse the full library of games.<br>
             Or use the filters to search for games that fit your needs.</p>
     </div>
@@ -101,7 +101,7 @@
                                 <strong>Title: {{ game.game_title }}</strong></h5>
                         </a>
                         
-                        <p class="card-text capitalize"><strong>Designer: </strong>{{ game.designer }}</p>
+                        <p class="capitalize"><strong>Designer: </strong>{{ game.designer }}</p>
                         <p class="card-text"><strong>Min Players: </strong>{{ game.min_players }}</p>
                         <p class="card-text"><strong>Max Players: </strong>{{ game.max_players }}</p>
                         <p class="card-text"><strong>Avg Playtime: </strong>{{ game.avg_playtime_mins }} mins</p>
