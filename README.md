@@ -289,8 +289,13 @@ Template code blocks taken from [Bootstrap 4.6 Library](https://getbootstrap.com
 <img src="documents/readme-images/bootstrap-forms-navbar.png">
 </details>
 
+## **Tutorials** ##
+
+Create a 404 page in flask|python tutorial video by ZetBit
+[View here](https://www.google.com/search?q=flask+how+to+add+404+pages&rlz=1C1GCEU_enGB1105GB1105&oq=flask+how+to+add+404+pages&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMgoIBhAAGIAEGKIEMgoIBxAAGIAEGKIEMgoICBAAGKIEGIkFMgoICRAAGIAEGKIE0gEINzgxMmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7525ba34,vid:50N7K4oDF4g,st:43)
+
 ## **Credits**
-- Shaun Russell: RPS logo & Modal Rules images.
+- Shaun Russell: site logo.
 - Google Fonts for 'Inter" typography [View here](https://...)
 - Favicon.io for icon converter & instructions [View here](https://favicon.io/)
 - Tinypng.com for image compression [View here](https://tinypng.com/)
