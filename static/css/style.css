@@ -7,7 +7,11 @@ body {
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     color: #530F83;
-    background-color: #bbecf7;
+    background-color: #530F83;
+}
+
+main {
+    background-color: #bbecf7
 }
 
 .bold {
@@ -52,6 +56,10 @@ body {
     text-decoration: underline;
 }
 
+.text-shadow {
+    text-shadow: 1px 1px 2px black;
+}
+
 /* display toggle */
 
 .hidden {
@@ -60,8 +68,8 @@ body {
 
 /* user action immediate feedback messages */
 .flash-message {
-    text-transform: capitalize;
     color: #fff;
+    text-shadow: 1px 1px 2px black;
     background-color: #17a2b8;
     margin: 0;
 }
@@ -158,6 +166,11 @@ body {
 .review-entry {
     padding:0.5rem;
     border: 1px solid #530F83;
+}
+
+/* footer icon */
+.brand-icon {
+    font-size: 48px;
 }
 
 /* media queries for responsive layout (bootstrap breakpoints) */
