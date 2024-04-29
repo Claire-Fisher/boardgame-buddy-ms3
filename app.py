@@ -60,7 +60,9 @@ def search():
         query["$text"] = {"$search": search}
         games = list(mongo.db.games.find(query))
 
-    print(query)
+    if not query:
+        flash("You didn't enter any search fields")
+        return redirect('library')
 
     return render_template("library.html", games=games)
 
