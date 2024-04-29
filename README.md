@@ -285,6 +285,9 @@ Template code blocks taken from [Bootstrap 4.6 Library](https://getbootstrap.com
 <details><summary>View the card panel code here</summary>
 <img src="documents/readme-images/bootstrap-card-code.png">
 </details>
+<details><summary>View the navbar forms code here</summary>
+<img src="documents/readme-images/bootstrap-forms-navbar.png">
+</details>
 
 ## **Credits**
 - Shaun Russell: RPS logo & Modal Rules images.
