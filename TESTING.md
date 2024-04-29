@@ -227,7 +227,22 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the fix in script.js</summary>
             <img src="documents/testing-images/difficulty-search-bug-fix-js.png">
             </details>
-12. **ISSUE NAME** 
+12. **Unbound local Error 304** 
+    * ***Search button clicked when no data input:*** 
+        * If the user clicks the search button without entering any search info, 304 message thrown. Unbound local error.
+            <details><summary>Click here to view the error message</summary>
+            <img src="documents/testing-images/unbound-local-error-304-msg.png">
+            </details>
+            <details><summary>Click here to view the code</summary>
+            <img src="documents/testing-images/unbound-local-error-304-code.png">
+            </details>
+    * ***Solution Used:***    
+        * Created an if statement at the end of the function, to check if no data in variable query. 
+        * If no data found, flash messages the user "You didn't enter any search fields", and refreshes the library with a reutnr redirect
+            <details><summary>Click here to view the code</summary>
+            <img src="documents/testing-images/unbound-local-error-304-fix.png">
+            </details>
+13. **ISSUE NAME** 
     * ***Issue Found:*** 
         * ...
     * ***Solution Used:***    
