@@ -6,52 +6,75 @@
         <p>Browse the full library of games.<br>
             Or use the filters to search for games that fit your needs.</p>
     </div>
-    <!-- filter games form -->
-    <div class="container-fluid m-0 p-0">
-        <form id="search-form" class="form-inline row bg-purple mx-auto py-2" method="POST" action="{{ url_for('search') }}">
-            <div class="form-group search-group mx-auto">
-                <!-- number of players -->
-                <label for="players" class="mr-1 text-white" >
-                    Number of players (0-8)
+    
+    <!-- library search filters -->
+    <nav class="navbar bg-purple">
+        <form id="search-form" class="form-inline"
+            method="POST" action="{{ url_for('search') }}">
+            <!-- number of players -->
+            <div class="form-group search-inputs col-xs-6 my-2">
+                <label for="players" class="text-white mr-2">
+                    <i class="fa-solid fa-users mr-2"></i>
+                    Player count
                 </label>
-                <input type="number" id="players" name="players" 
-                    min="1" max="8" class="form-control user-filter" >
+                <div class="input-group">
+                    <input id="players" name="players"
+                        type="number" min="1" max="8"
+                        class="form-control-lg mr-2"
+                        placeholder="( 0 - 8 )"
+                        aria-label="players">
+                </div>
             </div>
-            <div class="form-group search-group mx-auto">
-                <!-- duration -->
-                <label for="duration" class="mr-1 text-white" >Avg play duration (mins) </label>
-                <input type="number" id="duration" name="duration"
-                    min="15" max="121" class="form-control user-filter" >
+            <!-- avg play time -->
+            <div class="form-group search-inputs col-xs-6 my-2">
+                <label for="duration" class="text-white mr-2">
+                    <i class="fa-solid fa-clock mr-2"></i>
+                    Avg playtime
+                </label>
+                <div class="input-group">
+                    <input id="duration" name="duration"
+                        type="text" class="form-control-lg mr-2"
+                        placeholder="(mins)"
+                        aria-label="play time in minutes">
+                </div>
             </div>
-            <div class="form-group search-group mx-auto text-white">
-                <!-- difficulty -->
-                <label for="difficulty" class="mr-1">Difficulty</label>
-                <select name="difficulty" id="difficulty" class="form-control user-filter user-filter">
-                    <option class="text-purple" value="">Options</option>
-                    <option class="text-purple" value="beginner">Beginner</option>
-                    <option class="text-purple" value="advanced">Advanced</option>
-                </select>
+            <!-- difficulty -->
+            <div class="form-group search-inputs col-xs-12 my-2">
+                <label for="difficulty" class="text-white mr-2">
+                    <i class="fa-solid fa-dice-d20 mr-2 text-white"></i>
+                    Difficulty
+                </label>
+                <div class="input-group">
+                    <select id="difficulty" name="difficulty" 
+                        class="form-control-lg mr-2 user-filter" aria-label="Difficulty"
+                        style="width: 9rem;">
+                        <option class="" value="">Difficulty</option>
+                        <option class="" value="beginner">Beginner</option>
+                        <option class="" value="advanced">Advanced</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group search-group mx-auto text-white">
-                <!-- search text input -->
-                <label for="search" class="mr-1">Search Games</label>
-                <input
-                    class="form-control form-control mr-2 validate"
-                    type="search" id="search" name="search"
-                    aria-label="Search">
-            </div>
-            <div class="form-group search-group mx-auto text-white">
-                    <!-- submit -->
-                <button class="btn bg-yellow mr-1 text-purple" type="submit">
-                    <i class="fa-solid fa-search"></i>
-                    Search
-                </button>
-                <!-- reset -->
-                <a href="{{ url_for('library') }}"
-                    class="btn btn-info mr-1">Reset</a>
+            <!-- search title -->
+            <div id="search-group" class="form-group col-xs-12 my-2">
+                <div class="input-group"> 
+                    <input id="search" name="search"
+                        type="text" placeholder="Search title"
+                        class="form-control-lg mr-2"
+                        aria-label="search">
+                </div>
+                <div class="col-xs-12">
+                    <button class="btn btn-lg btn-primary ml-1 my-2 my-sm-0"
+                        type="submit">
+                        Search
+                    </button>
+                    <a href="{{ url_for('library') }}"
+                        class="btn btn-lg btn-info ml-1 my-2 my-sm-0">
+                        Reset
+                    </a>
+                </div>
             </div>
         </form>
-    </div>
+    </nav>
 
     <!-- games library game-cards -->
     {% if games|length > 0 %}

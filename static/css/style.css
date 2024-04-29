@@ -256,4 +256,9 @@ body {
         height: 250px;
         margin: 0.25rem auto;
     }
+
+    #search-group,
+    .search-inputs {
+        margin: 0 auto 0;
+    }
 }
