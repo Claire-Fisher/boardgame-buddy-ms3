@@ -3,10 +3,12 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
-            <div class="card shadow p-3 mb-5 bg-yellow rounded col-6" style="width: 18rem;">
+            <div id="register-card"
+                class="card shadow bg-yellow rounded col-sm-12 col-md-10 col-xl-8"
+                style="width: 100vw;">
                 <form class="card-body" method="POST" action="{{ url_for('register') }}">
                     <!-- form title -->
-                    <h3 class="card-title text-center">Register with Boardgame Buddy</h5>
+                    <h3 class="card-title text-center"><strong>Register with Boardgame Buddy</strong></h5>
                     <p class="text-center">We'll never share your personal information with anyone else.</p>
                     <!-- username input -->
                     <div class="form-group row">
@@ -53,7 +55,7 @@
                     </div>
                     <!-- register button -->
                     <div class="row">
-                        <button class="btn-lg btn-primary col-4 my-2 mx-auto shadow" 
+                        <button class="btn-lg btn-primary col-sm-6 col-md-4 my-2 mx-auto shadow" 
                             type="submit" value="Submit">
                             Register <i class="fa-solid fa-sign-in-alt mx-1"></i>
                         </button>
@@ -64,13 +66,11 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="text-center col-12">
-            <p>
-                Already registered?
-                <a href="{{ url_for('login') }}">
-                    Log in
-                </a>
-            </p>
+        <div class="text-center mb-3 col-12">
+            <p class="my-2 mb-0">Already registered?</p>
+            <a href="{{ url_for('login') }}">
+                Log in
+            </a>
         </div>
     </div>
     
