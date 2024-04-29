@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Error 404</h1>
-
-    <div class="card-action">
-        <h2 class="text-purple">OOPS!</h2>
-        <h3 class="text-purple">Looks like this page doesn't exist</h3>
-
-        <div class="card-action">
-            <a href="{{ url_for('library') }}" aria-label="Link to home page" class="btn btn-lg btn-primary">Back to Home page</a>
+    <div class="text-center mt-3">
+        <h1>Error 404</h1>
+        <div class="bg-yellow py-4 my-2">
+            <h2 class="text-purple">OOPS!</h2>
+            <h3 class="text-purple">Looks like this page doesn't exist</h3>
         </div>
+        <a href="{{ url_for('library') }}" aria-label="Link to home page"
+                class="btn btn-lg btn-primary">
+                <i class="fa-solid fa-chevron-left"></i> Back to Boardgame Buddy</a>
     </div>
 
 {% endblock %}
