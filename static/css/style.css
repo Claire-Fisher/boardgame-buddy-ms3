@@ -191,9 +191,10 @@ body {
         margin: 0;
     }
 
-    #edit_card {
+    #edit-card,
+    #login-card {
         padding: 0;
-        margin: 0;
+        margin: 0 0 0 5px;
     }
 }
 
