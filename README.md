@@ -128,7 +128,7 @@ Please toggle the following dropdowns to view the wireframe images.
 <img src="documents/readme-images/bgb-wireframe-profile-mobile.png">
 </details>
 <br>
-This planning and development work is uploaded to Figma. The design page on Figma is a useful tool to layout all my early project documents in one space, and share online with others for additional input. It allowed my mentor to quickly view and understand my project themes and objectives.
+This planning and development work is uploaded to Figma. The design page on Figma is a useful tool to layout all my early project documents in one space, and share online with others for additional input. It allowed my mentor to quickly view and understand my project themes and objectives. 
 
 Using Figma's wireframes capabilities, I was able to play with initial layouts and plan intuitive flow around my site. This has given me a good understanding of how an MVP might be presented to me by a frontend designer.
 
@@ -145,56 +145,55 @@ A generic Arial, Helvetica, & sans-serif fonts have been included as a backup in
 [**Back to top**](#boardgame-buddy)
 ## Features
 
-This project consists of one page with 14 features.
+This project includes many features, these include:
 
 ### Fully Responsive 
 - This site adapts to all devices and screen sizes ranging between 320px to 2560px wide (Tested).
+- Responsive break points tested on screen widths: 320px / 576px / 768px / 992px / 1200px / 1400px / 2560px. 
 
 ### Intuitive Navigation
-- The rules button is present on every page and stays in the same location.
-- The weapon buttons are large, obvious and stay in the same location. Shifting only from horizontal to vertical alignment depending on screen width. 
-- All buttons are named with intuitive text so navigation is clear to the user (e.g Continue, New Game) (Site objective No.7).
-- All buttons have aria-labels to allow good navigation for users with screen-readers. (Site objective No.7).
+- The navigation bar remains at the top of the screen with navigation links to the right. In keeping with typical user expectations.
+- All pages can be accessed within 1-3 user clicks. 
+- Often there are multiple ways for the user to navigate to the same pages.
+  - Examples: 
+    - Library page: users can access a game's full info page by clicking on the card Game Image, the Game Title, or the More Info button.
+    - User Collection area: as well as being able to click the "Remove" button on a game image, users can click the main image and navigate to it's full info page. 
+    - Where actions require a user to have an account and be logged in, if no sesssion user is found, a notification paragraph shows explaining this. If the user still clicks the Call-To-Action, the button navigates them to the Log in page instead. 
 
 ### Clear typography
-- The highly legible and readable font 'Inter' was selected from Google-fonts. As a Google-fonts listed typography, 'Inter' has a high chance of being usable across most devices. A generic 'serif' font has been coded to display in the event a device is not compatible with 'Inter'. 
+- The highly legible and readable font 'Syne' was selected from Google-fonts. As a Google-fonts listed typography, 'Syne' has a high chance of being usable across most devices. A generic fonts have been coded to display in the event a device is not compatible with 'Syne'. 
 
-### Logo
+### Custom Logo
 - Custom designed Logo in keeping with project brand aesthetics: both in colour and typography.
 - SVG format for optimum resolution quality at all screen sizes.
+- With thanks to Shaun Russell for the logo design.
 
 ### Images
-- Game over gifs have been included to increase the users positive experience. (Site objective No.1).
-- All images and gifs included aria-labels and/or alt attributes for accessibility (Site objective No.7).
-- To prioritise performance (Site objective No.6), all images and gifs are:
-  - Limited.
-  - Compressed for faster load times.
-  - Included as files in the assets folder to increase download times.
+- Images feature frequently across the site as a part of game info and user profile options. 
+- Images are stored in the mongoDB as URL's and can be rendered very quickly for positive UI and UX.
 
-### Fully automated game functionality
-- The user is only required to navigate and input their weapon selection with a choice of three buttons. 
-- The AI's choice, turn result, score keeping and final result are all fully automated and displayed to the user. 
+### Search filters functionality
+- Users can filter the library to views only the games that meet their gaming needs. 
+- Searches are instantaneous and the library is already populated with a good selection of games. 
 
-### 3-2-1 Countdown
-- An animated short countdown gives the illusion that the AI is "thinking" about its weapon selection. It builds suspense before the turn result, improving UX. 
-- The countdown allows the user a moment to read and be reminded of their latest weapon choice, while not interrupting site flow.
-- This feature also improves accessibilities by allowing users with cognitive, and/or reading difficulties, a moment to process the game information (Site objective No.7).
+### High performance / fast loading times. 
+- MongoDB excels at fetching large quantities of data, so as the site grows (with users collectively adding hundreds of games), site performance should be maintained.
 
-### Game Win Result
-- The game randomly selects one of five different gifs when the player achieves a win result. In contrast to the singular "Game Over: You Lose" ending, this is more rewarding for the player when they win (Site objective No.1). 
+### User profile creation and editing
+- Users are allowed to create and edit their own profile account. 
 
-### Large Buttons
-- Buttons have been built for all user interactions with this project. This eliminates user input error so the game functions are rapid, and excellent site flow is maintained. (Site objectives No.1, 2, 6).
-- They are designed with a minimum size of 48px x 48px. These are the WCAG 2.1 recommended guidelines for touchscreen buttons (Site objective No.7).
-- It improves usability for all users, especially when using their device single handed. Input doesn't need to be typed and is selected with a simple button press (User story No.5).
-- It improves accessibility for people with physical disabilities who have dexterity needs (Site objective No.7). 
+### User games contribution
+- With an active account, users are allowed to add additional games to the site library. 
+- These are then available to all users, to browse info, review, and add to their own collections. 
 
-### Colour scheme
-- The minimum colour palette has universal appeal.
-- Eye comfort. The lightest shade (#f9f9f9) is off-white, and the darkest shade (#222) is off-black. This reduces screen glare for all users. 
+### Large Font and Buttons
+- With the exception of some form/button help text, all main site text remains a minimum of 1rem (16pt) font size for readability and accessibility. 
+- All buttons maintain a minimum size of 48px x 48px. These are the WCAG 2.1 recommended guidelines for touchscreen buttons.
+- Large buttons also improves accessibility for people with physical disabilities who have dexterity needs.
 
-### Dark Mode
-- Due to the high contrast colour scheme, this project works well on dark mode screen settings. 
+### Theme appropriate colour scheme
+- Colour scheme is chosen with a retro 80's feel, so appeal to the site's most typical users. 
+- Eye comfort. There is no black on white (or visa versa). The dark purple has been chosen to soften screen glare of high contrast combinations. This is with all user's comfort in mind, but also for those with high visual needs.  
 
 ### High Standards of Accessibility 
 [According to accessguide.io](https://www.accessguide.io/)
