@@ -16,6 +16,7 @@ This project is intended for users of any age. It is developed using a mobile fi
     * [***Site Objectives***](#site-objectives)
     * [***Approach***](#approach)
     * [***Research***](#research)
+    * [***Data Schema***](#data-schema)
     * [***Wireframes***](#wireframes)
     * [***Colour Scheme***](#colour-scheme)
     * [***Typography***](#typography)
@@ -89,40 +90,25 @@ My adjustments to suit my project aims:
   - No auto play music that can reduce a user's positive UX.
 
 [**Back to top**](#boardgame-buddy)
+### Data Schema
+
+This was the original data schema as part of early development. Some features and pages have been edited or removed entirely to meet project deadlines.<br>Following MOSCOW prioritisation (Must-have, Should-have, Could-have, Won't-have)
+<details><summary>Original Data Schema</summary>
+<img src="documents/readme-images/bgb-db-schema1.png">
+</details>
+<details><summary>Revised Data Schema after MOSCOW prioritisation</summary>
+<img src="documents/readme-images/bgb-db-schema2.png">
+</details>
+
 ### Wireframes
 
-Procreate was used to document research, sketch out initial ideas, page layouts and wireframes.
+Balsamiq was used to create initial layouts and wireframes.
 
 Please toggle the following dropdowns to view the wireframe images.
 
-<details><summary>Wireframe Mobile: Home/Countdown/Next-Turn image</summary>
-<img src="documents/readme-images/wireframe-mobile-home-countdown-next.jpg">
+<details><summary>ADD WIRE FRAMES!!</summary>
+<img src="">
 </details>
-
-<details><summary>Wireframe Mobile: Turn-result image</summary>
-<img src="documents/readme-images/wireframe-mobile-turn-result-continue.jpg">
-</details>
-
-<details><summary>Wireframe Mobile: Game Over Win/Lose image</summary>
-<img src="documents/readme-images/wireframe-mobile-win-lose.jpg">
-</details>
-
-<details><summary>Wireframe Mobile: Game-Rules-Modal image</summary>
-<img src="documents/readme-images/wireframe-mobile-rules-modal.jpg">
-</details>
-
-<details><summary>Wireframe Desktop: Home/Countdown/Modal image</summary>
-<img src="documents/readme-images/wireframe-desktop-home-countdown.jpg">
-</details>
-
-<details><summary>Wireframe Desktop: Turn-results image</summary>
-<img src="documents/readme-images/wireframe-desktop-turn-results.jpg">
-</details>
-
-<details><summary>Wireframe Desktop: Game-Over image</summary>
-<img src="documents/readme-images/wireframe-desktop-game-over.jpg">
-</details>
-<br/>
 
 This planning and development work is uploaded to Figma. The design page on Figma is a useful tool to layout all my early project documents in one space, and share online with others for additional input. It allowed my mentor to quickly view and understand my project themes and objectives.
 
