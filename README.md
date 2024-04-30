@@ -25,7 +25,7 @@ This project is intended for users of any age. It is developed using a mobile fi
 * [**Testing**](#testing)
   * [Go to TESTING.md](TESTING.md)
 * [**Deployment**](#deployment)
-  * [Click here to deploy this project live](/###)
+  * [Click here to deploy this project live](/https://boardgame-buddy-c89ff5d28931.herokuapp.com/)
 * [**Languages**](#languages)
 * [**Frameworks and Tools**](#frameworks-and-tools)
 * [**Software**](#software)
@@ -183,8 +183,11 @@ This project includes many features, these include:
 - Users are allowed to create and edit their own profile account. 
 
 ### User games contribution
-- With an active account, users are allowed to add additional games to the site library. 
+- With an active account, users are allowed to add additional games to the site library.
 - These are then available to all users, to browse info, review, and add to their own collections. 
+
+### User personal collection creation and management
+- Users can add and delete games in their own personal collection.
 
 ### Large Font and Buttons
 - With the exception of some form/button help text, all main site text remains a minimum of 1rem (16pt) font size for readability and accessibility. 
@@ -198,8 +201,7 @@ This project includes many features, these include:
 ### High Standards of Accessibility 
 [According to accessguide.io](https://www.accessguide.io/)
 
-(Site objective No.7).
-- Definite status messages - 404 page included - "Oops, something went wrong" message.
+- Definite status messages - 404 page included.
 - Responsive design.
 - High colour contrast.
 - No colours convey information - colour blind users
@@ -209,49 +211,50 @@ This project includes many features, these include:
 - Alt descriptions on all images.
 - Semantic elements to assist screen reader users to navigate and access information.
 - Consistent navigation.
-- Written content is at an approachable level.
 - Minimum font size of 16px throughout the site and on all screen sizes.  
-- Custom visual graphic of the game rules. This minimises the amount of written information needed to be understood by the user. It helps those with cognitive difficulties. A brief but descriptive aria-label has been given to the rules image for visually-impaired users. 
-- Pausable game play. The pauses at specific intervals (game start, user weapon selection, turn result, game over), and waits for the user input before continuing (eg. click continue). This provides all users the opportunity to break their attention from the game to attend to other things. It gives people with cognitive and learning disabilities the control to pace the game to suit their individual needs.
 
 ### Family Friendly
-- This site is free from offensive language and imagery, and is suitable for users of all ages (Site objective No.3).
+- This site is free from offensive language and imagery, and is suitable for users of all ages. As content can be created by users, frequent maintenance would be needed to preserve this. An additional contact form could be added so users can notify admins of any offensive material added. T&Cs added to add game form.  
 
 ### The Footer
-The footer provides copyright information and name of the site creator. It cannot be interacted with by the user. 
+The footer provides copyright information and name of the site creator. Plus clickable links to my github and linkedin pages. 
 
 [**Back to top**](#boardgame-buddy)
 ## Future Features
 ### Feedback Form
-Include a button link to a feedback form page. Users can be invited to report bugs, ask for future features, or suggest accessibility improvements.  
-
-### Link to additional games 
-Additional game versions, or game types could be added. A drop-down menu to those options would add additional positive user experience. It would also keep the user on the product longer. 
-
-### Difficulty setting
-Have an option the user can toggle to change the difficulty of the game. Harder levels might calculate the computer has a 50% chance to select the winning weapon based on the user's choice etc. 
-
-### AI personality
-More conversational responses from the AI could be included to give the AI a "personality".
-
-### AI personality Expanded
-Have an option the user can toggle to select a "nice" or a "mean" AI opponent.
+A feedback form page. User can report misuse of content creation. Users can be invited to report bugs, ask for future features, or suggest accessibility improvements.  
 
 ### Advertising 
-An advertising banner could be added to promote other content from the same publisher. Or adverts supplied by third party companies to monetise the project. 
+An advertising banner could be added to promote company sponsors.
+Monitised links to boardgame online shops to direct users to purchase could be included on the game full info page. 
+- User feedback from Penny Lewis: "You could have links that take you to independents that sell the games, rather than Amazon."
+
+## Future Features Requested my user testers
+
+### Joe Hewitt
+"Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game'or 'On the lookout for future expansions!'."
+
+### Tom Harris
+"If I was to suggest improvements, I would say the following: 
+- Add a star rating to your review system
+- Change the colour of the footer to yellow so it matches the layout of your header (Done)
+- Remove the "Title:" from the game header (Done)
+- Display users avatars in the review section
+- Remove the animation from the nav bar when its pushed into the burger menu (when scales on a laptop, it can make it hard to click)
+- Potentially look at how the text is displayed on the game description/information."
 
 [**Back to top**](#boardgame-buddy)
 ## Testing
 - Please see full documentation for testing and bug reports [here](TESTING.md)
 
 ## Deployment
-[Click here to deploy this project live](/###)
+[Click here to deploy this project live](https://boardgame-buddy-c89ff5d28931.herokuapp.com/)
 
 
 ### **Languages**
 - HTML
 - CSS
-- Javascript.
+- Javascript
 - Python
 
 ### **Frameworks and Tools**
@@ -262,11 +265,9 @@ An advertising banner could be added to promote other content from the same publ
 - Flask
 - Visual Studio Code
 - Font Awesome
-- Procreate
 - Figma
 - Favicon.io
 - Tinypng.com
-- EZGIF.com
 - Lighthouse
 - W3C Markup validation service
 - W3C Jigsaw CSS validation service
@@ -280,7 +281,7 @@ An advertising banner could be added to promote other content from the same publ
 - Figma to create design-boards, wireframes and prototypes.
 - Procreate to create design pages and sketch-work, images and logo.
 
-[**Back to top**](#rock-paper-scissors)
+[**Back to top**](#boardgame-buddy)
 ## **Imported Code**
 Template code blocks taken from [Bootstrap 4.6 Library](https://getbootstrap.com/docs/4.6/components/navbar/). Heavily modified to suit my project requirements.
 <details><summary>View the navbar code here</summary>
@@ -300,15 +301,20 @@ Create a 404 page in flask|python tutorial video by ZetBit
 
 ## **Credits**
 - Shaun Russell: site logo.
-- Google Fonts for 'Inter" typography [View here](https://...)
+- Google Fonts for 'Syne" typography [View here](https://fonts.google.com/specimen/Syne)
 - Favicon.io for icon converter & instructions [View here](https://favicon.io/)
 - Tinypng.com for image compression [View here](https://tinypng.com/)
 - Accessguide.io an excellent accessibility guide [View here](https://www.accessguide.io/)
 
+## Site Testers
+- Shaun Russell - Senior UI/UX designer
+- Tom Harris - User tester
+- Joe Hewitt - User tester
+- Dean Russell - User tester
+- Penny Lewis - User tester
+
 ## **Thanks**
 - Richard Wells: Senior Developer, site tester, and my Code Institute Mentor.
-
-- Dan Sanderson: Senior Developer, site tester, for his support and advice.
 
 - atapas: for his markdown-cheatsheet [View here](https://github.com/atapas/markdown-cheatsheet#horizontal-line)
 
@@ -316,4 +322,5 @@ Create a 404 page in flask|python tutorial video by ZetBit
 
 - Shaun Russell: Senior UX/UI/Product Designer. My site tester, my partner, and my provider while I study. Building my new development career change would have been infinitely harder without you. Thank you.
 
-[**Back to top**](#rock-paper-scissors)
+
+[**Back to top**](#boardgame-buddy)
