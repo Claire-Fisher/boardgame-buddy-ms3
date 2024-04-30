@@ -64,7 +64,8 @@ This project is intended for users of any age. It is developed using a mobile fi
 7. To give users the functionality to update their own profile.
 7. To provide functionality for users to build their own game collection (and delete collection games too)
 8. To allow users to add and share more games to the main library.
-9. To allow users to create and delete their own reviews on games. 
+9. To allow users to create and delete their own reviews on games.
+10. To provide a design that appeals to typically geeky/retro fanatical individuals. 
 
 ### Approach
 - Mobile first design.
@@ -103,32 +104,43 @@ This was the original data schema as part of early development. Some features an
 ### Wireframes
 
 Balsamiq was used to create initial layouts and wireframes.
+Some features and pages have been edited or removed entirely to meet project deadlines.<br>Following MOSCOW prioritisation (Must-have, Should-have, Could-have, Won't-have)
+
 
 Please toggle the following dropdowns to view the wireframe images.
 
-<details><summary>ADD WIRE FRAMES!!</summary>
-<img src="">
+<details><summary>Early development Index page wireframe desktop</summary>
+<img src="documents/readme-images/bgb-wireframe-index-desktop.png">
 </details>
-
+<details><summary>Early development Index page wireframe mobile</summary>
+<img src="documents/readme-images/bgb-wireframe-index-mobile1.png">
+</details>
+<details><summary>Early development Library page wireframe desktop</summary>
+<img src="documents/readme-images/bgb-wireframe-library-desktop.png">
+</details>
+<details><summary>Early development Library page wireframe mobile</summary>
+<img src="documents/readme-images/bgb-wireframe-library-mobile.png">
+</details>
+<details><summary>Early development Profile page wireframe desktop</summary>
+<img src="documents/readme-images/bgb-wireframe-profile-desktop.png">
+</details>
+<details><summary>Early development Profile page wireframe mobile</summary>
+<img src="documents/readme-images/bgb-wireframe-profile-mobile.png">
+</details>
+<br>
 This planning and development work is uploaded to Figma. The design page on Figma is a useful tool to layout all my early project documents in one space, and share online with others for additional input. It allowed my mentor to quickly view and understand my project themes and objectives.
 
 Using Figma's wireframes capabilities, I was able to play with initial layouts and plan intuitive flow around my site. This has given me a good understanding of how an MVP might be presented to me by a frontend designer.
 
-Please click the link to view my development work on Figma:[View here](https://www.figma.com/file/5D9C0Ra8mOWScMFT2Mqq1e/RPS-Designs-%26-Development?type=design&node-id=0-1&mode=design&t=GZVaXRDeF3EGs5T8-0)
-
 ### Colour Scheme
-![Image of colour palette](/documents/readme-images/rps-colour-scheme.png)
+![Image of colour palette](documents/readme-images/bgb-colour-scheme.png)
 
-A reduced colour scheme of three greys (#f9f9f9, #c9c9c9, #222222) has been chosen for this project. The advantages of this are as follows:
-  - Clean, professional design with universal appeal.
-  - Reduced screen glare for all users as lightest shade is off-white, and darkest is off-black. 
-  - Better accommodates users with higher visual requirements (Site objective No.7).
-  - Project also displays extremely well on mobile devices set to dark mode.  
+To hit site objective 10, I've chosen a bright, 80's-style colour-scheme. The contrasts provide good readability and accessibility. The colour choices appeals to all genders and ages. Some bootstrap button colours have also been included, and these compliment my base colour scheme well.
 
 ### Typography
-'Inter" from Google Fonts was selected throughout as a clear, easily-readable font choice. [View here](https://fonts.google.com/specimen/Inter?query=inter)
+'Syne" from Google Fonts was selected throughout as a clear, easily-readable font choice that matches my site asthetic. [View here](https://fonts.google.com/?query=syne)
 
-A generic 'serif' font has been included as a backup in the event 'Inter' fails to load or is incompatible with the user's browser. 
+A generic Arial, Helvetica, & sans-serif fonts have been included as a backup in the event 'Syne' fails to load or is incompatible with the user's browser. 
 
 [**Back to top**](#boardgame-buddy)
 ## Features
