@@ -46,6 +46,17 @@ main {
     color:#bc0e5a;
 }
 
+/* overrides bootstrap colours with custom */
+.btn-primary {
+    background-color: #530F83;
+    border-color: #530F83;
+}
+
+.btn-outline-primary {
+    color: #530F83;
+    border-color: #530F83;
+}
+
 /* font styles */
 
 .capitalize {
