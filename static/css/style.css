@@ -14,10 +14,6 @@ main {
     background-color: #bbecf7
 }
 
-.bold {
-    font-weight: 800;
-}
-
 /* colour palettes */
 
 .bg-light-blue {
@@ -63,18 +59,16 @@ main {
     text-transform: capitalize;
 }
 
+.bold {
+    font-weight: 800;
+}
+
 .underline {
     text-decoration: underline;
 }
 
 .text-shadow {
     text-shadow: 1px 1px 2px black;
-}
-
-/* display toggle */
-
-.hidden {
-    display: none;
 }
 
 /* user action immediate feedback messages */
