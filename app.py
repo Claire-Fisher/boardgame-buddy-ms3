@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+
 if os.path.exists("env.py"):
     import env
 
@@ -21,12 +22,26 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/library")
 def library():
+    """Gets all the games from the db and sends to library template
+
+    Returns:
+        _template_ library.html
+        _arr_: All games in db
+    """
+
     games = list(mongo.db.games.find())
     return render_template("library.html", games=games)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """Checks user search inputs and filters the games db.
+
+    Returns:
+        _template_ library.html
+        _arr_: _filtered game list_
+    """
+
     query = {}
 
     players = request.form.get('players')
@@ -53,11 +68,11 @@ def search():
         query["difficulty"] = difficulty
         games = list(mongo.db.games.find(query))
 
-    search = request.form.get("search")
-    if not search:
+    new_search = request.form.get("search")
+    if not new_search:
         pass
     else:
-        query["$text"] = {"$search": search}
+        query["$text"] = {"$search": new_search}
         games = list(mongo.db.games.find(query))
 
     if not query:
@@ -69,6 +84,14 @@ def search():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """User registers a profile account.
+    Calls new_collection().
+
+    Returns:
+        Success: _template_ library.html
+        Fail: _template_ register.html
+    """
+
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -78,7 +101,7 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
 
-        register = {
+        new_register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -89,12 +112,11 @@ def register():
                 "https://cdn1.iconfinder.com/data/icons/project-management-8/"
                 "500/worker-512.png"
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(new_register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        """ Calls new_collection() to generate an empty 
-        collection for the new user"""
+        # Generate empty collection obj for the user
         new_collection(session["user"])
         flash("Registration Successful!")
         return redirect(url_for("library"))
@@ -104,6 +126,16 @@ def register():
 
 @app.route("/new_collection/<username>", methods=["POST"])
 def new_collection(username):
+    """Creates an empty collection obj for the user
+    Called from register()
+
+    Args:
+        username (_string_):
+
+    Returns:
+        _template_: library
+    """
+
     user = mongo.db.users.find_one({"username": username})
 
     create_collection = {
@@ -118,6 +150,13 @@ def new_collection(username):
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """Checks the username and hashed password.
+    User feedback if login successful/unsuccessful.
+
+    Returns:
+        _template_: library
+    """
+
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -130,8 +169,7 @@ def login():
                 existing_user["password"], request.form.get("password")
             ):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
-                print(session['user'])
+                flash(f"Welcome, {session["user"].capitalize()}")
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
@@ -148,23 +186,32 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    """Fetches session users info and collection
+    and renders their profile page.
+
+    Args:
+        username (_str_)
+
+    Returns:
+        _template_: profile
+    """
+
     # grab the session user's username from the db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     info = mongo.db.users.find_one({"username": username})
 
-    # gets the users profile avatar url and turns it into a string
+    # Turns user avatar into a string
     avatar = info.get("avatar_url")
     avatar = str(avatar)
-    # print()
-    # print(avatar)
-    collectionObj = mongo.db.collections.find_one(
-        {"user_id": str(info["_id"])})
-    # print(collectionObj)
-    collection = collectionObj["user_collection"]
-    # print(collection)
 
+    # Fetches collection by user id
+    collection_obj = mongo.db.collections.find_one(
+        {"user_id": str(info["_id"])})
+    collection = collection_obj["user_collection"]
+
+    # Creates an arr of tuples (image, title, game_id)
     collectionImages = []
     for game_id in collection:
         game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
@@ -181,7 +228,7 @@ def profile(username):
 
 @app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
 def edit_collection(this_game):
-    """_summary_  Delete functionality.
+    """Edit/Delete functionality.
     Gets the user collection games.
     User can remove games from their collection.
 
@@ -189,7 +236,8 @@ def edit_collection(this_game):
         game_id (_str_): Game ObjectId
 
     Returns:
-        _data_: refreshs profile page with deleted game instantly removed. 
+        profile()
+        Refreshes profile page with deleted game instantly removed.
     """
     user = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -212,15 +260,27 @@ def edit_collection(this_game):
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
 def edit_profile(username, placeholder=None):
+    """Update functionality. Fetches user profile info and populates form
+    Placeholders if data field is empty. Profile data updated on submit.
+
+    Args:
+        username (_str_)
+        placeholder (_str_, optional) Defaults to None.
+
+    Returns:
+        _template_: profile (with updated data)
+    """
+
     info = mongo.db.users.find_one({"username": username})
     # placeholder instructions for user if values are blank
     placeholder = {
         "city": "Enter your City here" if info["city"] == "" else "",
         "country": "Enter your Country here" if info["country"] == "" else "",
         "favourite_game":
-            "Enter your Favourite Game here"
+            "Enter your favourite game here"
             if info["favourite_game"] == "" else ""
     }
+
     # gets the users profile avatar url and turns it into a string
     avatar = info.get("avatar_url")
     avatar = str(avatar)
@@ -236,34 +296,34 @@ def edit_profile(username, placeholder=None):
         match_id = {"_id": info["_id"]}
         # set save object data to the matched user
         mongo.db.users.update_one(match_id, {"$set": save})
-        # redirect back to updated user profile page
         flash("Profile Successfully Updated")
         return redirect(url_for("profile", username=username))
+
     return render_template(
         "edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
 
 
-
 @app.route("/game/<game_id>", methods=["GET", "POST"])
 def game(game_id):
-    """_summary_  Displays full info for a game selected by the user.
+    """Fetches full info, inc reviews, for the game selected by the user.
+    Add review functionality if active session user.
 
     Args:
         game_id (_str_): Game ObjectId
 
     Returns:
-        _data_: displays full game info and all it's user reviews
+        _template_: game.html
+        Displays full game info and all it's user reviews
     """
-    # Finds all the data for the selected game
+
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    # Creates a list of all the review obj for the target game
     relevant_reviews = list(mongo.db.reviews.find({"game_id": game_id}))
-    # Check if a user is logged in
+
+    # Check if a user is logged in for write review functionality
     username = None
     if "user" in session:
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        # Creates a new review obj from user input into the modal form
         if request.method == "POST":
             new_review = {
                 "game_id": game_id,
@@ -272,7 +332,6 @@ def game(game_id):
                 "review_title": request.form.get("review-title"),
                 "username": username,
             }
-            # Adds the new review obj to the db
             mongo.db.reviews.insert_one(new_review)
             # Adds the new review to the end of the relevant reviews list
             relevant_reviews.append(new_review)
@@ -283,8 +342,13 @@ def game(game_id):
 
 @app.route("/add_game", methods=["GET", "POST"])
 def add_game():
+    """Create functionality, add games to the library.
+
+    Returns:
+        library() OR add_game()
+    """
+
     if request.method == "POST":
-        # check if game already exists in db
         existing_game = mongo.db.games.find_one(
             {"game_title": request.form.get("game_title").lower()})
 
@@ -292,6 +356,7 @@ def add_game():
             flash("That game already exists")
             return redirect(url_for("add_game"))
 
+        # Converts str data from the form into integers and stores in variables
         min_players = int(request.form.get("min_players"))
         max_players = int(request.form.get("max_players"))
         duration = int(request.form.get("duration"))
@@ -306,9 +371,8 @@ def add_game():
             "description": request.form.get("description"),
             "image": request.form.get("image"),
         }
-        print(new_game)
-        mongo.db.games.insert_one(new_game)
 
+        mongo.db.games.insert_one(new_game)
         flash("Game added successfully!")
         return redirect(url_for("library"))
 
@@ -317,8 +381,7 @@ def add_game():
 
 @app.route("/collection/<game_id>", methods=["GET", "POST"])
 def collection(game_id):
-    """_summary_ Allows user to add a game to their personal collection.
-    Identifies the game and user.
+    """Edit functionality, add a game to user's personal collection.
     Flash message if game already exists in user collection.
     Add game id str to user collection arr.
 
@@ -326,7 +389,8 @@ def collection(game_id):
         game_id (_str_): Game ObjectId
 
     Returns:
-        _page_: refreshed render page. DB updates, if conditions met.
+        library().
+        DB updates, if conditions met.
     """
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
     user = mongo.db.users.find_one(
@@ -348,17 +412,18 @@ def collection(game_id):
 
 @app.route("/delete_review/<review>/<game_id>", methods=["POST"])
 def delete_review(review, game_id):
-    """_summary_  Allows user to delete their own game reviews
+    """Delete functionality, user deletes their own game reviews
 
     Args:
         review (_str_): Target review ObjectId
         game_id (_str_): game_id to pass to redirected game page
 
     Returns:
-        _data_: displays full game info and all it's user reviews
+        game().
+        Refreshes full game info and all it's user reviews
         (Minus the review just deleted - as it no longer exists!)
     """
-    # Finds & deletes the target review selected by the user
+
     mongo.db.reviews.delete_one({"_id": ObjectId(review)})
 
     return redirect(url_for('game', game_id=game_id))
@@ -366,7 +431,12 @@ def delete_review(review, game_id):
 
 @app.route("/logout")
 def logout():
-    # remove user from the session cookies
+    """Logs out the user. Removes user from the session cookie
+
+    Returns:
+        login()
+    """
+
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -374,6 +444,9 @@ def logout():
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """
+    404 Error handler
+    """
     return render_template('404.html'), 404
 
 
