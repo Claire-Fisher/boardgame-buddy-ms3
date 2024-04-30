@@ -16,6 +16,13 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
         crossorigin="anonymous" type="text/css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover.css"
+      integrity="sha512-Qg72y9f1a3aVc1FVnjq5YURLOOG8fDKQjMnhxYaZgBz4nIVjpVOBUtuMMMqkZPS1FlVrzzEBXq2sM6Qp1zen/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
         type="text/css">
@@ -27,31 +34,31 @@
 
     <header class="container-fluid">
         <nav id="nav-header" class="navbar row navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand col-4" href="{{ url_for('library') }}"><img id="logo-svg" src="/static/images/bgb-logo.svg" alt="Boardgame Buddy Logo"></a>
+            <a class="navbar-brand col-4 hvr-float" href="{{ url_for('library') }}"><img id="logo-svg" src="/static/images/bgb-logo.svg" alt="Boardgame Buddy Logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse col-8 justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a  class="nav-link text-purple current-nav" href="{{ url_for('library') }}">Games Library</a>
+                        <a  class="nav-link text-purple current-nav hvr-float" href="{{ url_for('library') }}">Games Library</a>
                     </li>
                     {% if session.user %}
                         <li class="nav-item">
-                            <a class="nav-link text-purple" href="{{ url_for('add_game') }}">Add Game</a>
+                            <a class="nav-link text-purple hvr-float" href="{{ url_for('add_game') }}">Add Game</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-purple" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
+                            <a class="nav-link text-purple hvr-float" href="{{ url_for('profile', username=session['user']) }}">My Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-purple" href="{{ url_for('logout') }}">Log Out</a>
+                            <a class="nav-link text-purple hvr-float" href="{{ url_for('logout') }}">Log Out</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link text-purple" href="{{ url_for('login') }}">Log In</a>
+                            <a class="nav-link text-purple hvr-float" href="{{ url_for('login') }}">Log In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-purple" href="{{ url_for('register') }}">Register</a>
+                            <a class="nav-link text-purple hvr-float" href="{{ url_for('register') }}">Register</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -82,11 +89,11 @@
         <h5>&#169; Copyright Claire Fisher 2024</h5>
         <a href="https://github.com/Claire-Fisher/boardgame-buddy-ms3"
             target="_blank" aria-label="Link to site develeper's gitHub (opens in a new tab)">
-            <i class="fa-brands fa-github text-white brand-icon mx-2"></i>
+            <i class="fa-brands fa-github text-white hvr-float brand-icon mx-2"></i>
         </a>
         <a href="https://www.linkedin.com/in/claire-fisher-coder/"
             target="_blank" aria-label="Link to site develeper's Linkedin (opens in a new tab)">
-            <i class="fa-brands fa-linkedin text-white brand-icon mx-2"></i>
+            <i class="fa-brands fa-linkedin text-white hvr-float brand-icon mx-2"></i>
         </a>
     </footer>
 
