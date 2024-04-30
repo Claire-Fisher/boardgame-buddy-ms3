@@ -186,7 +186,8 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """Fetches session users info and collection
+    """Security checks for an active user and a match with username.
+    Fetches session users info and collection
     and renders their profile page.
 
     Args:
@@ -195,35 +196,33 @@ def profile(username):
     Returns:
         _template_: profile
     """
+    if not session.get("user") or session["user"] != username:
+        return redirect(url_for('library'))
+    else:
+        info = mongo.db.users.find_one({"username": username})
 
-    # grab the session user's username from the db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        # Turns user avatar into a string
+        avatar = info.get("avatar_url")
+        avatar = str(avatar)
 
-    info = mongo.db.users.find_one({"username": username})
+        # Fetches collection by user id
+        collection_obj = mongo.db.collections.find_one(
+            {"user_id": str(info["_id"])})
+        collection = collection_obj["user_collection"]
 
-    # Turns user avatar into a string
-    avatar = info.get("avatar_url")
-    avatar = str(avatar)
+        # Creates an arr of tuples (image, title, game_id)
+        collectionImages = []
+        for game_id in collection:
+            game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+            tuple = game["image"], game["game_title"], game_id
+            collectionImages.append(tuple)
 
-    # Fetches collection by user id
-    collection_obj = mongo.db.collections.find_one(
-        {"user_id": str(info["_id"])})
-    collection = collection_obj["user_collection"]
-
-    # Creates an arr of tuples (image, title, game_id)
-    collectionImages = []
-    for game_id in collection:
-        game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-        tuple = game["image"], game["game_title"], game_id
-        collectionImages.append(tuple)
-
-    return render_template(
-        "profile.html",
-        user=username,
-        info=info,
-        avatar=avatar,
-        collectionImages=collectionImages)
+        return render_template(
+            "profile.html",
+            user=username,
+            info=info,
+            avatar=avatar,
+            collectionImages=collectionImages)
 
 
 @app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
@@ -239,6 +238,7 @@ def edit_collection(this_game):
         profile()
         Refreshes profile page with deleted game instantly removed.
     """
+
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     # gets the username
@@ -271,36 +271,39 @@ def edit_profile(username, placeholder=None):
         _template_: profile (with updated data)
     """
 
-    info = mongo.db.users.find_one({"username": username})
-    # placeholder instructions for user if values are blank
-    placeholder = {
-        "city": "Enter your City here" if info["city"] == "" else "",
-        "country": "Enter your Country here" if info["country"] == "" else "",
-        "favourite_game":
-            "Enter your favourite game here"
-            if info["favourite_game"] == "" else ""
-    }
-
-    # gets the users profile avatar url and turns it into a string
-    avatar = info.get("avatar_url")
-    avatar = str(avatar)
-
-    if request.method == "POST":
-        save = {
-            "city": request.form.get("city").lower(),
-            "country": request.form.get("country").lower(),
-            "favourite_game": request.form.get("favourite_game").lower(),
-            "avatar_url": request.form.get("avatar_url")
+    if not session.get("user") or session["user"] != username:
+        return redirect(url_for('library'))
+    else:
+        info = mongo.db.users.find_one({"username": username})
+        # placeholder instructions for user if values are blank
+        placeholder = {
+            "city": "Enter your City here" if info["city"] == "" else "",
+            "country": "Enter your Country here" if info["country"] == "" else "",
+            "favourite_game":
+                "Enter your favourite game here"
+                if info["favourite_game"] == "" else ""
         }
-        # find the object id
-        match_id = {"_id": info["_id"]}
-        # set save object data to the matched user
-        mongo.db.users.update_one(match_id, {"$set": save})
-        flash("Profile Successfully Updated")
-        return redirect(url_for("profile", username=username))
 
-    return render_template(
-        "edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
+        # gets the users profile avatar url and turns it into a string
+        avatar = info.get("avatar_url")
+        avatar = str(avatar)
+
+        if request.method == "POST":
+            save = {
+                "city": request.form.get("city").lower(),
+                "country": request.form.get("country").lower(),
+                "favourite_game": request.form.get("favourite_game").lower(),
+                "avatar_url": request.form.get("avatar_url")
+            }
+            # find the object id
+            match_id = {"_id": info["_id"]}
+            # set save object data to the matched user
+            mongo.db.users.update_one(match_id, {"$set": save})
+            flash("Profile Successfully Updated")
+            return redirect(url_for("profile", username=username))
+
+        return render_template(
+            "edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
 
 
 @app.route("/game/<game_id>", methods=["GET", "POST"])
@@ -347,36 +350,38 @@ def add_game():
     Returns:
         library() OR add_game()
     """
+    if not session.get("user"):
+        return redirect(url_for('library'))
+    else:
+        if request.method == "POST":
+            existing_game = mongo.db.games.find_one(
+                {"game_title": request.form.get("game_title").lower()})
 
-    if request.method == "POST":
-        existing_game = mongo.db.games.find_one(
-            {"game_title": request.form.get("game_title").lower()})
+            if existing_game:
+                flash("That game already exists")
+                return redirect(url_for("add_game"))
 
-        if existing_game:
-            flash("That game already exists")
-            return redirect(url_for("add_game"))
+            # Converts str data from the form into integers and stores in variables
+            min_players = int(request.form.get("min_players"))
+            max_players = int(request.form.get("max_players"))
+            duration = int(request.form.get("duration"))
 
-        # Converts str data from the form into integers and stores in variables
-        min_players = int(request.form.get("min_players"))
-        max_players = int(request.form.get("max_players"))
-        duration = int(request.form.get("duration"))
+            new_game = {
+                "game_title": request.form.get("game_title").lower(),
+                "designer": request.form.get("designer").lower(),
+                "min_players": min_players,
+                "max_players": max_players,
+                "avg_playtime_mins": duration,
+                "difficulty": request.form.get("difficulty").lower(),
+                "description": request.form.get("description"),
+                "image": request.form.get("image"),
+            }
 
-        new_game = {
-            "game_title": request.form.get("game_title").lower(),
-            "designer": request.form.get("designer").lower(),
-            "min_players": min_players,
-            "max_players": max_players,
-            "avg_playtime_mins": duration,
-            "difficulty": request.form.get("difficulty").lower(),
-            "description": request.form.get("description"),
-            "image": request.form.get("image"),
-        }
+            mongo.db.games.insert_one(new_game)
+            flash("Game added successfully!")
+            return redirect(url_for("library"))
 
-        mongo.db.games.insert_one(new_game)
-        flash("Game added successfully!")
-        return redirect(url_for("library"))
-
-    return render_template("add_game.html")
+        return render_template("add_game.html")
 
 
 @app.route("/collection/<game_id>", methods=["GET", "POST"])
