@@ -117,7 +117,8 @@
                             {% if session.user %}
                                 <button class="btn btn-lg btn-outline-primary mb-1 card-library-btns"
                                     type="submit" value="Submit">
-                                        <strong><i class="fa-solid fa-circle-plus"></i> Add to Collection</strong>
+                                        <strong>
+                                            <i class="fa-solid fa-circle-plus text-purple"></i> Add to Collection</strong>
                                 </button>
                             {% else %}
                                 <!-- display if no user logged in. 
@@ -126,7 +127,8 @@
                                 <a href="{{ url_for('login') }}"
                                     class="btn btn-lg btn-outline-primary mb-1 card-library-btns" 
                                         type="button">
-                                        <strong>Add to Collection</strong>
+                                        <strong>
+                                            <i class="fa-solid fa-circle-plus text-purple"></i> Add to Collection</strong>
                                 </a>
                             {% endif %}
                         </form>
