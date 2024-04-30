@@ -1,14 +1,13 @@
 # Boardgame Buddy
+![Boardgame Buddy Logo](static/images/bgb-logo.svg)
 ### This site is designed as a Boardgame information resource, and personal boardgame-collection manager. 
 This project is intended for users of any age. It is developed using a mobile first approach and is fully responsive. The project aims to meet high standards of accessibility requirements. 
 
-![A mock-up image of the Boardgame Buddy project](/###)
+![A mock-up image of the Boardgame Buddy project](documents/readme-images/bgb-mockup.png)
 
-[Click here to deploy this project live](/###)
+## [Click here to deploy this project live](https://boardgame-buddy-c89ff5d28931.herokuapp.com/)
 
 **PLEASE NOTE: This documentation contains many images which can be viewed via a dropdown toggle.**
-
-check github/mongoDB connected 
 
 ## Table of Contents
 * [**Planning and Development**](#planning-and-development)
@@ -38,48 +37,56 @@ check github/mongoDB connected
 ## Planning and Development
 ### Target Users
 - Users of all age groups.
-- Users who are looking to spend some time on a simple game.
-- Users who want a game for a couple of seconds, to a couple of minutes, and beyond.
-- Users who want a clear and easy-to-use game with simple, familiar rules.
-- Users who want entertainment while waiting for something (commuters, patients in a waiting room etc).
+- Users who want to find introductory info about different Board Games.
+- Users who want fast and easily accessible game information.
+- Users who want peer recommendations on Board Games.
+- Users who want to filter a game library according to their needs.
+- Users who want to contribute more games and reviews to the site.
+- Users who want to be able to create and manage a collection of their own games.
 
 ### User Stories
-1. As a user, I want to be entertained.
+1. As a budding board gamer, I want to quickly find introductory information on lots of different Board Games.
 2. As a user, I want to have a positive user experience.
-3. As a user, I want the game to be intuitive and the rules easy to find.
-4. As a user, I want to use the project across multiple devices.
-5. As a travelling user, I want to be able to play the game with my mobile device in one hand, while I hold onto a transport safety rail, or bags of groceries.
-6. As a differently abled user, I want the product to be accessible.
+3. As a user, I want the site to be intuitive and easy to navigate.
+4. As a user, I want to use the site across multiple devices.
+5. As a busy adult planning a Board Game night with friends, I want to be able to quickly search for games that will meet my group's needs.
+6. As Board Game fanatic, I want to document and manage my game collection. 
+7. As a differently abled user, I want the product to be accessible.
 
 ### Site Objectives
 1. To provide a positive user experience.
 2. To create an intuitive UI that provides good site flow.
-3. To build a family-friendly game that is appropriate for all ages.
-4. To build a single-finger playable game. 
-5. To deliver a game that is responsive on a large variety of screen sizes and mobile devices.
-6. To create a fast, easy-to-use game that can be enjoyed in less than 1 minute.
-7. To deliver a game that implements accessibility needs to a high level.
+3. To build a family-friendly product.
+4. To deliver a game that is responsive on a large variety of screen sizes and mobile devices.
+5. To create a fast, reliable site that can fetch a lot of information quickly and display it clearly.
+6. To allow users to create their own profiles, with log in functionality that is secure.
+7. To give users the functionality to update their own profile.
+7. To provide functionality for users to build their own game collection (and delete collection games too)
+8. To allow users to add and share more games to the main library.
+9. To allow users to create and delete their own reviews on games. 
 
 ### Approach
 - Mobile first design.
-- The game functionality will be provided to the user logically and intuitively.
+- The site functionality will be provided to the user logically and intuitively.
 - The site will be created following the principles of user experience design.
 - The content of the site will be inoffensive and accessible to all.
 - Clean, professional design, with consistent colour-scheme, style and layouts throughout.
 
 ### Research
 The following sites were examined as part of my project research:
+- https://boardgamegeek.com/
+- https://www.board-game.co.uk/
+- https://theboardgamehut.co.uk/
 
 Common themes found:
   - Responsive design.
   - Neutral backgrounds to page styling.
-  - Colourful, busy designs, auto-played music.
+  - Massive amounts of info on the screen that could be overwhelming to the user.
 
 My adjustments to suit my project aims:
-  - Less colour. Keep to a monochrome palette for better accessibility. 
-  - Clearer feedback to the user on their choice and the AI choice. 
+  - Reduce info on the main library page to what's essential.
+  - Give full page space to a single game when the user wants more info.
   - No auto play music that can reduce a user's positive UX.
-  - A best of three outcome. A game that has a definite win or lose outcome is more satisfying to the user. 
 
 [**Back to top**](#boardgame-buddy)
 ### Wireframes
