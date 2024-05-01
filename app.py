@@ -303,7 +303,10 @@ def edit_profile(username, placeholder=None):
             return redirect(url_for("profile", username=username))
 
         return render_template(
-            "edit_profile.html", info=info, placeholder=placeholder, avatar=avatar)
+            "edit_profile.html",
+            info=info,
+            placeholder=placeholder,
+            avatar=avatar)
 
 
 @app.route("/game/<game_id>", methods=["GET", "POST"])
@@ -432,6 +435,42 @@ def delete_review(review, game_id):
     mongo.db.reviews.delete_one({"_id": ObjectId(review)})
 
     return redirect(url_for('game', game_id=game_id))
+
+
+@app.route("/edit_review/<review>/<game_id>", methods=["POST"])
+def edit_review(review, game_id):
+    """Edit functionality, user edits their own game reviews
+
+    Args:
+        review (_str_): Target review ObjectId
+        game_id (_str_): game_id to pass to redirected game page
+
+    Returns:
+        game().
+        Refreshes full game info and all it's user reviews
+    """
+
+    if not session.get("user"):
+        return redirect(url_for('library'))
+    else:
+
+        if request.method == "POST":
+            save_review = {
+                "review_title": request.form.get("edit_review_title").lower(),
+                "review": request.form.get("edit_review")
+            }
+
+            mongo.db.reviews.update_one(
+                {"_id": ObjectId(review)}, {"$set": save_review})
+            flash("Review Successfully Updated")
+            game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+            relevant_reviews = list(
+                mongo.db.reviews.find({"game_id": game_id}))
+            # After updating the review, render the game template directly
+            return render_template("game.html", game=game, relevant_reviews=relevant_reviews)
+
+        # If the request is not POST, redirect to the game route
+        return redirect(url_for("game", game_id=game_id))
 
 
 @app.route("/logout")

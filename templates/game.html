@@ -76,7 +76,7 @@
                                 <!-- review main text input -->
                                 <div class="form-group m-2 row">
                                     <label for="review" class="mr-2" aria-hidden="true">Review:</label>
-                                    <textarea type="text" required id="review" name="review" 
+                                    <textarea required id="review" name="review" 
                                         min-length="5" maxlength="400" rows="5" cols="60"></textarea>
                                     <small class="text-muted">Reviews are limited to 400 characters.</small>
                                 </div>
@@ -134,6 +134,14 @@
                                 <p class="capitalize m-0 p-2">Game: {{ review.game_title }}</p>
                                 <p class="capitalize m-0 p-2">Author: {{ review.username }}</p>
                                 {% if session.user|lower == review.username|lower %}
+                                    <button
+                                        class="btn btn-lg btn-outline-primary m-2"
+                                        type="submit"
+                                        value="submit"
+                                        data-toggle="modal"
+                                        data-target="#editModal{{ loop.index }}">
+                                        Edit
+                                    </button>
                                     <button 
                                         class="btn btn-lg btn-outline-danger m-2"
                                         type="submit"
@@ -142,6 +150,50 @@
                                         data-target="#deleteModal{{ loop.index }}">
                                         Delete
                                     </button>
+                                    <!-- edit review modal -->
+                                    <div class="modal fade" id="editModal{{ loop.index }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-yellow">
+                                                    <h5 class="modal-title" id="editModalLabel"><strong>Edit your review for {{ game.game_title }}</strong></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span class="text-purple" aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action="{{ url_for('edit_review', review=review._id, game_id=game._id) }}" method="POST" class="modal-body text-center">
+                                                    <!-- Add a hidden input field to include the game_id -->
+                                                    <input type="hidden" name="game_id" value="{{ game._id }}">
+                                                    <!-- review title input -->
+                                                    <div class="form-group m-2 row">
+                                                        <label for="edit_review_title" class="mr-2" aria-hidden="true">Review Title:</label>
+                                                        <input type="text" value="{{ review.review_title }}" required
+                                                            id="edit_review_title" name="edit_review_title" min-length="5" maxlength="30">
+                                                    </div>
+                                                    <!-- review main text input -->
+                                                    <div class="form-group m-2 row">
+                                                        <label for="edit_review" class="mr-2" aria-hidden="true">Review:</label>
+                                                        <textarea required id="edit_review" name="edit_review" 
+                                                            min-length="5" maxlength="400" rows="5" cols="60">{{ review.review }}</textarea>
+                                                        <small class="text-muted">Reviews are limited to 400 characters.</small>
+                                                    </div>
+                                                    <div>
+                                                        <button 
+                                                            type="button" data-dismiss="modal"
+                                                            class="btn btn-lg btn-danger my-2 shadow">
+                                                                <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
+                                                        </button>
+                                                        <button
+                                                            type="submit"
+                                                            class="btn btn-lg btn-primary text-white my-2 shadow">
+                                                                Save 
+                                                                    <i class="fa-solid fa-check mx-1" aria-hidden="true"></i> 
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <!-- delete review modal -->
                                     <div class="modal fade" id="deleteModal{{ loop.index }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
