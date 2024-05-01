@@ -106,7 +106,7 @@ main {
     margin: auto;
 }
 
-#game-image {
+img.game-image {
     object-fit: contain;
     border: 10px solid white;
 }
@@ -191,7 +191,7 @@ main {
     }
 
     /* library.html: game image on game card */
-    #game-image {
+    img.game-image {
         max-width: 300px;
         max-height: 300px;
         padding: 0;
@@ -229,7 +229,7 @@ main {
 @media screen and (min-width:576px) and (max-width:767px) {
 
     /* library.html: game image on game card */
-    #game-image {
+    img.game-image{
         max-width: 200px;
         max-height: 200px;
         margin-left: 0;
@@ -256,7 +256,7 @@ main {
 @media screen and (min-width:768px) and (max-width:991px) {
 
     /* library.html: game image on game card */
-    #game-image {
+    img.game-image {
         max-width: 300px;
         max-height: 300px;
     }
@@ -281,7 +281,7 @@ main {
 @media screen and (min-width:992px) {
 
     /* library.html: game image on game card */
-    #game-image {
+    img.game-image {
         max-width: 300px;
         max-height: 300px;
     }

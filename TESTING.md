@@ -324,11 +324,12 @@ My manual testing logs are as follows:
 </details> 
 
 * ***Errors Found:***
-    * None
+    * Bad value button for attribute anchor elements
+    * Duplicate IDs game-image
 * ***Warnings Found:***
     * 
 * ***Action Taken:***
-    * None
+    * Changed the id="game-image" to a class, and changed all the relevant css styles. (The element was being looped over, therefore creating many duplicat IDs)
 
 ### CSS - https://...
 
