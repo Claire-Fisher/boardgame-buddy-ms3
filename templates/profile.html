@@ -8,11 +8,12 @@
             <div id="circle-border" class="col-sm-12 col-md-4">
                 <img id="circle-profile-img"
                     src="{{ avatar }}"
-                    alt="Profile image for {{ username }}" no-repeat center center>
+                    alt="Profile image for {{ username }}"
+                    onerror="this.onerror=null;this.src='/static/images/no-img.jpg'">
             </div>
             <div id="profile-info" class="col-sm-12 col-md-8">
                 <!-- user profile info -->
-                <h3 class="username-title">
+                <h3 class="username-title capitalize">
                     <strong>{{ info.username }}'s Profile</strong>
                 </h3>
                 <p class="m-0">Email: {{ info["email"] }}</p>

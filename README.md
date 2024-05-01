@@ -293,11 +293,18 @@ Template code blocks taken from [Bootstrap 4.6 Library](https://getbootstrap.com
 <details><summary>View the navbar forms code here</summary>
 <img src="documents/readme-images/bootstrap-forms-navbar.png">
 </details>
+<br>
+Onerror image attribute to handle image errors - Taken from an article by Rahul Nanwani.
+<details><summary>View the code here</summary>
+<img src="documents/readme-images/onerror-img-attr.png">
+</details>
 
 ## **Tutorials** ##
 
-Create a 404 page in flask|python tutorial video by ZetBit
+- Create a 404 page in flask|python tutorial video by ZetBit
 [View here](https://www.google.com/search?q=flask+how+to+add+404+pages&rlz=1C1GCEU_enGB1105GB1105&oq=flask+how+to+add+404+pages&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMgoIBhAAGIAEGKIEMgoIBxAAGIAEGKIEMgoICBAAGKIEGIkFMgoICRAAGIAEGKIE0gEINzgxMmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7525ba34,vid:50N7K4oDF4g,st:43)
+
+- Handling image doesn't exist issues. Article by Rahul Nanwani [View here](https://blog.imagekit.io/how-to-handle-loading-images-that-may-not-exist-on-your-website-92e6c3c6ea63)
 
 ## **Credits**
 - Shaun Russell: site logo.

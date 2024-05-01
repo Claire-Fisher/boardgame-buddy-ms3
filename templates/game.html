@@ -14,7 +14,7 @@
                     <img id="game-image" src="{{ game.image }}"
                             class="card-img-top"
                             alt="An image of the game {{ game.game_title}}"
-                            no-repeat>
+                            onerror="this.onerror=null;this.src='/static/images/no-img.jpg'">
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <div class="card-body">

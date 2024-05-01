@@ -46,7 +46,7 @@
                 </label>
                 <div class="input-group">
                     <select id="difficulty" name="difficulty" 
-                        class="form-control-lg mr-2 user-filter" aria-label="Difficulty"
+                        class="form-control-lg mr-2" aria-label="Difficulty"
                         style="width: 9rem;">
                         <option class="" value="">Difficulty</option>
                         <option class="" value="beginner">Beginner</option>
@@ -80,7 +80,7 @@
     {% if games|length > 0 %}
     <div class="container-fluid m-0 p-0">
         <div class="row bg-yellow">
-            <h5 class="text-center col-12 p-0 m-1"><strong>{{ games|length }} Games Found</strong></h5>
+            <h5 class="text-center col-12 mt-1 p-0"><strong>{{ games|length }} Games Found</strong></h5>
         </div>
         <div class="row">
             {% for game in games %}
@@ -91,7 +91,7 @@
                             <img id="game-image" src="{{ game.image }}"
                                 class="card-img-top"
                                 alt="An image of the game {{ game.game_title}}"
-                                no-repeat center center>
+                                onerror="this.onerror=null;this.src='/static/images/no-img.jpg'">
                     </a>
                     </div>
                     <div class="card-body">
