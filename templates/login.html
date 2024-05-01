@@ -20,6 +20,7 @@
                             class="form-control col-10 mx-auto" placeholder="Enter your username here"
                             pattern="^[a-zA-Z0-9]{3,15}$" id="username" name="username" 
                             aria-describedby="usernameHelp">
+                        <div id="usernameHelp" hidden>Enter your username here</div>
                     </div>
                     <!-- password input -->
                     <div class="form-group row">
@@ -31,13 +32,15 @@
                             class="form-control col-10 mx-auto" 
                             placeholder="Enter your password here" pattern="^[a-zA-Z0-9]{6,15}$" 
                             id="password" name="password" aria-describedby="paswordHelp">
+                        <div id="paswordHelp" hidden>Enter your password here</div>
                     </div>
                     <!-- log in button -->
                     <div class="row">
-                        <button class="btn-lg btn-primary col-sm-6 col-md-4 my-2 mx-auto shadow" 
+                        <button id="submitHelp" class="btn-lg btn-primary col-sm-6 col-md-4 my-2 mx-auto shadow" 
                             type="submit" value="Submit">
                             Log in <i class="fa-solid fa-sign-in-alt mx-1"></i>
                         </button>
+                        <div id="submitHelp" hidden>Submit button to action log in</div>
                     </div>
                 </form>
             </div>
