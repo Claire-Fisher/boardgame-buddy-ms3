@@ -197,6 +197,11 @@ main {
         padding: 0;
     }
 
+    /* h1 titles */
+    .main-title {
+        font-size: 1.5rem;
+    }
+
     /* profile.html: user image */
     #circle-border {
         width: 150px;
@@ -206,7 +211,6 @@ main {
     .username-title {
         margin: 0;
         line-height: 1;
-        font-size: 1rem;
     }
 
     #profile-info {
@@ -231,6 +235,11 @@ main {
         margin-left: 0;
     }
 
+    /* h1 titles */
+    .main-title {
+        font-size: 2rem;
+    }
+
     /* profile.html: user image */
     #circle-border {
         width: 200px;
@@ -252,6 +261,11 @@ main {
         max-height: 300px;
     }
 
+    /* h1 titles */
+    .main-title {
+        font-size: 2.2rem;
+    }
+
     /* profile.html: user image */
     #circle-border {
         width: 300px;
@@ -270,6 +284,11 @@ main {
     #game-image {
         max-width: 300px;
         max-height: 300px;
+    }
+
+    /* h1 titles */
+    .main-title {
+        font-size: 2.8rem;
     }
 
     /* profile.html: user image */
