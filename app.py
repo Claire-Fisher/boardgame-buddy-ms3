@@ -452,7 +452,10 @@ def page_not_found(e):
     """
     404 Error handler
     """
-    return render_template('404.html'), 404
+    try:
+        return render_template('404.html'), 404
+    except Exception as e:
+        return "Ann error occurred", 500
 
 
 if __name__ == "__main__":
