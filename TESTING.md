@@ -318,6 +318,8 @@ My manual testing logs are as follows:
 ## **Validators**
 
 ### HTML validator checks w3.org
+<hr>
+
 ### Library [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com)
 <details><summary>HTML validator for LIBRARY Initial Results</summary>
 <img src="documents/testing-images/html-validator-errors-library.png">
@@ -328,8 +330,9 @@ My manual testing logs are as follows:
     * Duplicate ID usernameHelp
 * ***Action Taken:***
     * Changed the id="game-image" to a class, and changed all the relevant css styles. (The element was being looped over, therefore creating many duplicat IDs)
+<hr>
 
-### Register [View current results here###]()
+### Register [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Fregister)
 <details><summary>HTML validator for REGISTER Initial Results</summary>
 <img src="documents/testing-images/html-validator-errors-register.png">
 </details>
@@ -338,6 +341,18 @@ My manual testing logs are as follows:
     * Duplicate ID usernameHelp
 * ***Action Taken:***
     * Corrected second occurance of id to passwordHelp
+<hr>
+
+### Log in [View current results here###]()
+<details><summary>HTML validator for LOG IN Initial Results</summary>
+<img src="">
+</details>
+
+* ***Errors Found:***
+    * Duplicate aria-describedby attributes
+* ***Action Taken:***
+    * Corrected second occurance of attribute
+<hr>
 
 ### CSS - https://...
 
