@@ -25,28 +25,32 @@
                         <p class="card-text-description"><strong>Description: </strong>{{ game.description }}</p>
                         <p class="card-text"><strong>Reviews: </strong>{{ relevant_reviews|length }}</p>
                     </div>
-                    <!-- add to user collection -->
+                    <!-- game info buttons -->
                     <div class="text-left mb-3">
                         {% if session.user %}
                             <a href="{{ url_for('game', game_id=game._id) }}"
                                 class="btn btn-lg btn-outline-primary mx-3 my-2"
-                                data-toggle="modal" data-target="#writeReviewModal">
+                                data-toggle="modal" data-target="#leaveAReviewModal"
+                                aria-labelledby="leaveAReviewModalLabel">
                                 <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                                 <strong> Leave a review</strong>
                             </a>
                             <a href="{{ url_for('library') }}"
-                                class="btn btn-lg btn-outline-primary back-to-library mx-3 my-2">
+                                class="btn btn-lg btn-outline-primary back-to-library mx-3 my-2"
+                                aria-label="Back to game library">
                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i>
                                 <strong> Back to main game library</strong>
                             </a>
                         {% else %}
                             <a href="{{ url_for('login') }}"
-                                class="btn btn-lg btn-outline-primary mx-3 my-2">
+                                class="btn btn-lg btn-outline-primary mx-3 my-2"
+                                aria-label="Redirects to log in page">
                                 <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                                 <strong> Leave a Review</strong>
                             </a>
                             <a href="{{ url_for('library') }}" 
-                                class="btn btn-lg btn-outline-primary back-to-library mx-3 my-2">
+                                class="btn btn-lg btn-outline-primary back-to-library mx-3 my-2"
+                                aria-label="Back to game library">
                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i>
                                 <strong> Back to main game library</strong>
                             </a>
@@ -57,7 +61,7 @@
                     </div>
                 </div>
                 <!-- add a review modal window -->
-                <div class="modal fade" id="writeReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="leaveAReviewModal" tabindex="-1" aria-labelledby="leaveAReviewModal" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header bg-yellow">
@@ -69,37 +73,35 @@
                             <form class="modal-body" method="POST" action="{{ url_for('game', game_id=game._id) }}">
                                 <!-- review title input -->
                                 <div class="form-group m-2 row">
-                                    <label for="review-title" class="mr-2" aria-hidden="true">Review Title:</label>
+                                    <label for="review-title" class="mr-2" aria-hidden="true" id="review-title-label">Review Title:</label>
                                     <input type="text" placeholder="Give your review a title" required
                                         id="review-title" name="review-title" maxlength="30"
-                                        aria-labelledby="review-titleHelp">
+                                        aria-labelledby="review-title-label" aria-describedby="review-title">
                                 </div>
-                                <div aria-describedby="review-titleHelp" hidden>Input your review title here</div>
+                                <div id="review-title-help" hidden>Input your review title here</div>
                                 <!-- review main text input -->
                                 <div class="form-group m-2 row">
-                                    <label for="review" class="mr-2" aria-hidden="true">Review:</label>
+                                    <label for="review" class="mr-2" aria-hidden="true" id="review-label">Review:</label>
                                     <textarea required id="review" name="review" 
                                         maxlength="400" rows="5" cols="60"
-                                        aria-labelledby="review-mainHelp"></textarea>
+                                        aria-labelledby="review-label" aria-describedby="review"></textarea>
                                     <small class="text-muted">Reviews are limited to 400 characters.</small>
-                                    <div aria-describedby="review-mainHelp" hidden>Input your review message here</div>
+                                    <div id="review-help" hidden>Input your review message here</div>
                                 </div>
                                 <div class="modal-footer bg-yellow">
                                     <button 
                                         type="button" data-dismiss="modal"
                                         class="btn btn-lg btn-primary my-2"
-                                        aria-labelledby="go-backHelp">
+                                        aria-label="Back">
                                         <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
                                     </button>
-                                    <div aria-describedby="go-backHelp" hidden>Cancel and go back</div>
                                     <button
                                         type="submit"
                                         class="btn btn-lg bg-info text-white my-2"
-                                        aria-labelledby="submit-reviewHelp">
+                                        aria-label="submit">
                                             Submit
                                         <i class="fa-solid fa-check mx-1" aria-hidden="true"></i>
                                     </button>
-                                    <div aria-describedby="submit-reviewHelp" hidden>Save and post your review</div>
                                 </div>
                             </form>
                         </div>
@@ -120,20 +122,18 @@
                         {% if session.user %}
                             <a href="{{ url_for('game', game_id=game._id) }}" class="btn btn-lg btn-outline-primary justisfy-content-center mx-3"
                                 data-toggle="modal" data-target="#writeReviewModal"
-                                aria-labelledby="write-reviewHelp">
+                                aria-label="Leave a review">
                                 <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                                 <strong> Leave a review</strong>
-                                <div aria-describedby="write-reviewHelp" hidden>Write a review for {{ game.game_title }}</div>
                             </a>
                         {% else %}
                             <!-- if no user logged in - switches review btn to login -->
                             <a href="{{ url_for('login') }}"
                                 class="btn btn-lg btn-outline-info my-1"
-                                aria-labelledby="user-reviewHelp">
+                                aria-label="Redirects to log in">
                                 <i class="fa-solid fa-sign-in mx-1" aria-hidden="true"></i>
                                 <strong>Log In</strong></a>
                             <p class="text-pink text-center mt-1"><small>You must be logged in to leave a review.</small></p>
-                            <div aria-describedby="user-reviewHelp" hidden>Only users can leave reviews. Click this to go to log in page</div>
                         {% endif %}
                     </div>
                 {% else %}
@@ -152,7 +152,8 @@
                                         type="submit"
                                         value="submit"
                                         data-toggle="modal"
-                                        data-target="#editModal{{ loop.index }}">
+                                        data-target="#editModal{{ loop.index }}"
+                                        aria-label="Edit your review button">
                                         Edit
                                     </button>
                                     <button 
@@ -160,15 +161,16 @@
                                         type="submit"
                                         value="submit"
                                         data-toggle="modal"
-                                        data-target="#deleteModal{{ loop.index }}">
+                                        data-target="#deleteModal{{ loop.index }}"
+                                        aria-label="Delete your review button">
                                         Delete
                                     </button>
                                     <!-- edit review modal -->
-                                    <div class="modal fade" id="editModal{{ loop.index }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="editModal{{ loop.index }}" tabindex="-1" aria-labelledby="editModal{{ loop.index }}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-yellow">
-                                                    <h5 class="modal-title" id="editModalLabel" aria-describedby="editModalLabel"><strong>Edit your review for {{ game.game_title }}</strong></h5>
+                                                    <h5 class="modal-title" id="editModalLabel" aria-labelledby="editModalLabel"><strong>Edit your review for {{ game.game_title }}</strong></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span class="text-purple" aria-hidden="true">&times;</span>
                                                     </button>
@@ -181,44 +183,38 @@
                                                         <label for="edit_review_title" class="mr-2" aria-hidden="true">Review Title:</label>
                                                         <input type="text" value="{{ review.review_title }}" required
                                                             id="edit_review_title" name="edit_review_title" 
-                                                            aria-labelledby="edit-review-titleHelp" minlength="3" maxlength="30">
+                                                            aria-labelledby="edit_review_title_label" minlength="3" maxlength="30">
                                                         <div aria-describedby="edit-review-titleHelp" hidden>Edit your review title here</div>
                                                     </div>
                                                     <!-- review main text input -->
                                                     <div class="form-group m-2 row">
                                                         <label for="edit_review" class="mr-2" aria-hidden="true">Review:</label>
                                                         <textarea required id="edit_review" name="edit_review" 
-                                                            minlength="5" maxlength="400" rows="5" cols="60" aria-labelledby="edit-review-mainHelp">{{ review.review }}</textarea>
+                                                            minlength="5" maxlength="400" rows="5" cols="60" aria-labelledby="edit-review-label">{{ review.review }}</textarea>
                                                         <small class="text-muted">Reviews are limited to 400 characters.</small>
-                                                        <div aria-describedby="edit-review-mainHelp" hidden>Edit your review message here</div>
                                                     </div>
                                                     <div>
                                                         <button 
                                                             type="button" data-dismiss="modal"
-                                                            class="btn btn-lg btn-danger my-2 shadow"
-                                                            aria-labelledby="backHelp">
+                                                            class="btn btn-lg btn-danger my-2 shadow">
                                                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
                                                         </button>
-                                                        <div aria-describedby="backHelp" hidden>Cancel and go back</div>
                                                         <button
                                                             type="submit"
-                                                            class="btn btn-lg btn-primary text-white my-2 shadow"
-                                                                aria-labelledby="save-edited-reviewHelp">
-                                                                Save 
-                                                                    <i class="fa-solid fa-check mx-1" aria-hidden="true"></i> 
+                                                            class="btn btn-lg btn-primary text-white my-2 shadow">
+                                                                <i class="fa-solid fa-check mx-1" aria-hidden="true"></i> Save
                                                         </button>
-                                                        <div aria-describedby="save-edited-reviewHelp" hidden>Save and post your edited review</div>
                                                     </div>
                                                 </form>
                                             </div> 
                                         </div>
                                     </div>
                                     <!-- delete review modal -->
-                                    <div class="modal fade" id="deleteModal{{ loop.index }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="deleteModal{{ loop.index }}" tabindex="-1" aria-labelledby="deleteModal{{ loop.index }}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-yellow">
-                                                    <h5 class="modal-title" id="deleteModalLabel" aria-describedby="deleteModalLabel"><strong>Are you sure?...</strong></h5>
+                                                    <h5 class="modal-title" id="deleteModalLabel" aria-labelledby="deleteModalLabel"><strong>Are you sure?...</strong></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span class="text-purple" aria-hidden="true">&times;</span>
                                                     </button>
@@ -237,19 +233,14 @@
                                                         action="{{ url_for('delete_review', review=review._id, game_id=review.game_id) }}">
                                                         <button 
                                                             type="button" data-dismiss="modal"
-                                                            class="btn btn-lg btn-primary my-2 shadow"
-                                                            aria-labelledby="returnHelp">
+                                                            class="btn btn-lg btn-primary my-2 shadow">
                                                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
                                                         </button>
-                                                        <div aria-describedby="returnHelp" hidden>Cancel and go back</div>
                                                         <button
                                                             type="submit"
-                                                            class="btn btn-lg bg-danger text-white my-2 shadow"
-                                                            aria-labelledby="deleteReviewHelp">
-                                                                Confirm 
-                                                                    <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> 
+                                                            class="btn btn-lg bg-danger text-white my-2 shadow">
+                                                                <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> Confirm
                                                         </button>
-                                                        <div aria-describedby="deleteReviewHelp" hidden>Confirm review deletion</div>
                                                     </form>
                                                 </div>
                                             </div>
