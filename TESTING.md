@@ -343,15 +343,37 @@ My manual testing logs are as follows:
     * Corrected second occurance of id to passwordHelp
 <hr>
 
-### Log in [View current results here###]()
+### Log in [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Flogin)
 <details><summary>HTML validator for LOG IN Initial Results</summary>
-<img src="">
+<img src="documents/testing-images/html-validator-errors-login.png">
 </details>
 
 * ***Errors Found:***
     * Duplicate aria-describedby attributes
 * ***Action Taken:***
     * Corrected second occurance of attribute
+<hr>
+
+### Profile [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Fprofile%2Fclaire)
+<details><summary>HTML validator for PROFILE Initial Results</summary>
+<img src="documents/testing-images/html-validator-errors-profile.png">
+</details>
+
+* ***Errors Found:***
+    * Duplicate aria-describedby attributes
+* ***Action Taken:***
+    * Corrected second occurance of attribute
+<hr>
+
+### Game Page [View current results here###]()
+<details><summary>HTML validator for GAME Initial Results</summary>
+<img src="documents/testing-images/html-validator-errors-profile.png">
+</details>
+
+* ***Errors Found:***
+    * 
+* ***Action Taken:***
+    * 
 <hr>
 
 ### CSS - https://...
