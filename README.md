@@ -51,7 +51,7 @@ This project is intended for users of any age. It is developed using a mobile fi
 3. As a user, I want the site to be intuitive and easy to navigate.
 4. As a user, I want to use the site across multiple devices.
 5. As a busy adult planning a Board Game night with friends, I want to be able to quickly search for games that will meet my group's needs.
-6. As Board Game fanatic, I want to document and manage my game collection. 
+6. As a Board Game fanatic, I want to document and manage my game collection. 
 7. As a differently abled user, I want the product to be accessible.
 
 ### Site Objectives
@@ -135,10 +135,10 @@ Using Figma's wireframes capabilities, I was able to play with initial layouts a
 ### Colour Scheme
 ![Image of colour palette](documents/readme-images/bgb-colour-scheme.png)
 
-To hit site objective 10, I've chosen a bright, 80's-style colour-scheme. The contrasts provide good readability and accessibility. The colour choices appeals to all genders and ages. Some bootstrap button colours have also been included, and these compliment my base colour scheme well.
+To hit site objective 10, I've chosen a bright, 80's-style colour-scheme. The contrasts provide good readability and accessibility. The colour choices appeal to all genders and ages. Some bootstrap button colours have also been included, and these compliment my base colour scheme well.
 
 ### Typography
-'Syne" from Google Fonts was selected throughout as a clear, easily-readable font choice that matches my site asthetic. [View here](https://fonts.google.com/?query=syne)
+'Syne" from Google Fonts was selected throughout as a clear, easily-readable font choice that matches my site aesthetic. [View here](https://fonts.google.com/?query=syne)
 
 A generic Arial, Helvetica, & sans-serif fonts have been included as a backup in the event 'Syne' fails to load or is incompatible with the user's browser. 
 
@@ -158,10 +158,10 @@ This project includes many features, these include:
   - Examples: 
     - Library page: users can access a game's full info page by clicking on the card Game Image, the Game Title, or the More Info button.
     - User Collection area: as well as being able to click the "Remove" button on a game image, users can click the main image and navigate to it's full info page. 
-    - Where actions require a user to have an account and be logged in, if no sesssion user is found, a notification paragraph shows explaining this. If the user still clicks the Call-To-Action, the button navigates them to the Log in page instead. 
+    - Where actions require a user to have an account and be logged in, if no session user is found, a notification paragraph shows explaining this. If the user still clicks the Call-To-Action, the button navigates them to the Log in page instead. 
 
 ### Clear typography
-- The highly legible and readable font 'Syne' was selected from Google-fonts. As a Google-fonts listed typography, 'Syne' has a high chance of being usable across most devices. A generic fonts have been coded to display in the event a device is not compatible with 'Syne'. 
+- The highly legible and readable font 'Syne' was selected from Google-fonts. As a Google-fonts listed typography, 'Syne' has a high chance of being usable across most devices. Generic fonts have been coded to display in the event a device is not compatible with 'Syne'. 
 
 ### Custom Logo
 - Custom designed Logo in keeping with project brand aesthetics: both in colour and typography.
@@ -170,7 +170,7 @@ This project includes many features, these include:
 
 ### Images
 - Images feature frequently across the site as a part of game info and user profile options. 
-- Images are stored in the mongoDB as URL's and can be rendered very quickly for positive UI and UX.
+- Images are stored in the mongoDB as URLs and can be rendered very quickly for positive UI and UX.
 
 ### Search filters functionality
 - Users can filter the library to views only the games that meet their gaming needs. 
@@ -222,17 +222,17 @@ The footer provides copyright information and name of the site creator. Plus cli
 [**Back to top**](#boardgame-buddy)
 ## Future Features
 ### Feedback Form
-A feedback form page. User can report misuse of content creation. Users can be invited to report bugs, ask for future features, or suggest accessibility improvements.  
+A feedback form page. Users can report misuse of content creation. Users can be invited to report bugs, ask for future features, or suggest accessibility improvements.  
 
 ### Advertising 
 An advertising banner could be added to promote company sponsors.
-Monitised links to boardgame online shops to direct users to purchase could be included on the game full info page. 
+Monitized links to boardgame online shops to direct users to purchase could be included on the game full info page. 
 - User feedback from Penny Lewis: "You could have links that take you to independents that sell the games, rather than Amazon."
 
 ## Future Features Requested my user testers
 
 ### Joe Hewitt
-"Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game'or 'On the lookout for future expansions!'."
+"Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game' or 'On the lookout for future expansions!'."
 
 ### Tom Harris
 "If I was to suggest improvements, I would say the following: 
@@ -321,7 +321,7 @@ Onerror image attribute to handle image errors - Taken from an article by Rahul 
 - Penny Lewis - User tester
 
 ## **Thanks**
-- Richard Wells: Senior Developer, site tester, and my Code Institute Mentor.
+- Richard Wells: Senior Developer, site tester, and my Code Institute Mentor. Thank you for going above and beyond with your support and patience! I massively appreciate the time and expertise you've give me.
 
 - atapas: for his markdown-cheatsheet [View here](https://github.com/atapas/markdown-cheatsheet#horizontal-line)
 
