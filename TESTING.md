@@ -365,15 +365,16 @@ My manual testing logs are as follows:
     * Corrected second occurance of attribute
 <hr>
 
-### Game Page [View current results here###]()
+### Game Page [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Fgame%2F660d3e5d976a40e927d031f2)
 <details><summary>HTML validator for GAME Initial Results</summary>
-<img src="documents/testing-images/html-validator-errors-profile.png">
+<img src="documents/testing-images/html-validator-errors-game.png">
 </details>
 
 * ***Errors Found:***
-    * 
+    * Attrribute errors
+    * Aria-labelledby errors
 * ***Action Taken:***
-    * 
+    * Corrected in game html
 <hr>
 
 ### CSS - https://...
