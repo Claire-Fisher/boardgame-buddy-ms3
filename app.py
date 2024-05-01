@@ -364,7 +364,7 @@ def add_game():
                 flash("That game already exists")
                 return redirect(url_for("add_game"))
 
-            # Converts str data from the form into integers and stores in variables
+            # Converts str data from form into integers & stores in variables
             min_players = int(request.form.get("min_players"))
             max_players = int(request.form.get("max_players"))
             duration = int(request.form.get("duration"))
@@ -467,7 +467,8 @@ def edit_review(review, game_id):
             relevant_reviews = list(
                 mongo.db.reviews.find({"game_id": game_id}))
             # After updating the review, render the game template directly
-            return render_template("game.html", game=game, relevant_reviews=relevant_reviews)
+            return render_template(
+                "game.html", game=game, relevant_reviews=relevant_reviews)
 
         # If the request is not POST, redirect to the game route
         return redirect(url_for("game", game_id=game_id))
