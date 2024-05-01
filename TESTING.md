@@ -317,19 +317,27 @@ My manual testing logs are as follows:
 [**Back to top**](#testing-boardgame-buddy)
 ## **Validators**
 
-### HTML - https://...
-
-<details><summary>HTML validator Results Image</summary>
-<img src="">
-</details> 
+### HTML validator checks w3.org
+### Library [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com)
+<details><summary>HTML validator for LIBRARY Initial Results</summary>
+<img src="documents/testing-images/html-validator-errors-library.png">
+</details>
 
 * ***Errors Found:***
     * Bad value button for attribute anchor elements
-    * Duplicate IDs game-image
-* ***Warnings Found:***
-    * 
+    * Duplicate ID usernameHelp
 * ***Action Taken:***
     * Changed the id="game-image" to a class, and changed all the relevant css styles. (The element was being looped over, therefore creating many duplicat IDs)
+
+### Register [View current results here###]()
+<details><summary>HTML validator for REGISTER Initial Results</summary>
+<img src="documents/testing-images/html-validator-errors-register.png">
+</details>
+
+* ***Errors Found:***
+    * Duplicate ID usernameHelp
+* ***Action Taken:***
+    * Corrected second occurance of id to passwordHelp
 
 ### CSS - https://...
 
