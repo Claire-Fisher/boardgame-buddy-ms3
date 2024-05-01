@@ -71,26 +71,35 @@
                                 <div class="form-group m-2 row">
                                     <label for="review-title" class="mr-2" aria-hidden="true">Review Title:</label>
                                     <input type="text" placeholder="Give your review a title" required
-                                        id="review-title" name="review-title" min-length="5" maxlength="30">
+                                        id="review-title" name="review-title" maxlength="30"
+                                        aria-labelledby="review-titleHelp">
                                 </div>
+                                <div aria-describedby="review-titleHelp" hidden>Input your review title here</div>
                                 <!-- review main text input -->
                                 <div class="form-group m-2 row">
                                     <label for="review" class="mr-2" aria-hidden="true">Review:</label>
                                     <textarea required id="review" name="review" 
-                                        min-length="5" maxlength="400" rows="5" cols="60"></textarea>
+                                        maxlength="400" rows="5" cols="60"
+                                        aria-labelledby="review-mainHelp"></textarea>
                                     <small class="text-muted">Reviews are limited to 400 characters.</small>
+                                    <div aria-describedby="review-mainHelp" hidden>Input your review message here</div>
                                 </div>
                                 <div class="modal-footer bg-yellow">
                                     <button 
                                         type="button" data-dismiss="modal"
-                                        class="btn btn-lg btn-primary my-2">
-                                        <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back</button>
+                                        class="btn btn-lg btn-primary my-2"
+                                        aria-labelledby="go-backHelp">
+                                        <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
+                                    </button>
+                                    <div aria-describedby="go-backHelp" hidden>Cancel and go back</div>
                                     <button
                                         type="submit"
-                                        class="btn btn-lg bg-info text-white my-2">
+                                        class="btn btn-lg bg-info text-white my-2"
+                                        aria-labelledby="submit-reviewHelp">
                                             Submit
                                         <i class="fa-solid fa-check mx-1" aria-hidden="true"></i>
                                     </button>
+                                    <div aria-describedby="submit-reviewHelp" hidden>Save and post your review</div>
                                 </div>
                             </form>
                         </div>
@@ -110,17 +119,21 @@
                         <h4 class="text-center">What?... No reviews for this game yet?<br>Be the first to write one!</h4>
                         {% if session.user %}
                             <a href="{{ url_for('game', game_id=game._id) }}" class="btn btn-lg btn-outline-primary justisfy-content-center mx-3"
-                                data-toggle="modal" data-target="#writeReviewModal">
+                                data-toggle="modal" data-target="#writeReviewModal"
+                                aria-labelledby="write-reviewHelp">
                                 <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
                                 <strong> Leave a review</strong>
+                                <div aria-describedby="write-reviewHelp" hidden>Write a review for {{ game.game_title }}</div>
                             </a>
                         {% else %}
                             <!-- if no user logged in - switches review btn to login -->
                             <a href="{{ url_for('login') }}"
-                                class="btn btn-lg btn-outline-info my-1">
+                                class="btn btn-lg btn-outline-info my-1"
+                                aria-labelledby="user-reviewHelp">
                                 <i class="fa-solid fa-sign-in mx-1" aria-hidden="true"></i>
                                 <strong>Log In</strong></a>
                             <p class="text-pink text-center mt-1"><small>You must be logged in to leave a review.</small></p>
+                            <div aria-describedby="user-reviewHelp" hidden>Only users can leave reviews. Click this to go to log in page</div>
                         {% endif %}
                     </div>
                 {% else %}
@@ -155,7 +168,7 @@
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-yellow">
-                                                    <h5 class="modal-title" id="editModalLabel"><strong>Edit your review for {{ game.game_title }}</strong></h5>
+                                                    <h5 class="modal-title" id="editModalLabel" aria-describedby="editModalLabel"><strong>Edit your review for {{ game.game_title }}</strong></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span class="text-purple" aria-hidden="true">&times;</span>
                                                     </button>
@@ -167,27 +180,34 @@
                                                     <div class="form-group m-2 row">
                                                         <label for="edit_review_title" class="mr-2" aria-hidden="true">Review Title:</label>
                                                         <input type="text" value="{{ review.review_title }}" required
-                                                            id="edit_review_title" name="edit_review_title" min-length="5" maxlength="30">
+                                                            id="edit_review_title" name="edit_review_title" 
+                                                            aria-labelledby="edit-review-titleHelp" minlength="3" maxlength="30">
+                                                        <div aria-describedby="edit-review-titleHelp" hidden>Edit your review title here</div>
                                                     </div>
                                                     <!-- review main text input -->
                                                     <div class="form-group m-2 row">
                                                         <label for="edit_review" class="mr-2" aria-hidden="true">Review:</label>
                                                         <textarea required id="edit_review" name="edit_review" 
-                                                            min-length="5" maxlength="400" rows="5" cols="60">{{ review.review }}</textarea>
+                                                            minlength="5" maxlength="400" rows="5" cols="60" aria-labelledby="edit-review-mainHelp">{{ review.review }}</textarea>
                                                         <small class="text-muted">Reviews are limited to 400 characters.</small>
+                                                        <div aria-describedby="edit-review-mainHelp" hidden>Edit your review message here</div>
                                                     </div>
                                                     <div>
                                                         <button 
                                                             type="button" data-dismiss="modal"
-                                                            class="btn btn-lg btn-danger my-2 shadow">
+                                                            class="btn btn-lg btn-danger my-2 shadow"
+                                                            aria-labelledby="backHelp">
                                                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
                                                         </button>
+                                                        <div aria-describedby="backHelp" hidden>Cancel and go back</div>
                                                         <button
                                                             type="submit"
-                                                            class="btn btn-lg btn-primary text-white my-2 shadow">
+                                                            class="btn btn-lg btn-primary text-white my-2 shadow"
+                                                                aria-labelledby="save-edited-reviewHelp">
                                                                 Save 
                                                                     <i class="fa-solid fa-check mx-1" aria-hidden="true"></i> 
                                                         </button>
+                                                        <div aria-describedby="save-edited-reviewHelp" hidden>Save and post your edited review</div>
                                                     </div>
                                                 </form>
                                             </div> 
@@ -198,7 +218,7 @@
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-yellow">
-                                                    <h5 class="modal-title" id="deleteModalLabel"><strong>Are you sure?...</strong></h5>
+                                                    <h5 class="modal-title" id="deleteModalLabel" aria-describedby="deleteModalLabel"><strong>Are you sure?...</strong></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span class="text-purple" aria-hidden="true">&times;</span>
                                                     </button>
@@ -217,15 +237,19 @@
                                                         action="{{ url_for('delete_review', review=review._id, game_id=review.game_id) }}">
                                                         <button 
                                                             type="button" data-dismiss="modal"
-                                                            class="btn btn-lg btn-primary my-2 shadow">
+                                                            class="btn btn-lg btn-primary my-2 shadow"
+                                                            aria-labelledby="returnHelp">
                                                                 <i class="fa-solid fa-chevron-left mx-1" aria-hidden="true"></i> Back
                                                         </button>
+                                                        <div aria-describedby="returnHelp" hidden>Cancel and go back</div>
                                                         <button
                                                             type="submit"
-                                                            class="btn btn-lg bg-danger text-white my-2 shadow">
+                                                            class="btn btn-lg bg-danger text-white my-2 shadow"
+                                                            aria-labelledby="deleteReviewHelp">
                                                                 Confirm 
                                                                     <i class="fa-solid fa-trash mx-1" aria-hidden="true"></i> 
                                                         </button>
+                                                        <div aria-describedby="deleteReviewHelp" hidden>Confirm review deletion</div>
                                                     </form>
                                                 </div>
                                             </div>
