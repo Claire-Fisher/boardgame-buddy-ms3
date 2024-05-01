@@ -255,14 +255,13 @@ Post development, I manually tested in the following ways:-
 
 1. Manually tested each element for appearance and responsiveness via a simulated live server.
 
-2. The code passed through HTML, CSS, JavaScript(ES6) validators to check for errors.
+2. The code passed through HTML, CSS, JavaScript(ES6), pep8 validators to check for errors.
 * [**Validators Results**](#validators)
 3. The code passed through an Accessibility evaluation. 
 *  [**Accessibility Results**](#accessibility)
-4. Published the page via GitHub pages and shared with fellow students to test and receive feedback.
+4. Published the page via GitHub pages and shared with fellow students and friends (particulary boardgame fans) to test and receive feedback.
 
 5. Sent my gitHub to link to three third party testers with different devices, browsers, and skill sets:
-    - Dan Sanderson - Senior Developer
     - Shaun Russell - Senior UI/UX/Product Designer
     - Tom Harris - Enterprise Account Manager, krystal.io and Safari user 
 
@@ -272,17 +271,28 @@ My manual testing logs are as follows:
 ***
 ### Home Page Manual Testing
 ***
-**Home Page Test 1 -  Incorrect URL (random letter character)**
+**Incorrect URL**
 * Expected:
   * Site expected to display 404-page when the user enters an incorrect URL.
 * Testing:
-  * Tested site by adding a random letter at the end of URL
+  * Tested site by adding a random at the end of URL
 * Result:
-  * The site acted as expected and showed its custom 404-page.
+  * The site acted as expected in some cases and showed the 404-page. But not reliable. 
 * Action: 
-  * None
+  * Included try: except: conditions to the error handler function to catch all page errors.  
 ***
-**Home Page Test 2 -  Incorrect URL (random number character)**
+**Incorrect URL (SECURITY BREACH)**
+* Expected:
+  * Expected site to show 404 when a user tries to access other user's profile information or user-only features (such as add_game) by manually manipulating the url.
+* Testing:
+  * Tried to access unauthorised pages and sections without loggin in or by inputing "other" usernames into the url. 
+* Result:
+  * The site allowed unauthorised access to /profile/*username*, /edit_profile/*username*, and /add_game 
+* Action: 
+  * Added if conditions to the pages that direct to those pages, checking if a session user is True, and checking the session user matches the username given in the url.
+  * Page no longer gives unauthorised access to those areas.
+***
+**title**
 * Expected:
   * 
 * Testing:
