@@ -261,9 +261,8 @@ Post development, I manually tested in the following ways:-
 *  [**Accessibility Results**](#accessibility)
 4. Published the page via GitHub pages and shared with fellow students and friends (particulary boardgame fans) to test and receive feedback.
 
-5. Sent my gitHub to link to three third party testers with different devices, browsers, and skill sets:
-    - Shaun Russell - Senior UI/UX/Product Designer
-    - Tom Harris - Enterprise Account Manager, krystal.io and Safari user 
+5. Sent my deployed project to multiple user testers with different devices, browsers, and skill sets.
+    - Jump to: [**Third Party Testing**](#third-party-testing) here
 
 ## **Post Development Testing Expanded**
 
@@ -386,6 +385,14 @@ In addition to the accessibility score on lighthouse, [WAVE - Web accessibility 
 
 [**Back to top**](#testing-boardgame-buddy) 
 ### **Third Party Testing**
+I sent my deployed project to multiple user testers with different devices, browsers, and skill sets:
+- Richard Wells - Senior full stack developer and boardgame fan.
+- Shaun Russell - Senior UI/UX/Product Designer, and boardgame fan.
+- Tom Harris - Enterprise Account Manager, krystal.io and Safari user.
+- Joe Hewitt - Font designer and boardgame fan.
+- Dean Russell - Graphic designer and boardgame fan.
+- Penny Lewis - Project Manager and boardgame fan. 
+- Duncan Lewis - IT technician and boardgame fan.
 
 1. **Final result "Draw"**
     * ***Tester feedback: Shaun Russell***
@@ -396,6 +403,8 @@ In addition to the accessibility score on lighthouse, [WAVE - Web accessibility 
     * ***Tester...***
         *
 ### Third Party Feedback
+
+
 1. <u>** ###EXAMPLE DO NOT LEAVE THIS IN###Dan Sanderson - Senior Developer.**</u>
   * "It looks great to me. Plays well and reliably. Nice job!".
  
@@ -404,15 +413,13 @@ In addition to the accessibility score on lighthouse, [WAVE - Web accessibility 
   * "A future feature you could add would be to take all the hardcoded text out of your JS and HTML files and stick that in a language file. Then you can just run it through google translate or something and then have an English and maybe a French option etc which you can swap with a button."
 
 ## Thank you to my product testers
-- Richard Wells: Senior Developer, and my Code Institute Mentor.
-
-- Dan Sanderson: Senior Developer.
-
-- Shaun Russell: Senior UI/UX/Product Designer. 
-
-- Tom Harris: Site tester, Safari user.
-
-- Various friends and family members.
+- Richard Wells
+- Shaun Russell
+- Tom Harris
+- Joe Hewitt
+- Dean Russell
+- Penny Lewis
+- Duncan Lewis
 
 [**Back to top**](#testing-boardgame-buddy)
 
