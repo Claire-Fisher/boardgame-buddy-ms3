@@ -576,15 +576,51 @@ My manual testing logs are as follows:
 
 [**Back to top**](#testing-boardgame-buddy)
 
+### User Stories
+1. As a budding board gamer, I want to quickly find introductory information on lots of different Board Games.
+2. As a user, I want to have a positive user experience.
+3. As a user, I want the site to be intuitive and easy to navigate.
+4. As a user, I want to use the site across multiple devices.
+5. As a busy adult planning a Board Game night with friends, I want to be able to quickly search for games that will meet my group's needs.
+6. As a Board Game fanatic, I want to document and manage my game collection. 
+7. As a differently abled user, I want the product to be accessible.
+
 ## **User Story Testing**
-1. **As a user, I want to be entertained.**
+1. **As a budding board gamer, I want to quickly find introductory information on lots of different Board Games.**
   * The site provides:
-    * Entertainment in the form of a game play. 
-    * User interactive elements.
-    * Fast feedback to user interactions. 
-    * Countdown to build suspense.
-    * Rewarding Game-Over feedback with animated gifs.
-    * Availability on mobile device to play anywhere, and anytime.  
+    * A large library of games, which will continue to grow with more user contributions.
+    * Clear, bite sized info, that's quick to read and easy to find. 
+    * Search functionality to easily find games based on your requirements as a new board gamer.
+    * More information easily found for games that interest you, and peer reviews to help guide you with further.
+
+2. **As a user, I want to have a positive user experience.**
+  * The site provides:
+    * Clear, accessible, and fast information. 
+    * Intuitive navigation
+    * Users the opportunity to customise their own profiles. 
+    * Users the opportunity to contribute by adding games and reviews. 
+    * User the ability to "collect" games. Who doesn't like a collection?
+
+3. **As a user, I want the site to be intuitive and easy to navigate.**
+  * The site provides this, and has been confirmed by my user testers. 
+
+4. **As a user, I want to use the site across multiple devices.**
+  * The site provides:
+    * Responsive layouts across all pages.
+    * Adaptive functionality to screen sizes 320px - 2560px (Tested)
+
+5. **As a busy adult planning a Board Game night with friends, I want to be able to quickly search for games that will meet my group's needs.**
+  * The site provides:
+    * Search functionality to filter games to the most common requirements for a gaming group.
+
+6. **As a Board Game fanatic, I want to document and manage my game collection.**
+ * The site provides exactly this. 
+
+7. **As a differently abled user, I want the product to be accessible.**
+  * The site provides:
+    * Excellent accessibility ratings according to Lighthouse tests and Wave evaluations. 
+    * Responsive design so the site can be used on many different devices and work with built in accessibility tools.
+
 
 [**Back to top**](#testing-boardgame-buddy)
 ## **Validators**
@@ -742,23 +778,9 @@ I sent my deployed project to multiple user testers with different devices, brow
 - Penny Lewis - Project Manager and boardgame fan. 
 - Duncan Lewis - IT technician and boardgame fan.
 
-1. **Final result "Draw"**
-    * ***Tester feedback: Shaun Russell***
-        * The "Final Result: Draw" outcome is confusing to the user. 
-        * Suggestion: Have "Win" and "Lose" game completion options only.
-        * Draw will continuously tally until Win or Lose scores reach three.
-2. **TEST NAME**
-    * ***Tester...***
-        *
 ### Third Party Feedback
 
 
-1. <u>** ###EXAMPLE DO NOT LEAVE THIS IN###Dan Sanderson - Senior Developer.**</u>
-  * "It looks great to me. Plays well and reliably. Nice job!".
- 
-  * "Some UI feedback, but it's minor, it's a bit difficult to know who's won each turn until you look closely and read the text. It's not in-your-face, but maybe that's what you're going for... One way around this might be to change the background colour of the results box to red or green if you lose or win, but I know your palette is monotone, so not sure how that would work".
-
-  * "A future feature you could add would be to take all the hardcoded text out of your JS and HTML files and stick that in a language file. Then you can just run it through google translate or something and then have an English and maybe a French option etc which you can swap with a button."
 
 ## Thank you to my product testers
 - Richard Wells
