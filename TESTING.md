@@ -27,9 +27,9 @@ During the development process, I was manually testing in the following ways:-
 
 1. Manually tested each element for appearance and responsiveness via a simulated live server by running app.py in PORT 5000.
 
-2. 
+2. Checked functionality as I built. Dealing with bugs and error messages during development. (See bugs and fixes)
     
-3. 
+3. Sought feedback from my mentor and student peers at key intervals during development. 
 
 ## Manual Testing:
 
@@ -40,25 +40,23 @@ During testing, I used four different browsers to ensure cross-compatibility. Th
   2. Firefox  
   3. Edge
 
-Shaun Russell - Site tester - Tested on Chrome, Firefox, and Edge.
+I have manually tested on Chrome.
+Shaun Russell - Site tester - Tested on Firefox, and Edge.
 Tom Harris - Site tester - Tested the project on Safari.
 
 ### Screen Sizes
 
-The site has been tested at screen sizes 320px to ###px in width.
+The site has been tested at screen sizes 320px to 2560px in width.
 
 <details><summary>Screen Size: 320px</summary>
-<img src="">
+<img src="documents/testing-images/mobile-320px.png">
 </details>
-<details><summary>Screen Size: ###px</summary>
-<img src="">
+<details><summary>Screen Size: 2560px</summary>
+<img src="documents/testing-images/desktop-2560px.png">
 </details>
 
 ### Function Testing
-<details><summary>Function Testing Image</summary>
-<img src="">
-</details><br/>
-The functions are all tested via their output displayed in the UI, the console, or both. (All console.log and console.info have been removed in the final version of the project).
+The functions are all tested via their output displayed in the terminal with print statements, the browser display, or both. (All print statements have been removed in the final version of the project).
 
 [**Back to top**](#testing-boardgame-buddy)
 ## ***Bugs and Fixes:***
@@ -242,11 +240,6 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the code</summary>
             <img src="documents/testing-images/unbound-local-error-304-fix.png">
             </details>
-13. **ISSUE NAME** 
-    * ***Issue Found:*** 
-        * ...
-    * ***Solution Used:***    
-        * ...
 
 [**Back to top**](#testing-boardgame-buddy)  
 ## **Post Development Testing**
@@ -291,15 +284,180 @@ My manual testing logs are as follows:
   * Added if conditions to the pages that direct to those pages, checking if a session user is True, and checking the session user matches the username given in the url.
   * Page no longer gives unauthorised access to those areas.
 ***
-**title**
+**Navigation links in top navbar**
 * Expected:
-  * 
+  * Expected the nav bar links to redirect to the correct pages and render the correct information.
+* Testing:
+  * Clicked Logo / Games Library / Register / Log in / Profile / Add Game / Log Out in turn
+* Result:
+  * All pages redirected correctly and with the correct data fetched and displayed
+* Action: 
+  * None
+***
+**Search bar - No data**
+* Expected:
+  * If no search data entered and search button clicked.
+* Testing:
+  * Expected full library to keep displaying and a flash message to tell the user they didn't search for anything.
+* Result:
+  * Library displays and flash message "You didn't enter any search fields"
+* Action: 
+  * None
+***
+**Search bar - player count outside range**
+* Expected:
+  * A validation pop up if the user enters a number outside the give range 1-8. Library should show full game list.
+* Testing:
+  * Entered a search of 0, and a search of 9, 10, 20. 
+* Result:
+  * Validation pop up shows reminding user of the acceptable range values. Library unchanged. 
+* Action: 
+  * None
+***
+**Search bar - player count inside range**
+* Expected:
+  * Games library to filter according to the numbers of players entered by the user.
+* Testing:
+  * Searched through all numbers from 1-8.
+* Result:
+  * Game library behaved as expected and filtered the games correctly. 
+* Action: 
+  * None
+***
+**Search bar - avg playtime outside range**
+* Expected:
+  * Values <15 to pop up a validation message. Values >121 to do the same.
+* Testing:
+  * Tested values 0, 1, 2, 121, 300
+* Result:
+  * Values <15 redirected to "Oops, no games found" which is acceptable.
+  * Values >121 showed the full library. This is also acceptable. If a party game lasts longer than 2hours, board gamers will usually split sessions into multiple play sessions. 
+* Action: 
+  * None
+***
+**Search bar - avg playtime inside range**
+* Expected:
+  * Games library to filter all games below and including value set. 
+* Testing:
+  * Values 15, 20, 30, 45, 120 entered
+* Result:
+  * Games filtered correctly
+* Action: 
+  * None
+***
+**Search bar - Difficulty dropdown**
+* Expected:
+  * Games to filter according to difficulty rating searched.
+* Testing:
+  * Selected Beginner, then clicked Search
+  * Selected Advanced, then clicked Search
+* Result:
+  * Games filters and displayed as expected
+* Action: 
+  * None
+***
+**Search bar - Title search**
+* Expected:
+  * The search bar to find the title entered into the search bar
+* Testing:
+  * Searched for the following:
+    - Catan
+    - catan
+    - CATAN
+    - cat
+    - catttan
+    - ticket
+    - ticket to
+    - ticket to ride
+    - tick
+* Result:
+  * Searched found and displayed the correct game regardless of casing. 
+  * Multiple word searches also worked correctly. 
+  * Partial words and mispellings displayed the "Oops, no games matching your search found". This is acceptable. For future features, I would like to add suggestions ("Did you mean "Catan"?), or a dropdown updating dynamically as the user types, to offer suggestions of already existing games. 
+* Action: 
+  * None
+***
+**Searchbar - Reset**
+* Expected:
+  * Fetch all games in the db
+* Testing:
+  * Filtered the games library with the searches - clicked Reset
+* Result:
+  * Game library refreshed back to the full db library of games
+* Action: 
+  * None
+***
+**Game Card Navigation - Game Info**
+* Expected:
+  * The site to fetch and display the full info page for the game targeted.
+  * This function should be achieved by clicking any of the following card features: Game Image / Game Title / More Info
+* Testing:
+  * Clicked the Game Image / Game Title / More Info Button on the following game cards:
+    - Ticket to ride
+    - Wingspan
+    - Splendor
+* Result:
+  * Each link worked as expected. Fetching and rendering the info page for the correct target game. 
+* Action: 
+  * None
+***
+**Game Card Navigation - Add to Collection**
+* Expected:
+  * If user logged in: clicking add to collection on a game card will do one of two things:
+    - If game already in user collection - flash message to tell the user. 
+    - If game not in user collection - flash message to tell the user and game image will now appear in the collection section of their profile page.
+  * If no user logged in:
+    - "You must be logged in message to add this game" below the "Add to Collection" button.
+    - If button still clicked: redirected to Log in page
+* Testing:
+  * As an session user:
+    - 1a. Clicked the Add to Collection btn on a game card.
+    - 1b. Clicked to Add a game I knew already existed in the user's collection.
+  * When logged out / no session user:
+    - 2a. Clicked the Add to Collection btn on a game card. 
+* Result:
+  - 1a. No response, but the game did appear in the users collection when checking the profile page.
+  - 1b. Behaved as expected. Flash message and user collection unchanged.
+  - 2a. Behaved as expected. Message below the button. Redirected to log in page if user still clicks. 
+* Action: 
+  * 1a. Flash message added to collection() in app.py. User now notified that their Game added successfully.
+***
+**Game Page - no reivews**
+* Expected:
+  * If no reivews in db for target game. Show the "no revies message" in the game info page
+  * If no reviews: reviews number should equal 0.
+  * If there's an active session user: button to leave a review
+  * If there's no session user: button to Log In
+* Testing:
+  * Navigated to a game with no reviews.
+* Result:
+  * No reviews message displaying as expected. 
+  * Reviews number displaying 0 as expected. 
+  * If active user: Leave a review button there, but doesn't work on click. 
+  * If no active user: Log in button there, and working as expected.
+* Action: 
+  * Removed the "Leave a review" button from the "no reviews" message section. (There is already a review button in the game main info section above.)
+***
+**Game Page - Buttons**
+* Expected:
+  * 1. "Back to main game library" button clicked - site rendered library page with full bd of games displayed.
+  * 2. "Leave a review" Button clicked
 * Testing:
   * 
 * Result:
   * 
 * Action: 
+  * None
+***
+**title**
+* Expected:
+  *  
+* Testing:
   * 
+* Result:
+  * 
+* Action: 
+  * None
 ***
 
 [**Back to top**](#testing-boardgame-buddy)
