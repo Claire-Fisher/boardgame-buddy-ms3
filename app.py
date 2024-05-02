@@ -227,7 +227,7 @@ def profile(username):
 
 @app.route("/edit_collection/<this_game>", methods=["GET", "POST"])
 def edit_collection(this_game):
-    """Edit/Delete functionality.
+    """Delete functionality.
     Gets the user collection games.
     User can remove games from their collection.
 
@@ -416,6 +416,7 @@ def collection(game_id):
             mongo.db.collections.update_one(
                 existing_collection,
                 {"$push": {"user_collection": str(game["_id"])}})
+            flash("Game successfully added to your collection")
 
     return redirect(url_for("library"))
 
