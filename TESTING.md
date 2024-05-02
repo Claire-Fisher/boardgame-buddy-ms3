@@ -397,18 +397,31 @@ My manual testing logs are as follows:
       - hover.css
 * ***Action Taken:***
     * No action needed at this time
+<hr>
 
-### JavaScript - https://jshint...
+### JavaScript Validator
 
 <details><summary>JS validator Results Image</summary>
-<img src="">
+<img src="documents/testing-images/js-validator.png">
 </details> 
 
 JSHint validator was configured to recognise New JavaScript Features (ES6), and jQuery.
 * ***Errors Found:***
-    * None
+    * None - No errors in a whole two lines of code! (flex)
 * ***Action Taken:***
     * N/A
+<hr>
+
+### Python CI Linter (PEP8 check)
+
+<details><summary>Python linter results</summary>
+<img src="documents/testing-images/py-ci-linter.png">
+</details>
+
+* ***Errors Found:***
+    * None
+* ***Action Taken:***
+    * None
 
 ## Lighthouse Scores
 ### Test conditions
