@@ -36,8 +36,10 @@
                                 <input type="text" class="form-control"
                                     value="{{ info.city }}"
                                     placeholder="{{ placeholder.city }}"
+                                    pattern="^[a-zA-Z -_']{2,30}$"
                                     id="city" name="city" 
                                     aria-describedby="uHelp">
+                                <small>Numbers and specials characters are not allowed.</small>
                             </div>
                         </div>
                         <!-- country input -->
@@ -51,8 +53,10 @@
                                 <input type="text" class="form-control"
                                     value="{{ info.country }}"
                                     placeholder="{{ placeholder.country }}"
+                                    pattern="^[a-zA-Z -_']{2,30}$"
                                     id="country" name="country" 
                                     aria-describedby="uHelp">
+                                <small>Numbers and specials characters are not allowed.</small>
                             </div>
                         </div>
                         <!-- favourite boardgame -->
@@ -66,8 +70,10 @@
                                 <input type="text" class="form-control"
                                     value="{{ info.favourite_game }}"
                                     placeholder="{{ placeholder.favourite_game }}"
+                                    pattern="^[a-zA-Z -_']{2,30}$"
                                     id="favourite_game" name="favourite_game" 
                                     aria-describedby="uHelp">
+                                <small>Numbers and specials characters are not allowed.</small>
                             </div>
                         </div>
                         <!-- user profile avatar -->
