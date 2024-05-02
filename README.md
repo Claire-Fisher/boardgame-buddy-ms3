@@ -231,6 +231,16 @@ Monitized links to boardgame online shops to direct users to purchase could be i
 
 ## Future Features Requested my user testers
 
+### Dean Russell
+- "When the results are filtered it's not immediately obvious that anything changes. Maybe a fade or a scroll down for results or something."
+
+### Penny Lewis
+- "Could there be something on the home page to indicate if it's (game) already in your collection?"
+- When you click into a game from your collection, the only way back is through the library. Would it be good to go back to your collection as an option?"
+
+### Duncan Lewis
+- "Possibly a spell check feature when leaving a review?"
+
 ### Joe Hewitt
 "Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game' or 'On the lookout for future expansions!'."
 
@@ -319,6 +329,7 @@ Onerror image attribute to handle image errors - Taken from an article by Rahul 
 - Joe Hewitt - User tester
 - Dean Russell - User tester
 - Penny Lewis - User tester
+- Duncan Lewis - User tester
 
 ## **Thanks**
 - Richard Wells: Senior Developer, site tester, and my Code Institute Mentor. Thank you for going above and beyond with your support and patience! I massively appreciate the time and expertise you've give me.
