@@ -139,9 +139,7 @@ Using Figma's wireframes capabilities, I was able to play with initial layouts a
 To hit site objective 10, I've chosen a bright, 80's-style colour-scheme. The contrasts provide good readability and accessibility. The colour choices appeal to all genders and ages. Some bootstrap button colours have also been included, and these compliment my base colour scheme well.
 
 ### Typography
-'Syne" from Google Fonts was selected throughout as a clear, easily-readable font choice that matches my site aesthetic. [View here](https://fonts.google.com/?query=syne)
-
-A generic Arial, Helvetica, & sans-serif fonts have been included as a backup in the event 'Syne' fails to load or is incompatible with the user's browser. 
+The highly legible and readable fonts, Arial, Helvetica and a standard sans-serif have been chosen. There can be a lot of data displayed, especially on large screens, so the typography needs to be as clear and clean as possible. These common and popular fonts are also much less likely to have compatibility issues with different browsers.
 
 [**Back to top**](#boardgame-buddy)
 ## Features
@@ -163,7 +161,7 @@ This project includes many features, these include:
     - Where actions require a user to have an account and be logged in, if no session user is found, a notification paragraph shows explaining this. If the user still clicks the Call-To-Action, the button navigates them to the Log in page instead. 
 
 ### Clear typography
-- The highly legible and readable font 'Syne' was selected from Google-fonts. As a Google-fonts listed typography, 'Syne' has a high chance of being usable across most devices. Generic fonts have been coded to display in the event a device is not compatible with 'Syne'. 
+- The highly legible and readable fonts, Arial, Helvetica and a standard sans-serif. 
 
 ### Custom Logo
 ![Custom Logo Image](static/images/bgb-logo.svg)
@@ -341,7 +339,6 @@ Onerror image attribute to handle image errors - Taken from an article by Rahul 
 
 ## **Credits**
 - Shaun Russell: site logo.
-- Google Fonts for 'Syne" typography [View here](https://fonts.google.com/specimen/Syne)
 - Favicon.io for icon converter & instructions [View here](https://favicon.io/)
 - Tinypng.com for image compression [View here](https://tinypng.com/)
 - Accessguide.io an excellent accessibility guide [View here](https://www.accessguide.io/)
