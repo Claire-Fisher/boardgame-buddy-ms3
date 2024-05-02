@@ -779,6 +779,79 @@ I sent my deployed project to multiple user testers with different devices, brow
 - Duncan Lewis - IT technician and boardgame fan.
 
 ### Third Party Feedback
+<hr>
+
+**Shaun Russell - User tester - Senior UI/UX designer & Boardgame fan**
+
+<hr>
+
+**Tom Harris - User tester**  
+
+"The site has a bright theme which is instantly welcoming and fitting for the sites topic (board games). The colour pallet used is reminiscent of how sites used to be designed but has been mixed in with modern aspects to make it unique and appealing to todays users." 
+
+"The site has been tested on a pc that has a 2560 x 1440 display, a Macbook Pro with a 3456 x 2234 display and a oneplus open. The site sizes correctly on all devices, opening the window and scaling on all pages seems to bring everything into line as it should - The burger menu appears when the window is sized small enough that the normal navigation line would not fit." 
+
+"The site works as intended - registering was problem free, browsing board games resulted in no issues, information was precise. Adding games to your library was easy to do, however a notification to say it was added would be very handy." 
+
+"If I was to suggest improvements, I would say the following: 
+- Add a star rating to your review system
+- Change the colour of the footer to yellow so it matches the layout of your header (done)
+- Remove the "Title:" from the game header (done)
+- Display users avatars in the review section
+- Remove the animation from the nav bar when its pushed into the burger menu (when scales on a laptop, it can make it hard to click)
+- Potentially look at how the text is displayed on the game description/information."
+
+"Overall it's an extremely pleasant site with no issues and more importantly, it is a fantastic idea - not only as it is a passion of Claires but it looks much better and functions better than some of the much larger and currently active dedicated platforms for this."
+<hr>
+
+**Joe Hewitt - User tester - Boardgame fan**
+
+"I found the website very easy to use. When compared to Board Game Geek for example, Boardgame Buddy fits the niche of not overloading the user with too much info, which for a novice gamer, would be an easier entry point into board gaming and be much less daunting. I also imagine that the clearer less cluttered pages will make choosing a game to play with friends or family quite easy and quick."
+
+"Boardgame Buddy works very fast! Almost instant page loading in my experience."
+
+"The design of the website is nice and clean, but i feel the yellow and purple colour scheme could be improved upon. It looks a little old fashioned in my opinion."
+
+"Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game'or 'On the lookout for future expansions!'."
+
+"I just tried it on my iPad Air and on my iphone 11. Works fine on both and maintains that ultra quick speed of use!"
+<hr>
+
+**Dean Russell - User tester - Graphic Designer - Boardgame fan**
+
+"Looks great. A couple of things. Maybe have the burger menu when it's opened to the right, or centered, or a different colour. Just to make it more obvious."
+
+"When the results are filtered, it's not immediately obvious anything changes. Maybe a fade saying scroll down for results or something?"
+
+"On the log in box, the password section text says insert username." (corrected)
+
+"When you go into a game info page, an "Add to Collection" button would be nice there too." (Wanted to add but it created issues and I had to drop it: MOSCOW)
+
+Q: *Me: As a boardgame fan, would you find a site like this useful for managing your own game collection / planning game nights / finding game info a peer reviews?...*<br>
+A: Dean's answer - "Yeah! Boardgame geek site is atrocious."
+<hr>
+
+**Penny Lewis - User tester - Project Manager - Boardgame fan**
+
+"Looking on my phone. The auto search is a little confusing when there's a search button to press. I get that it's if you're looking for a title, but perhaps it's needs more clarification?" (Corrected - form no longer auto searches)
+
+"I love all the different elements. It's really clean. Easy functionality. I love the ability to create your own collection. Could there be something on the home page to indicate which games are already in your collection?" (Future feature I would like to add).
+
+"I can't add an apostrophe in the game title" (corrected)
+
+"It's a great website. Really user friendly."
+
+"If you click in to a game from your collection, the only way out is back to the main gallery. Would be good to go back to your collection as an option."
+
+Q: *Me: As a boardgame fan, would you find a site like this useful for managing your own game collection / planning game nights / finding game info a peer reviews?...*<br>
+A: Penny's answer: Absolutely! The reviews section is excellent. I love that you can build your own collection."
+<hr>
+
+**Duncan Lewis - User tester - IT Technician - Boardgame fan**
+
+"Such a great concept, Claire! I love it!"
+
+"Possibly a spell check feature when leaving a review?"
 
 
 
