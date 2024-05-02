@@ -237,6 +237,18 @@ An advertising banner could be added to promote company sponsors.
 Monitized links to boardgame online shops to direct users to purchase could be included on the game full info page. 
 - User feedback from Penny Lewis: "You could have links that take you to independents that sell the games, rather than Amazon."
 
+### Events / Meetups / Venues
+Create an events page for businesses and/or users to post details about local gaming events. User can filter event by their location (based on the city/country info they enter on their profiles)
+
+### Wishlist
+Allow users to create an additional list to their Collection, called a Wishlist. Helping them keep track of games they may have played, but don't own, but would like to in future.
+
+### Profile Sharing
+Allow users to view each other's profile pages. If you're hosting a game session, you can invite your guests to view your collection list to help decide what to play (additional search functionality would be recommended). If people are looking to buy you a gift, invite them to view your wishlist for a whole shopping list of gift game options. 
+
+### Landing page highlights
+Instead of the home page as the library, some general info and stats on a home page would be a more interesting entry to the site. "Top three trending now" / "Top Three highest rated games" / "Top Three games in people's collections etc.
+
 ## Future Features Requested my user testers
 
 ### Dean Russell
