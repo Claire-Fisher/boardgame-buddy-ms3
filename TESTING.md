@@ -784,6 +784,15 @@ I sent my deployed project to multiple user testers with different devices, brow
 
 **Shaun Russell - User tester - Senior UI/UX designer & Boardgame fan**
 
+"The experience of the site is a pleasant one and the colours are warm, fun and friendly, which are perfectly aligned with the topic of board games. I’m not overwhelmed with information - a problem I typically find with other board game sites I’ve used - and I can browse with ease and at my own pace."
+
+"The site has a nice communal feel - like I’m amongst friends, perfect for a site about board games. The fact that user’s can freely contribute new games to the site means there’ll always be a trickle of fresh content - with minimal effort. Whilst in future, this will have to be monitored and moderated to ensure the site remains a ‘safe-space’, the community will probably police itself to a certain degree, letting you know of any problems that might arise."
+
+"There’s a level of scope around this theme of community. Hosting / advertising events in their area - online or in person, a board game exchange, allowing others to see and ‘like’ your collection are just a few that spring to mind."
+
+"The library and collections are ‘sticky’ features that I can see users checking out / updating on their commute or the loo! The addition of a 'share' feature so you can send your collection to friends ahead of planning your game night would be nice. Or maybe a ‘Game Night Planner’ could be a future feature - where you and your friends can pool your games collections and vote on what games you want to play."
+
+"I hope you continue to grow this site and I look forward to seeing what you come up with."
 <hr>
 
 **Tom Harris - User tester**  
@@ -805,7 +814,7 @@ I sent my deployed project to multiple user testers with different devices, brow
 "Overall it's an extremely pleasant site with no issues and more importantly, it is a fantastic idea - not only as it is a passion of Claires but it looks much better and functions better than some of the much larger and currently active dedicated platforms for this."
 <hr>
 
-**Joe Hewitt - User tester - Boardgame fan**
+**Joe Hewitt - User tester - Font designer - Boardgame fan**
 
 "I found the website very easy to use. When compared to Board Game Geek for example, Boardgame Buddy fits the niche of not overloading the user with too much info, which for a novice gamer, would be an easier entry point into board gaming and be much less daunting. I also imagine that the clearer less cluttered pages will make choosing a game to play with friends or family quite easy and quick."
 
