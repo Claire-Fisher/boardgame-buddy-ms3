@@ -112,11 +112,12 @@
                         <!-- check for active user -->
                         <form method="POST" action="{{ url_for('collection', game_id=game._id) }}">
                             <a href="{{ url_for('game', game_id=game._id) }}"
-                                class="btn btn-lg btn-outline-primary mb-1 card-library-btns">
+                                class="btn btn-lg btn-outline-primary mb-1 card-library-btns"
+                                aria-label="More info for {{ game.game_title}}">
                                 <strong><i class="fa-solid fa-circle-question"></i> More info</strong></a>
                             {% if session.user %}
                                 <button class="btn btn-lg btn-outline-primary mb-1 card-library-btns"
-                                    type="submit" value="Submit">
+                                    type="submit" value="Submit" aria-label="Add {{ game.game_title}} to your collection">
                                         <strong>
                                             <i class="fa-solid fa-circle-plus text-purple"></i> Add to Collection</strong>
                                 </button>
