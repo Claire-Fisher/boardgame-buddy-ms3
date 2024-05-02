@@ -440,20 +440,24 @@ JSHint validator was configured to recognise New JavaScript Features (ES6), and 
 <br/>
 
 ## **Accessibility** 
-In addition to the accessibility score on lighthouse, [WAVE - Web accessibility evaluation tool](https://wave.webaim.org/) has been used to check the site for accessibility issues. 
+In addition to the accessibility score on lighthouse, WAVE - Web accessibility evaluation tool has been used to check the site for accessibility issues..<br>
+[View my results here](https://wave.webaim.org/report#/https://boardgame-buddy-c89ff5d28931.herokuapp.com/)  
 <details><summary>Wave Accessibility Evaluation Results Image</summary>
-<img src="">
+<img src="documents/testing-images/wave-evaluation.png">
+</details> 
+<details><summary>Wave Alerts Image</summary>
+<img src="documents/testing-images/wave-alerts.png">
 </details> 
 
 * ***Errors Found:***
     * None
-* ***Contrast Errors Found:***
-    * None
 * ***Alerts Found:***
-    * 
+    * 48 Alerts for "Redundant Links".
 * ***Action Taken:***
-    * None.
-    * Reason: 
+    * The alerts are caused because of the template style build of the site. The validator sees all the buttons as duplicates, when actually, they are looped data that go to individual game pages.
+    * To improve accessibility, I have added aria-labels to each "duplicate" button on the library game cards. Using {{ game.game_title }} screen reader users will know which buttons go to which games.
+    * This has not corrected the Alerts in the Wave Validator, but I am satisfied I have made adequate accessibility improvements towards this, so no further action at this time. 
+
 
 [**Back to top**](#testing-boardgame-buddy) 
 ### **Third Party Testing**
