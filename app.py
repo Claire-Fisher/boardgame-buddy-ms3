@@ -277,8 +277,10 @@ def edit_profile(username, placeholder=None):
         info = mongo.db.users.find_one({"username": username})
         # placeholder instructions for user if values are blank
         placeholder = {
-            "city": "Enter your City here" if info["city"] == "" else "",
-            "country": "Enter your Country here" if info["country"] == "" else "",
+            "city":
+                "Enter your City here" if info["city"] == "" else "",
+            "country":
+                "Enter your Country here" if info["country"] == "" else "",
             "favourite_game":
                 "Enter your favourite game here"
                 if info["favourite_game"] == "" else ""
