@@ -65,7 +65,7 @@ This project is intended for users of any age. It is developed using a mobile fi
 7. To provide functionality for users to build their own game collection (and delete collection games too)
 8. To allow users to add and share more games to the main library.
 9. To allow users to create and delete their own reviews on games.
-10. To provide a design that appeals to typically geeky/retro fanatical individuals. 
+10. To provide a design that appeals to fans of retro and geeky things. 
 
 ### Approach
 - Mobile first design.
@@ -93,18 +93,19 @@ My adjustments to suit my project aims:
 [**Back to top**](#boardgame-buddy)
 ### Data Schema
 
-This was the original data schema as part of early development. Some features and pages have been edited or removed entirely to meet project deadlines.<br>Following MOSCOW prioritisation (Must-have, Should-have, Could-have, Won't-have)
+This was the original data schema as part of early development. Some features and pages have been edited or removed entirely to meet project deadlines.
 <details><summary>Original Data Schema</summary>
 <img src="documents/readme-images/bgb-db-schema1.png">
 </details>
-<details><summary>Revised Data Schema after MOSCOW prioritisation</summary>
+Following MOSCOW prioritisation (Must-have, Should-have, Could-have, Won't-have)
+<details><summary>Revised Data Schema after</summary>
 <img src="documents/readme-images/bgb-db-schema2.png">
 </details>
 
 ### Wireframes
 
 Balsamiq was used to create initial layouts and wireframes.
-Some features and pages have been edited or removed entirely to meet project deadlines.<br>Following MOSCOW prioritisation (Must-have, Should-have, Could-have, Won't-have)
+Some features and pages have been edited or removed entirely to meet project deadlines.
 
 
 Please toggle the following dropdowns to view the wireframe images.
@@ -213,7 +214,7 @@ This project includes many features, these include:
 - Responsive design.
 - High colour contrast.
 - No colours convey information - colour blind users
-- No flashing lights. Care has been taken to select gifs with minimum to no flashing lights.
+- No flashing lights.
 - No background audio or autoplay audio.
 - Aria-labels on all interactive elements.
 - Alt descriptions on all images.
