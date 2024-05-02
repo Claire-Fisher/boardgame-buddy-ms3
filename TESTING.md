@@ -329,7 +329,7 @@ My manual testing logs are as follows:
     * Bad value button for attribute anchor elements
     * Duplicate ID usernameHelp
 * ***Action Taken:***
-    * Changed the id="game-image" to a class, and changed all the relevant css styles. (The element was being looped over, therefore creating many duplicat IDs)
+    * Changed the id="game-image" to a class, and changed all the relevant css styles. (The element was being looped over, therefore creating many duplicate IDs)
 <hr>
 
 ### Register [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Fregister)
@@ -343,7 +343,7 @@ My manual testing logs are as follows:
     * Corrected second occurance of id to passwordHelp
 <hr>
 
-### Log in [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Flogin)
+### Log in/Log Out [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Flogin)
 <details><summary>HTML validator for LOG IN Initial Results</summary>
 <img src="documents/testing-images/html-validator-errors-login.png">
 </details>
@@ -377,16 +377,26 @@ My manual testing logs are as follows:
     * Corrected in game html
 <hr>
 
-### CSS - https://...
-
-<details><summary>CSS validator Results Image</summary>
-<img src="">
-</details> 
+### Add Game Page [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Fadd_game)
+<details><summary>HTML validator for ADD GAME Initial Results</summary>
+<img src="documents/testing-images/html-validator-errors-add-game.png">
+</details>
 
 * ***Errors Found:***
     * None
 * ***Action Taken:***
-    * N/A
+    * None
+<hr>
+
+### CSS - [View current results here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Flibrary&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+* ***Errors Found:***
+    * Many!  However!  All errors have been causes by 3rd party libraries I've installed:
+      - Bootstrap 4.6.2
+      - Fontawesome 6.5.1
+      - hover.css
+* ***Action Taken:***
+    * No action needed at this time
 
 ### JavaScript - https://jshint...
 
