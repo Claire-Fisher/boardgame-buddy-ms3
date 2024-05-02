@@ -148,6 +148,7 @@ A generic Arial, Helvetica, & sans-serif fonts have been included as a backup in
 This project includes many features, these include:
 
 ### Fully Responsive 
+![Site mockup image showing different screen sizes](documents/readme-images/bgb-mockup.png)
 - This site adapts to all devices and screen sizes ranging between 320px to 2560px wide (Tested).
 - Responsive break points tested on screen widths: 320px / 576px / 768px / 992px / 1200px / 1400px / 2560px. 
 
@@ -164,6 +165,7 @@ This project includes many features, these include:
 - The highly legible and readable font 'Syne' was selected from Google-fonts. As a Google-fonts listed typography, 'Syne' has a high chance of being usable across most devices. Generic fonts have been coded to display in the event a device is not compatible with 'Syne'. 
 
 ### Custom Logo
+![Custom Logo Image](static/images/bgb-logo.svg)
 - Custom designed Logo in keeping with project brand aesthetics: both in colour and typography.
 - SVG format for optimum resolution quality at all screen sizes.
 - With thanks to Shaun Russell for the logo design.
@@ -173,16 +175,20 @@ This project includes many features, these include:
 - Images are stored in the mongoDB as URLs and can be rendered very quickly for positive UI and UX.
 
 ### Search filters functionality
+![Custom Logo Image](documents/readme-images/search-bar.png)
 - Users can filter the library to views only the games that meet their gaming needs. 
 - Searches are instantaneous and the library is already populated with a good selection of games. 
 
 ### High performance / fast loading times. 
+![Lighthouse Scores Image](documents/readme-images/lighthouse-scores.png)
 - MongoDB excels at fetching large quantities of data, so as the site grows (with users collectively adding hundreds of games), site performance should be maintained.
 
 ### User profile creation and editing
+![User Profile Image](documents/readme-images/feature-profile.png)
 - Users are allowed to create and edit their own profile account. 
 
 ### User games contribution
+![Add Game Image](documents/readme-images/features-add-game.png)
 - With an active account, users are allowed to add additional games to the site library.
 - These are then available to all users, to browse info, review, and add to their own collections. 
 
@@ -201,6 +207,8 @@ This project includes many features, these include:
 ### High Standards of Accessibility 
 [According to accessguide.io](https://www.accessguide.io/)
 
+![Lighthouse Scores Image](documents/readme-images/lighthouse-scores.png)
+- 98 Rating for accessibility on Lighthouse scores.
 - Definite status messages - 404 page included.
 - Responsive design.
 - High colour contrast.
@@ -217,7 +225,7 @@ This project includes many features, these include:
 - This site is free from offensive language and imagery, and is suitable for users of all ages. As content can be created by users, frequent maintenance would be needed to preserve this. An additional contact form could be added so users can notify admins of any offensive material added. T&Cs added to add game form.  
 
 ### The Footer
-The footer provides copyright information and name of the site creator. Plus clickable links to my github and linkedin pages. 
+The footer provides copyright information and name of the site creator. Plus clickable links to my github and linkedin pages. (Icons intentionally large for better accessibility - easier to press)
 
 [**Back to top**](#boardgame-buddy)
 ## Future Features
@@ -259,6 +267,8 @@ Monitized links to boardgame online shops to direct users to purchase could be i
 
 ## Deployment
 [Click here to deploy this project live](https://boardgame-buddy-c89ff5d28931.herokuapp.com/)
+
+This project is designed to work collectively for a large group of people. Hence the choice to use MongoDB. The main purpose is that all users can build a library of games together, to share information and peer reviews. Therefore it is not recommended to clone, branch, or deploy this project from a new database. Instead, deploy via the link above and enjoy browsing and contributing with the community! 
 
 
 ### **Languages**
@@ -339,6 +349,5 @@ Onerror image attribute to handle image errors - Taken from an article by Rahul 
 - Tom Harris: Site tester, and my biggest cheerleader.
 
 - Shaun Russell: Senior UX/UI/Product Designer. My site tester, my partner, and my provider while I study. Building my new development career change would have been infinitely harder without you. Thank you.
-
 
 [**Back to top**](#boardgame-buddy)
