@@ -422,7 +422,7 @@ My manual testing logs are as follows:
 * Action: 
   * 1a. Flash message added to collection() in app.py. User now notified that their Game added successfully.
 ***
-**Game Page - no reivews**
+**Game Page - no reviews**
 * Expected:
   * If no reivews in db for target game. Show the "no revies message" in the game info page
   * If no reviews: reviews number should equal 0.
@@ -440,22 +440,136 @@ My manual testing logs are as follows:
 ***
 **Game Page - Buttons**
 * Expected:
-  * 1. "Back to main game library" button clicked - site rendered library page with full bd of games displayed.
-  * 2. "Leave a review" Button clicked
+  * 1: "Back to main game library" button clicked - site rendered library page with all games displayed.
+  * 2a: If no user message under "Leave a review" button to tell the user they need to log in. Direct to log in page if still clicked.
+  * 2b: If active user: "Leave a review" button opens the write review modal.
 * Testing:
-  * 
+  * 1: Clicked back to Library button with and without a user logged in.
+  * 2a:  Clicked the leave review button when no user logged in.
+  * 2b: Clicked the leave review button when logged in. 
 * Result:
-  * 
+  * 1: Site behaved as expected and rendered the library page with all games displayed
+  * 2a: Site behaved as expected. Message displayed, and button click redirects to Log in.
+  * 2b: Site behaved as expected. Write a review modal activated. 
 * Action: 
   * None
 ***
-**title**
+**Review Modal**
 * Expected:
-  *  
+  * 1: Text input title allows all characters and stops at 30 char limit.
+  * 2: Text input text-area allows all characters and stopps at 400 char limit. 
+  * 3: Back button does not submit the review and closed the modal.
+  * 4: Submit button, updates the db, closes the modal. Game page instantly displays latest review and updated review count.
+  * 5: Edit and delete buttons appear on the user's new review and any previous reviews submitted by them. 
+  * 6: Clicking the edit button, opens a prepopulated edit review modal.
+  * 7: Edit review modal text fields are editable (within char limits).
+  * 8: Clicking back on edit modal cancels any changes and review displays, unchanged. Review count stays unchanged.
+  * 9: Clicking Save on the edit modal, closes the modal, updates the db and instantly displayed the new edited review. Review count stays unchanged. 
+  10: Clicking the delete button, opens the "Are you sure?" modal. 
+  11. Clicking back on the delete confirmation modal, closes the modal, and the review remains unchanged. Review count stays unchanged.
+  12. Clicking the Confirm button on the delete modal, closes the modal & deletes the review from the db. The target review immediately disappears and the review count decreases by one. 
 * Testing:
-  * 
+  * Tested all the above by following the actions as described. 
 * Result:
-  * 
+  * All resulted in the site behaving as expected. 
+* Action: 
+  * None
+***
+**Register / Log In / Log Out**
+* Expected:
+  * 1: Register - expected the form to validate inputs to check the user enters required info in the correct format.
+  * 2: Log In - As above, but also expect the log in to fail if username and/or password are incorrect.
+  * 3: Log Out - Whenever a user logs out, expected the session user to delete and redirect to Log In page.
+  * 4: The navigation links in the top main navbar should change dependent on an active user logged in or not. 
+* Testing:
+  * Tried to break all form entry fields with forbidden special characters, character-lengths and non-email-formatting.
+  * Attempted to log in with combinations of incorrect username and passwords.
+  * Checked the nav bar when logged in or out to make sure the correct links display. 
+* Result:
+  * All of the above behaved as expected. 
+* Action: 
+  * None
+***
+**Add Game**
+* Expected:
+  * Form to require entries in all input fields
+  * Form to validate data entered and give validation messages on submit if there are issues.
+  * Submit button to update the db, redirect back to the library, with the new game immediately available.
+  * Back button, cancel the Add Game action, and return to the library, all data unchanged. 
+* Testing:
+  * Carried out all actions above as decribed. (Attempted to break input fields with incorrect data, or left blank)
+* Result:
+  * Site and form behaved as expected.
+* Action: 
+  * None
+***
+**User Profile - New User**
+* Expected:
+  * On their profile page, a newly created user will have:
+    - A generic avatar image
+    - Their username and email
+    - Blank entries for City / Country / Favourite Game
+    - An edit button
+    - An empty collection list. "0 Games" and an invitation link to visit the library.
+* Testing:
+  * Created a new user and inspected their profile page.
+* Result:
+  * All elements displaying as expected.
+* Action: 
+  * None
+***
+**User Profile - Edit User**
+* Expected:
+  * Clicking the edit button will redirect to an Edit "username's" Profile
+  * Username and password cannot be changed and a message under the title confirming this.
+  * Remaining inputs can be edited or left blank (not required)
+  * If data has been added previously, form will pre-populate, otherwise a placeholder text shows. 
+  * Cancel button cancels the form and no changes saved.
+* Testing:
+  * Edited a newly created test account
+  * Viewed then saved without any changes. 
+  * Viewed again, made some changes and saved. 
+  * Viewed again, cancelled without changes. 
+  * Viewed again, made some changes and cancelled. 
+* Result:
+  * All the above behaved as expected. 
+  * But the City / Country / Favourite Game inputs accepted numbers. Which isn't intended.
+* Action: 
+  * Gave the City / Country / Favourite Game inputs pattern requirements for letters and a few simple special characters.
+***
+**User Profile Collection**
+* Expected:
+  * Collection adding has already been tested (See Game Card Navigation - Add to Collection)
+  * A collection image to open the game details page.
+  * The remove button to open the Delete confirmation modal.
+* Testing:
+  * Added various games to a test user's collection
+  * Clicked through the collection images to navigate to their corresponding info page.
+  * Clicked the remove buttons on the images to make sure the modal opened instead. 
+* Result:
+  * All elements displaying and behaving as expected.
+* Action: 
+  * None
+***
+**User Profile Collection - Delete Modal**
+* Expected:
+  * Delete modal to appear when Remove button is clicked.
+  * Back button on the modal to, close the modal window, make no changes to the user collection. 
+  * Confirm button on the modal to, close the modal window, instantly remove that game from the user's collection, but making sure it's still available in the game main library.
+* Testing:
+  * Clicked through all of the actions as described above.
+* Result:
+  * All elements displaying and behaving as expected.
+* Action: 
+  * None
+***
+**Footer - Social Icon Links**
+* Expected:
+  * Social icons to direct the user to my gitHub and linkedIn (in a new browser window)
+* Testing:
+  * Clicked the icons
+* Result:
+  * Both links behaving as expected.
 * Action: 
   * None
 ***
