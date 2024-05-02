@@ -34,7 +34,7 @@ During the development process, I was manually testing in the following ways:-
 ## Manual Testing:
 
 ### Browser Compatibility
-During testing, I used four different browsers to ensure cross-compatibility. The desktop browsers used by myself were:
+During testing, I used three different browsers to ensure cross-compatibility. The desktop browsers used by myself were:
 
   1. Chrome
   2. Firefox  
@@ -71,7 +71,8 @@ Below is a list of bugs I found during the development process by testing myself
             <img src="documents/testing-images/parse-procfile-error.png">
             </details>
     * ***Solution Used:*** 
-        
+        * Set VSCode to UTF-8 and LF. Procfile parse then succeeded and the build completed correctly.
+
 2. **Logo not displaying** 
     * ***Issue Found:***
         * Custom svg logo wouldn't display. 
@@ -206,7 +207,7 @@ Below is a list of bugs I found during the development process by testing myself
             <details><summary>Click here to view the fix</summary>
             <img src="documents/testing-images/error-405-user-registration-fix.png">
             </details>
-11. **Difficulty serach not working** 
+11. **Difficulty search not working** 
     * ***Issue Found:*** 
         * Difficulty dropdown search not filtering games in library
             <details><summary>Click here to view the code</summary>
