@@ -120,12 +120,6 @@
                     <div class="text-center mx-auto">
                         <h4 class="text-center">What?... No reviews for this game yet?<br>Be the first to write one!</h4>
                         {% if session.user %}
-                            <a href="{{ url_for('game', game_id=game._id) }}" class="btn btn-lg btn-outline-primary justisfy-content-center mx-3"
-                                data-toggle="modal" data-target="#writeReviewModal"
-                                aria-label="Leave a review">
-                                <i class="fa-solid fa-pencil mx-1" aria-hidden="true"></i>
-                                <strong> Leave a review</strong>
-                            </a>
                         {% else %}
                             <!-- if no user logged in - switches review btn to login -->
                             <a href="{{ url_for('login') }}"
