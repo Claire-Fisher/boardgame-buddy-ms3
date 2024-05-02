@@ -252,7 +252,7 @@ Post development, I manually tested in the following ways:-
 * [**Validators Results**](#validators)
 3. The code passed through an Accessibility evaluation. 
 *  [**Accessibility Results**](#accessibility)
-4. Published the page via GitHub pages and shared with fellow students and friends (particulary boardgame fans) to test and receive feedback.
+4. Published the page via GitHub pages and shared with fellow students and friends (particularly boardgame fans) to test and receive feedback.
 
 5. Sent my deployed project to multiple user testers with different devices, browsers, and skill sets.
     - Jump to: [**Third Party Testing**](#third-party-testing) here
@@ -277,7 +277,7 @@ My manual testing logs are as follows:
 * Expected:
   * Expected site to show 404 when a user tries to access other user's profile information or user-only features (such as add_game) by manually manipulating the url.
 * Testing:
-  * Tried to access unauthorised pages and sections without loggin in or by inputing "other" usernames into the url. 
+  * Tried to access unauthorised pages and sections without logging in or by typing "other" usernames into the url. 
 * Result:
   * The site allowed unauthorised access to /profile/*username*, /edit_profile/*username*, and /add_game 
 * Action: 
@@ -373,11 +373,11 @@ My manual testing logs are as follows:
 * Result:
   * Searched found and displayed the correct game regardless of casing. 
   * Multiple word searches also worked correctly. 
-  * Partial words and mispellings displayed the "Oops, no games matching your search found". This is acceptable. For future features, I would like to add suggestions ("Did you mean "Catan"?), or a dropdown updating dynamically as the user types, to offer suggestions of already existing games. 
+  * Partial words and misspellings displayed the "Oops, no games matching your search found". This is acceptable. For future features, I would like to add suggestions ("Did you mean "Catan"?), or a dropdown updating dynamically as the user types, to offer suggestions of already existing games. 
 * Action: 
   * None
 ***
-**Searchbar - Reset**
+**Search bar - Reset**
 * Expected:
   * Fetch all games in the db
 * Testing:
@@ -457,7 +457,7 @@ My manual testing logs are as follows:
 **Review Modal**
 * Expected:
   * 1: Text input title allows all characters and stops at 30 char limit.
-  * 2: Text input text-area allows all characters and stopps at 400 char limit. 
+  * 2: Text input text-area allows all characters and stops at 400 char limit. 
   * 3: Back button does not submit the review and closed the modal.
   * 4: Submit button, updates the db, closes the modal. Game page instantly displays latest review and updated review count.
   * 5: Edit and delete buttons appear on the user's new review and any previous reviews submitted by them. 
@@ -497,7 +497,7 @@ My manual testing logs are as follows:
   * Submit button to update the db, redirect back to the library, with the new game immediately available.
   * Back button, cancel the Add Game action, and return to the library, all data unchanged. 
 * Testing:
-  * Carried out all actions above as decribed. (Attempted to break input fields with incorrect data, or left blank)
+  * Carried out all actions above as described. (Attempted to break input fields with incorrect data, or left blank)
 * Result:
   * Site and form behaved as expected.
 * Action: 
@@ -648,7 +648,7 @@ My manual testing logs are as follows:
 * ***Errors Found:***
     * Duplicate ID usernameHelp
 * ***Action Taken:***
-    * Corrected second occurance of id to passwordHelp
+    * Corrected second occurrence of id to passwordHelp
 <hr>
 
 ### Log in/Log Out [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Flogin)
@@ -659,7 +659,7 @@ My manual testing logs are as follows:
 * ***Errors Found:***
     * Duplicate aria-describedby attributes
 * ***Action Taken:***
-    * Corrected second occurance of attribute
+    * Corrected second occurrence of attribute
 <hr>
 
 ### Profile [View current results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fboardgame-buddy-c89ff5d28931.herokuapp.com%2Fprofile%2Fclaire)
@@ -679,7 +679,7 @@ My manual testing logs are as follows:
 </details>
 
 * ***Errors Found:***
-    * Attrribute errors
+    * Attribute errors
     * Aria-labelledby errors
 * ***Action Taken:***
     * Corrected in game html
@@ -812,7 +812,7 @@ I sent my deployed project to multiple user testers with different devices, brow
 
 "The design of the website is nice and clean, but i feel the yellow and purple colour scheme could be improved upon. It looks a little old fashioned in my opinion."
 
-"Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game'or 'On the lookout for future expansions!'."
+"Two possible features i would like to see added to my collection page. A way to track/add plays of the games. I would find it interesting to see which games i have played most. A date field could also be added to this but i feel it's not of paramount importance. Secondly, a simple personal comments box for each game. It would be handy to add notes like 'My friend Bob didn't enjoy this game' or 'On the lookout for future expansions!'."
 
 "I just tried it on my iPad Air and on my iphone 11. Works fine on both and maintains that ultra quick speed of use!"
 <hr>
