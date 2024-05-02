@@ -425,15 +425,17 @@ JSHint validator was configured to recognise New JavaScript Features (ES6), and 
 
 ## Lighthouse Scores
 ### Test conditions
-* All lighthouse tests were run in incognito mode to avoid interference from browser extensions. 
-* Both mobile and desktop performance are tested. 
+* All lighthouse tests were run from heroku and in incognito mode to avoid interference. 
+* Both mobile and desktop performance are tested.
+* The drop in performance on mobile is likely due to Heroku. 
+* All my user testers reported fast load and response times on both desktop and mobile devices, so no adjusts will be made at this time. 
 
 <details><summary>Desktop Results</summary>
-<img src="">
+<img src="documents/testing-images/lighthouse-desktop.png">
 </details> 
 
 <details><summary>Mobile Results</summary>
-<img src="">
+<img src="documents/testing-images/lighthouse-mobile.png">
 </details> 
 <br/>
 
