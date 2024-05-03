@@ -105,6 +105,8 @@ main {
 }
 
 img.game-image {
+    max-width: 300%;
+    max-height: 300%;
     object-fit: contain;
     border: 10px solid white;
 }
@@ -188,10 +190,10 @@ img.game-image {
         max-width: 175px;
     }
 
-    /* library.html: game image on game card */
+    /* game.html: game image info page */
     img.game-image {
-        max-width: 300px;
-        max-height: 300px;
+        max-width: 200px;
+        max-height: 200px;
         padding: 0;
     }
 
@@ -226,10 +228,14 @@ img.game-image {
 
 @media screen and (min-width:576px) and (max-width:767px) {
 
-    /* library.html: game image on game card */
+    .game-image-container {
+        margin-left: 0;
+    }
+
+    /* game.html: game image on info page*/
     img.game-image{
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 250px;
+        max-height: 250px;
         margin-left: 0;
     }
 
